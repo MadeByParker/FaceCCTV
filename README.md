@@ -12,7 +12,9 @@ This Project was carried out to create an AI Facial / Object Recognition Tool fo
 
 ### Research
 
-[Existing Project](https://pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/)
+* [Existing Project](https://pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/)
+* Why is the footage on CCTV cameras bad quality [click here](https://www.scienceabc.com/eyeopeners/why-is-the-quality-of-cctv-footage-still-so-low.html).
+* Youtube Video explaining why CCTV camera have poor quality [here]
 
 ### List of Project Objectives:
 
@@ -24,11 +26,12 @@ This Project was carried out to create an AI Facial / Object Recognition Tool fo
 #### Side Objectives:
 
 * The AI can identify objects such as car registration plates, car models, locations.
-* The AI is optimally developed so there isn't performance issues.
+* The AI is optimally developed so there aren't any performance issues.
+* The AI should be able to handle any image, in size and resolution.
 
 ### Project Management Planner 
 
-To view my project planner on ClickUp, please visit [this link](https://id.atlassian.com/invite/p/jira-software?id=Oz8QbbMWRCyVmXMjr2BcFQ).
+To view my project planner on Jira, please visit [this link](https://id.atlassian.com/invite/p/jira-software?id=Oz8QbbMWRCyVmXMjr2BcFQ).
 
 ### Download
 
