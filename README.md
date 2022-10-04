@@ -10,6 +10,10 @@ This repository contains the source code and assets for the COMP3000 Final Year 
 
 This Project was carried out to create an AI Facial / Object Recognition Tool for CCTV Cameras that will make a difference in recognising and identifying the correct people. The aim of this project is to make the identification process easier for the police and other security companies so the percentage of misidentification of criminals is reduced.
 
+### Research
+
+[Existing Project](https://pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/)
+
 ### List of Project Objectives:
 
 #### Main Objectives:
@@ -24,7 +28,7 @@ This Project was carried out to create an AI Facial / Object Recognition Tool fo
 
 ### Project Management Planner 
 
-To view my project planner on ClickUp, please visit [this link](https://app.clickup.com/26442884/v/li/200543895).
+To view my project planner on ClickUp, please visit [this link](https://id.atlassian.com/invite/p/jira-software?id=Oz8QbbMWRCyVmXMjr2BcFQ).
 
 ### Download
 
