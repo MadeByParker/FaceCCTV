@@ -8,7 +8,7 @@ This repository contains the source code and assets for the COMP3000 Final Year 
 
 ### Project Vision:
 
-This Project was carried out to create an AI Facial / Object Recognition Tool for CCTV Cameras that will make a difference in recognising and identifying the correct people. The aim of this project is to make the identification process easier for the police and other security companies so the percentage of misidentification of criminals is reduced.
+FaceCCTV is an AI Face Recognition Tool and Image Enhancer that will be used on desktops and laptops. This project is aimed at police departments and security companies that use CCTV surveillance footage, who have trouble identifying people that they are looking for, through CCTV footage. Having low-quality CCTV footage and screenshots is a real-world problem which may give police departments a hard time identifying the correct person. As a result of FaceCCTV, the identification process will become more efficient as the time and resources used will be reduced, additionally, the percentage of misidentifying criminals will be reduced. 
 
 ### Research
 
