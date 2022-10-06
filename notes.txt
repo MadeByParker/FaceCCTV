@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/13211745/detect-face-then-autocrop-pictures
+https://pypi.org/project/face-recognition/
+https://towardsdatascience.com/deep-learning-based-super-resolution-with-opencv-4fd736678066
