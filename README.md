@@ -14,7 +14,7 @@ FaceCCTV is an AI Face Recognition Tool and Image Enhancer that will be used on 
 
 * [Existing Project](https://pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/)
 * Why is the footage on CCTV cameras bad quality [click here](https://www.scienceabc.com/eyeopeners/why-is-the-quality-of-cctv-footage-still-so-low.html).
-* Youtube Video explaining why CCTV camera have poor quality [here]
+* Youtube Video explaining why CCTV camera have poor quality [here](https://www.youtube.com/watch?v=KWCPXJXWum8)
 
 ### List of Project Objectives:
 
@@ -28,6 +28,9 @@ FaceCCTV is an AI Face Recognition Tool and Image Enhancer that will be used on 
 * The AI can identify objects such as car registration plates, car models, locations.
 * The AI is optimally developed so there aren't any performance issues.
 * The AI should be able to handle any image, in size and resolution.
+* Store previous images on database with an account
+* Manage Account details
+
 
 ### Project Management Planner 
 
