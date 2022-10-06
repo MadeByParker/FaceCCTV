@@ -8,11 +8,12 @@ This repository contains the source code and assets for the COMP3000 Final Year 
 
 ### Project Vision:
 
-FaceCCTV is an AI Face Recognition Tool and Image Enhancer that will be used on desktops and laptops. This project is aimed at police departments and security companies that use CCTV surveillance footage, who have trouble identifying people that they are looking for, through CCTV footage. Having low-quality CCTV footage and screenshots is a real-world problem which may give police departments a hard time identifying the correct person. As a result of FaceCCTV, the identification process will become more efficient as the time and resources used will be reduced, additionally, the percentage of misidentifying criminals will be reduced. 
+FaceCCTV is an AI Face Recognition Tool and Image Enhancer that will be used on desktops and laptops. Contrived for police departments and security companies that use CCTV surveillance footage, who have trouble identifying people that they are looking for, through CCTV footage. Having low-quality CCTV footage and screenshots is a real-world problem which may give police departments a hard time identifying the correct person. As a result of FaceCCTV, the identification process will become more efficient as the time and resources used will be reduced, additionally, the percentage of misidentifying criminals will be reduced. 
+
+The tool uses deep learning AI to detect faces and then zoom in on the section and enhance it so the face appears crispy and clearer.  
 
 ### Research
 
-* [Existing Project](https://pyimagesearch.com/2018/06/18/face-recognition-with-opencv-python-and-deep-learning/)
 * Why is the footage on CCTV cameras bad quality [click here](https://www.scienceabc.com/eyeopeners/why-is-the-quality-of-cctv-footage-still-so-low.html).
 * Youtube Video explaining why CCTV camera have poor quality [here](https://www.youtube.com/watch?v=KWCPXJXWum8)
 
