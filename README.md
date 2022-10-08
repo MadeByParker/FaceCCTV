@@ -1,6 +1,6 @@
 # FaceCCTV
 
-![Banner](https://imgur.com/a/3ibwv6R.png)
+![Banner](https://imgur.com/P0jOrS9.png)
 
 ## Before Reading
 
