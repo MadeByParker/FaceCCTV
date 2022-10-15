@@ -31,6 +31,7 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 * The AI can identify objects such as car registration plates, car models, locations.
 * The AI is optimally developed so there aren't any performance issues.
 * The AI should be able to handle any image, in size and resolution.
+* The Image could be colurised with AI after the enhancement process
 
 ### Security
 
