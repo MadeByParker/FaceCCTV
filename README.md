@@ -17,7 +17,7 @@ This repository contains the source code and assets for my Final Year Project at
       <ul>
         <li><a href="#topic-research">Topic Research</a></li>
         <li><a href="#project-research">Project Research</a></li>
-        li><a href="#project-vision">Project Vision</a></li>
+        <li><a href="#project-vision">Project Vision</a></li>
       </ul>
     </li>
     <li>
