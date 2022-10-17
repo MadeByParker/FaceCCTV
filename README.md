@@ -89,11 +89,6 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 * As this project handling with very sensitive data, I am not permitted to allow users store CCTV on my website for later use in case of a data breach or if i had the intent to access the data myself as this could conflict with the rules of the Human Rights Act 1998, 2018 GDPR Regulations and etc... [as stated here](https://www.caughtoncamera.net/news/cctv-legal-requirements-cctv-laws-explained/)
 * As users can upload images to the website via a mobile network connection or through WiFi, the images will be encrypted in transit (using AES-256-CBC mode) to ensure that unauthorised parties can't intercept whilst uploading/downloading.
 
-<br />
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<br/>
 
 ### Other Miscellanous Items
 
