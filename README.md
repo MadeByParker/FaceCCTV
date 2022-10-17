@@ -69,12 +69,6 @@ After doing research on the crime rate percentage and seeing a 1% increase of cr
 
 My solution is an app called FaceCCTV, where users can upload an image then the app uses deep learning AI (trained beforehand with a dataset of pre-collected images). the AI can detect the faces in an image and then enhance the faces, which the user can export and use later on. The main goal is to provide a tool that is easy to use and powered by AI to help people identify criminals easier without the unnecessary costs of cameras or professionals.
 
-<br />
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<br/>
-
 ### List of Project Objectives
 
 #### Main Objectives:
@@ -89,12 +83,6 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 * The AI is optimally developed so there aren't any performance issues.
 * The AI should be able to handle any image, in size and resolution.
 * The Image could be colurised with AI after the enhancement process.
-
-<br />
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<br/>
 
 ### Security
 
@@ -113,12 +101,6 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 
 To view my project planner on Jira, please visit [this link](https://id.atlassian.com/invite/p/jira-software?id=Oz8QbbMWRCyVmXMjr2BcFQ).
 
-<br />
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<br/>
-
 ### Getting Started
 
 #### Prerequisites
@@ -133,19 +115,7 @@ You can download the webs app and the mobile app from their respective sections 
 
 * This project will be hosted online for everyone to use.
 
-<br />
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<br/>
-
 ### Images (coming soon)
-
-<br />
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<br/>
 
 ### Credits and Resources
 
@@ -166,9 +136,3 @@ You can download the webs app and the mobile app from their respective sections 
 | Resource         | URL                                                                             |
 |------------------|---------------------------------------------------------------------------------|
 |                  |                                                                                 |
-
-<br />
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<br/>
