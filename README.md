@@ -62,6 +62,7 @@ This repository contains the source code and assets for my Final Year Project at
 ### Project Research
 
 * [How Face Recognition Works in Facebook.](https://zbigatron.com/how-facial-recognition-works-part-1/)
+* [Size of training dataset](https://towardsdatascience.com/how-do-you-know-you-have-enough-training-data-ad9b1fd679ee)
 
 ### Project Vision
 
