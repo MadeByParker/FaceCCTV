@@ -1,4 +1,5 @@
-node_modules/
+node_modules
 data/
 AI/Deep Learning/data/
-Desktop/app/node_modules/semver/LICENSE
+.idea
+*.hprof
