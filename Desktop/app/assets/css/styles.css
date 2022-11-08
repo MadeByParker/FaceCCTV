@@ -1,12 +1,35 @@
-html, body {
+html.light.alternate-background {
+	--main-first-transparent:rgba(255,255,255,0.85);
+}
+
+html, body, button, input, textarea {
+	font-family:var(--font-family);
+}
+
+body {
 	margin:0;
-	background-color: #2C313C;
-	color: #949aa7;
+	background:var(--main-first);
+	color:var(--main-contrast);
 	padding:0;
 	font-size:0;
 	overflow:hidden;
-	font-family:var(--font-family);
 }
+input, button {
+	outline:none;
+	border:none;
+}
+button {
+	cursor:pointer;
+	transition:background 0.25s;
+}
+html, body, textarea, input, div {
+	transition:background 0.25s;
+}
+a {
+	text-decoration:none;
+	color:var(--accent-first);
+}
+
 
 .clickable {
 	cursor:pointer !important;
@@ -32,124 +55,78 @@ html, body {
 	text-transform:uppercase !important;
 }
 
-.top-bar {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	height: 40px;
-	filter: drop-shadow(0px 5px 10p #000);
-	background-color: #FFFFFF;
-	-webkit-user-select: none;
+.titlebar {
+	transition:none;
+	position:absolute;
+	width:100%;
+	height:36px;
+	top:0;
+	left:0;
+	box-shadow:var(--shadow-smooth);
+	background:var(--main-second);
+	-webkit-app-region:drag;
+	z-index:900;
 }
-
-.title-bar {
-	display: flex;
-    flex-direction: row;
-    align-items: center;
-	width: 100%;
+#web .titlebar {
+	display:none;
 }
-
-.toggle-button {
-	width: 45px;
-	height: 40px;
-	border: none;
-	outline: none;
-	background-color: transparent;
-    background-image: url("../img/gear.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	transition: 0.25s;
-	cursor: pointer;
+.window-buttons {
+	transition:none;
+	font-size:0;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:902;
+	width:220px;
 }
-
-.toggle-button:hover {
-	background-color: #448ec3;
+.window-buttons button {
+	display:inline-block;
+	width:18px;
+	height:18px;
+	margin:9px 0 0 9px;
+	padding:0;
+	border-radius:50%;
+	cursor:default;
+	vertical-align:top;
+	-webkit-app-region:no-drag;
+	position:relative;
 }
-
-.toggle-button:active{
-	background-color: #277EBD;
-	height: 230px;
-	width: 50px;
+.window-buttons button:hover svg {
+	opacity:1;
 }
-
-.toggle-button:active > img {
-	color: white;
-}
-
-.title-bar > img {
-	margin-top: 10px;
-}
-
-.title {
-	margin-left: 10px;
-	width: 100%;
-	line-height: 30px;
-	margin-top: 5px;
-	padding-bottom: 5px;
-	-webkit-app-region: drag;
-}
-
-.title-bar-buttons {
-	display: flex;
-    flex-direction: row;
-	width: 120px;
-	height: 40px;
-}
-
-.top-button {
-	width: 40px;
-	height: 40px;
-    border: none;
-    outline: none;
-	background-color: transparent;
-	background-repeat: no-repeat;
-	background-position: center;
-    transition: 0.25s;
-	cursor: pointer;
-}
-
-.top-button:hover{
-	background-color: #272C36;
-}
-
-.top-button:active{
-	background-color: #277EBD;
-	height: 40px;
-	width: 40px;
-}
-
-.minimize-button {
-	background-image: url('../icons/minimze.png');
-}
-
-.restore-button {
-	background-image: url('../icons/restore.png');
-}
-
-.maximize-button {
-	background-image: url('../icons/maximize.png');
-}
-
-.close-button {
+.window-buttons button.close-button {
 	background-image: url('../icons/close.png');
 }
-
-.left-menu {
-	width: 270px;
-	height: 100%;
-    background-color: #F4F5F7;
-	transition: 0.4s;
+.window-buttons button.minimize-button {
+	background-image: url('../icons/minimze.png');
+}
+.window-buttons button.maximize-button {
+	background-image: url('../icons/maximise.png');
+}
+.window-buttons button svg {
+	fill:rgb(255,255,255);
+	width:70%;
+	height:70%;
+	position:absolute;
+	top:2px;
+	left:15%;
+	opacity:0;
+	transition:opacity 0.25s;
+}
+.window-buttons button.maximize-button svg {
+	width:60%;
+	height:60%;
+	top:3.2px;
+	left:calc((100% - 60%) / 2);
 }
 
 .app-content {
-	display: flex;
-	flex-direction: column;
-    width: 100%;
-    height: 100%;
-	flex-wrap: nowrap;
-	overflow: hidden;
-	border: 1px solid #343848;
-	-webkit-box-sizing: border-box;
+	position:absolute;
+	top:36px;
+	left:0;
+	height:calc(100% - 36px);
+	width:100%;
 }
 
 #web .app-content {
@@ -176,22 +153,6 @@ html, body {
 	border-radius:5px;
 }
 
-#background {
-	pointer-events:none;
-	transform:rotate(180deg);
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	opacity:1;
-	background-size:cover;
-	background-attachment:fixed;
-	z-index:1;
-}
-html.alternate-background #background {
-	transform:rotate(0deg);
-}
 
 .loading-screen {
 	position:absolute;

@@ -11,7 +11,7 @@
     <link class="favicon" rel="apple-touch-icon" sizes="180x180" href="../assets/icons/logo.png">
 		<link class="favicon" rel="icon" type="image/png" sizes="32x32" href="../assets/icons/logo.png">
 		<link class="favicon" rel="icon" type="image/png" sizes="16x16" href="../assets/icons/logo.png">
-		<link class="favicon" rel="shortcut icon" href="../assets/icons/logo.ico">
+		<link class="favicon" rel="shortcut icon" href="./assets/icons/logo.ico">
 
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
@@ -23,20 +23,14 @@
     <title>FaceCCTV</title>
   </head>
   <body>
+    <div class="titlebar" id="titlebar" style="background:rgb(20,20,20); box-shadow:none;">
+			<div class="window-buttons">
+				<button id="button-window-close" class="close-button" title="Close Window"><i class="fa-solid fa-xmark"></i></button>
+				<button id="button-window-minimize" class="minimize-button" title="Minimize Window"><i class="fa-solid fa-minus"></i></button>
+				<button id="button-window-maximize" class="maximize-button" title="Maximize Window"><i class="fa-sharp fa-solid fa-window-restore"></i></button>
+			</div>
+		</div>
     <div class="app-content" id="app-content">
-      <div class="top-bar" id="top-bar">
-        <div class="title-bar" id="title-bar">
-          <button id="show-hide-menus" class="toggle-button"></button>
-          <div id="title" class="title">
-            FaceCCTV
-          </div>
-        </div>
-        <div id="title-bar-buttons" class="title-bar-buttons">
-          <button id="minimize-button" class="top-button toggle-minimize"></button>
-          <button id="expand-button" class="top-button toggle-expand"></button>
-          <button id="close-button" class="top-button toggle-close"></button>
-        </div>
-      </div>
 			<div id="background"></div>
 			<div class="loading-overlay active noselect" id="loading-overlay"><div class="loading-icon"><div></div><div></div></div></div>
 
