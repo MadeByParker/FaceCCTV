@@ -1,0 +1,71 @@
+{
+  "name": "facecctv",
+  "version": "1.0.0",
+  "description": "A tool that allow you to import a image and use deep learning AI Face Detection in CCTV Footage and allows Image Enhancememt amd Colourisation with an open source web, mobile, and desktop application, fitted with a web hosted AI",
+  "main": "main.js",
+  "scripts": {
+    "test": "test app",
+    "publish": "electron-forge publish",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parker06/COMP3000-FaceCCTV.git"
+  },
+  "keywords": [
+    "AI",
+    "Face-Detection",
+    "Image-Enhancement"
+  ],
+  "author": "Harry Parker <hspark5@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Parker06/COMP3000-FaceCCTV/issues"
+  },
+  "homepage": "https://github.com/Parker06/COMP3000-FaceCCTV#readme",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./assets/icons/logo"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "FaceCCTV"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin",
+            "linux",
+            "win32"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0",
+    "@electron-forge/maker-deb": "^6.0.0",
+    "@electron-forge/maker-rpm": "^6.0.0",
+    "@electron-forge/maker-squirrel": "^6.0.0",
+    "@electron-forge/maker-zip": "^6.0.0",
+    "electron": "21.2.2"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.18.2"
+  }
+}
