@@ -44,8 +44,8 @@ app.on("ready", function() {
 
 	const { width, height } = screen.getPrimaryDisplay().workAreaSize;
 
-	let windowWidth = width;
-	let windowHeight = height;
+	let windowWidth = 1250;
+	let windowHeight = 800;
 
 	if(width > 1200 && height > 800) {
 		windowWidth = 1160;
@@ -58,9 +58,9 @@ app.on("ready", function() {
 
     const localWindow = new BrowserWindow({
 		width: windowWidth,
-		minWidth: windowWidth,
+		minWidth: 800,
 		height: windowHeight,
-		minHeight: windowHeight,
+		minHeight: 600,
 		resizable: true,
 		frame: false,
 		resizable: true,
@@ -89,6 +89,7 @@ app.on("ready", function() {
 
 	localExpress.use("/assets", express.static(path.join(__dirname, "assets")));
 
+	ipcMain.handle('ping', () => 'pong')
 	localWindow.loadURL("http://127.0.0.1:" + localPort);
 	localWindow.loadFile("./views/index.html");
 	if(debugMode) {

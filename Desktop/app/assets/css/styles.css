@@ -1,18 +1,11 @@
-html.light.alternate-background {
-	--main-first-transparent:rgba(255,255,255,0.85);
-}
-
-html, body, button, input, textarea {
-	font-family:var(--font-family);
-}
-
-body {
+html, body {
 	margin:0;
-	background: url('../images/rose-petals.jpg') ;
-	color: black;
+	background-color: #2C313C;
+	color: #949aa7;
 	padding:0;
 	font-size:0;
 	overflow:hidden;
+	font-family:var(--font-family);
 }
 
 .clickable {
@@ -39,34 +32,126 @@ body {
 	text-transform:uppercase !important;
 }
 
-#title-bar {
-    -webkit-app-region: drag;
-    height: 24px; 
-    background-color: rgb(255, 255, 255);
-    padding: none;
-    margin: 0px; 
-   }
-   
-   #title {
-    position: fixed;
-    top: 0px;
-    left: 6px; 
-   }
-   
-   #title-bar-btns {
-    -webkit-app-region: no-drag;
-    position: fixed;
-    top: 0px;
-    right: 6px;
-   }
+.top-bar {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 40px;
+	filter: drop-shadow(0px 5px 10p #000);
+	background-color: #FFFFFF;
+	-webkit-user-select: none;
+}
+
+.title-bar {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+	width: 100%;
+}
+
+.toggle-button {
+	width: 45px;
+	height: 40px;
+	border: none;
+	outline: none;
+	background-color: transparent;
+    background-image: url("../img/gear.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+.toggle-button:hover {
+	background-color: #448ec3;
+}
+
+.toggle-button:active{
+	background-color: #277EBD;
+	height: 230px;
+	width: 50px;
+}
+
+.toggle-button:active > img {
+	color: white;
+}
+
+.title-bar > img {
+	margin-top: 10px;
+}
+
+.title {
+	margin-left: 10px;
+	width: 100%;
+	line-height: 30px;
+	margin-top: 5px;
+	padding-bottom: 5px;
+	-webkit-app-region: drag;
+}
+
+.title-bar-buttons {
+	display: flex;
+    flex-direction: row;
+	width: 120px;
+	height: 40px;
+}
+
+.top-button {
+	width: 40px;
+	height: 40px;
+    border: none;
+    outline: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+    transition: 0.25s;
+	cursor: pointer;
+}
+
+.top-button:hover{
+	background-color: #272C36;
+}
+
+.top-button:active{
+	background-color: #277EBD;
+	height: 40px;
+	width: 40px;
+}
+
+.minimize-button {
+	background-image: url('../icons/minimze.png');
+}
+
+.restore-button {
+	background-image: url('../icons/restore.png');
+}
+
+.maximize-button {
+	background-image: url('../icons/maximize.png');
+}
+
+.close-button {
+	background-image: url('../icons/close.png');
+}
+
+.left-menu {
+	width: 270px;
+	height: 100%;
+    background-color: #F4F5F7;
+	transition: 0.4s;
+}
 
 .app-content {
-	position:absolute;
-	top:36px;
-	left:0;
-	height:calc(100% - 36px);
-	width:100%;
+	display: flex;
+	flex-direction: column;
+    width: 100%;
+    height: 100%;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	border: 1px solid #343848;
+	-webkit-box-sizing: border-box;
 }
+
 #web .app-content {
 	top:0;
 	height:100%;
@@ -115,7 +200,7 @@ html.alternate-background #background {
 	width:100%;
 	height:100%;
 	z-index:850;
-	background:rgb(20,20,20);
+	background:rgb(200,200,200);
 }
 .loading-overlay {
 	display:none;
@@ -125,7 +210,7 @@ html.alternate-background #background {
 	width:100%;
 	height:100%;
 	position:absolute;
-	background:rgb(20,20,20);
+	background:rgb(200,200,200);
 	transition:none;
 	z-index:99;
 }
