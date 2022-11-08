@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: normal;
+    fony-weight: 400;
+    font-display: swap;
+    src: url('CrimsonText-Regular') format('ttf');
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: normal;
+    fony-weight: 600;
+    font-display: swap;
+    src: url('CrimsonText-SemiBold') format('ttf');
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: normal;
+    fony-weight: 700;
+    font-display: swap;
+    src: url('CrimsonText-Bold') format('ttf');
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: italic;
+    fony-weight: 400;
+    font-display: swap;
+    src: url('CrimsonText-Italic') format('ttf');
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: italic;
+    fony-weight: 600;
+    font-display: swap;
+    src: url('CrimsonText-SemiBoldItalic') format('ttf');
+}
+
+@font-face {
+    font-family: 'Crimson Text';
+    font-style: italic;
+    fony-weight: 700;
+    font-display: swap;
+    src: url('CrimsonText-BoldItalic') format('ttf');
+}

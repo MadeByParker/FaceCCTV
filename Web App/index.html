@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" id="app">
+  <head>
+    <script src="./assets/js/app-settings.js"></script>
+
+    <link href="./assets/css/global.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+    <link href="./assets/css/dark.css" rel="stylesheet">
+    <link href="./assets/css/light.css" rel="stylesheet">
+
+    <link class="favicon" rel="apple-touch-icon" sizes="180x180" href="./assets/icons/logo.png">
+		<link class="favicon" rel="icon" type="image/png" sizes="32x32" href="./assets/icons/logo.png">
+		<link class="favicon" rel="icon" type="image/png" sizes="16x16" href="./assets/icons/logo.png">
+		<link class="favicon" rel="shortcut icon" href="./assets/icons/logo.ico">
+
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+    <meta class="browser-theme" name="theme-color" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta charset="UTF-8" />
+
+    <title>FaceCCTV</title>
+  </head>
+  <body>
+    <div class="titlebar" id="titlebar" style="background:rgb(20,20,20); box-shadow:none;">
+			<div class="window-buttons">
+				<button id="button-window-close" class="close-button" title="Close Window"><i class="fa-solid fa-xmark"></i></button>
+				<button id="button-window-minimize" class="minimize-button" title="Minimize Window"><i class="fa-solid fa-minus"></i></button>
+				<button id="button-window-maximize" class="maximize-button" title="Maximize Window"><i class="fa-sharp fa-solid fa-window-restore"></i></button>
+			</div>
+		</div>
+    <div class="app-content" id="app-content">
+			<div id="background"></div>
+			<div class="loading-overlay active noselect" id="loading-overlay"><div class="loading-icon"><div></div><div></div></div></div>
+
+      <div id="side-navigation" class="left-menu">
+
+      </div>
+
+      
+
+      <div id="dom-cache"></div>
+      <noscript>
+				<div class="noscript-wrapper noselect">
+					<span>JavaScript is required for this app to function.</span>
+				</div>
+			</noscript>
+    </div>
+
+    <script src="./assets/js/functions.js"></script>
+    <script src="./assets/js/defaults.js"></script>
+    <script src="./assets/js/page-assets.js"></script>
+    <script src="./assets/js/user-settings.js"></script>
+    <script src="./assets/js/renderer.js"></script>
+  </body>
+</html>
