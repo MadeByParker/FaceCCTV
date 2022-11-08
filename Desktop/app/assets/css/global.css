@@ -1,0 +1,7 @@
+@import url("../fonts/Crimson-Text/Crimson-Text.css");
+
+html {
+    --border-radius: 10px;
+    --blur:blur(2px);
+    --font-family: "Crimson Text", serif;
+}
