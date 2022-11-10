@@ -52,43 +52,31 @@ buttonWindowMaximize.addEventListener("click", () => {
 	}
 });
 
-// Used to enable "desktop" mode, and play sounds when buttons are clicked on.
-document.addEventListener("click", (event) => {
-	clickTargets.push(event.target.id);
-	clickTargets = clickTargets.slice(-3);
-
-	if(clickTargets.join("-") === "span-login-title-span-login-title-span-login-title") {
-		clickTargets = [];
-		appToggle();
+// add our event listener for the click
+btn.addEventListener("click", () => {
+	sidebar.classList.toggle("-translate-x-full");
+  });
+  
+  // close sidebar if user clicks outside of the sidebar
+  document.addEventListener("click", (event) => {
+	const isButtonClick = btn === event.target && btn.contains(event.target);
+	const isOutsideClick =
+	  sidebar !== event.target && !sidebar.contains(event.target);
+  
+	// bail out if sidebar isnt open
+	if (sidebar.classList.contains("-translate-x-full")) return;
+  
+	// if the user clicks the button, then toggle the class
+	if (isButtonClick) {
+	  console.log("does not contain");
+	  sidebar.classList.toggle("-translate-x-full");
+	  return;
 	}
-
-	let audible = audibleElement(event.target);
-	if(applicationSettings.sounds === "enabled" && audioPlayable && audible.audible) {
-		if(audible.type === "switch") {
-			audioSwitch.currentTime = 0;
-			audioSwitch.play();
-		} else {
-			audioPop.currentTime = 0;
-			audioPop.play();
-		}
+  
+	// check to see if user clicks outside the sidebar
+	if (!isButtonClick && isOutsideClick) {
+	  console.log("outside click");
+	  sidebar.classList.add("-translate-x-full");
+	  return;
 	}
-});
-
-closeBtn.addEventListener("click", ()=>{
-  sidebar.classList.toggle("open");
-  menuBtnChange();//calling the function(optional)
-});
-
-searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
-  sidebar.classList.toggle("open");
-  menuBtnChange(); //calling the function(optional)
-});
-
-// following are the code to change sidebar button(optional)
-function menuBtnChange() {
- if(sidebar.classList.contains("open")){
-   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
- }else {
-   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
- }
-}
+  });

@@ -11,6 +11,7 @@ let DOMCache = document.getElementById("dom-cache");
 
 let divLoading = document.getElementById("loading-overlay");
 
-let sidebar = document.querySelector(".sidebar");
-let closeBtn = document.querySelector("#btn");
-let searchBtn = document.querySelector(".bx-search");
+// grab everything we need
+const btn = document.querySelector(".mobile-menu-button");
+const sidebar = document.querySelector(".sidebar");
+let isSidebarOpen = false;
