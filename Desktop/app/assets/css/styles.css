@@ -1,33 +1,16 @@
-html.light.alternate-background {
-	--main-first-transparent:rgba(255,255,255,0.85);
-}
-
-html, body, button, input, textarea {
-	font-family:var(--font-family);
+* {
+	font-family: Inter, sans-serif;
 }
 
 body {
 	margin:0;
-	background:var(--main-first);
-	color:var(--main-contrast);
+	background: url("../images/rose-petals.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: black;
 	padding:0;
 	font-size:0;
 	overflow:hidden;
-}
-input, button {
-	outline:none;
-	border:none;
-}
-button {
-	cursor:pointer;
-	transition:background 0.25s;
-}
-html, body, textarea, input, div {
-	transition:background 0.25s;
-}
-a {
-	text-decoration:none;
-	color:var(--accent-first);
 }
 
 
@@ -96,13 +79,13 @@ a {
 	opacity:1;
 }
 .window-buttons button.close-button {
-	background-image: url('../icons/close.png');
+	background:var(--colorful-gradient);
 }
 .window-buttons button.minimize-button {
-	background-image: url('../icons/minimze.png');
+	background:var(--orange-gradient);
 }
 .window-buttons button.maximize-button {
-	background-image: url('../icons/maximise.png');
+	background:var(--blue-gradient);
 }
 .window-buttons button svg {
 	fill:rgb(255,255,255);
@@ -128,31 +111,49 @@ a {
 	height:calc(100% - 36px);
 	width:100%;
 }
-
 #web .app-content {
 	top:0;
 	height:100%;
 }
 
-::-webkit-scrollbar, div::-webkit-scrollbar {
+.noscript-wrapper {
+	position:absolute;
+	z-index:890;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	background:rgba(0,0,0,0.7);
+	backdrop-filter:blur(4px);
+}
+.noscript-wrapper span {
 	display:block;
-	width:4px;
-	height:6px;
-	background:var(--main-fifth);
-	border-radius:5px;
-}
-::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb {
-	border-radius:5px;
-	background:var(--main-contrast-darker);
-}
-::-webkit-scrollbar-thumb:hover, div::-webkit-scrollbar-thumb:hover {
-	background:var(--accent-first);
-}
-::-webkit-scrollbar-track, div::-webkit-scrollbar-track { 
-	background:var(--main-first);
-	border-radius:5px;
+	text-align:center;
+	width:100%;
+	font-size:20px;
+	font-weight:bold;
+	color:rgb(255,255,255);
 }
 
+#background {
+	pointer-events:none;
+	transform:rotate(180deg);
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	opacity:1;
+	background-size:cover;
+	background-attachment:fixed;
+	z-index:1;
+}
+html.alternate-background #background {
+	transform:rotate(0deg);
+}
 
 .loading-screen {
 	position:absolute;
@@ -161,7 +162,7 @@ a {
 	width:100%;
 	height:100%;
 	z-index:850;
-	background:rgb(200,200,200);
+	background:rgb(20,20,20);
 }
 .loading-overlay {
 	display:none;
@@ -171,7 +172,7 @@ a {
 	width:100%;
 	height:100%;
 	position:absolute;
-	background:rgb(200,200,200);
+	background:rgb(20,20,20);
 	transition:none;
 	z-index:99;
 }
@@ -212,7 +213,7 @@ a {
 }
 .loading-icon div {
 	position:absolute;
-	border:4px solid rgb(75, 95, 159);
+	border:4px solid var(--accent-first);
 	opacity:1;
 	border-radius:50%;
 	animation:loading-icon 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;

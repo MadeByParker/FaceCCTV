@@ -91,7 +91,7 @@ app.on("ready", function() {
 
 	ipcMain.handle('ping', () => 'pong')
 	localWindow.loadURL("http://127.0.0.1:" + localPort);
-	localWindow.loadFile("./views/index.html");
+	localWindow.loadFile("./displays/index.html");
 	if(debugMode) {
 		localWindow.webContents.openDevTools();
 	}

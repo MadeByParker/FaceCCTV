@@ -1,7 +1,7 @@
-@import url("../fonts/Crimson-Text/Crimson-Text.css");
+@import url("../fonts/Inter/Inter.css");
 
 html {
     --border-radius: 10px;
     --blur:blur(2px);
-    --font-family: "Crimson Text", serif;
+    --font-family: "Imter", sans-serif;
 }
