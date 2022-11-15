@@ -1,111 +1,151 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
-  <link href="./assets/css/global.css" rel="stylesheet">
-  <link href="./assets/css/styles.css" rel="stylesheet">
+<html id="web">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link href="./assets/css/global.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
-  <script src="https://kit.fontawesome.com/d6413e2fbf.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./assets/js/index.js"></script>
-  <title>FaceCCTV</title>
-</head>
-<body>
-  <div class="app-container">
+    <script src="https://kit.fontawesome.com/d6413e2fbf.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./assets/js/index.js"></script>
+    <title>FaceCCTV</title>
+  </head>
+  <body>
+    <div class="app-container">
 
-    <div class="app-header flex relative items-center justify-between w-full h-[60px] py-4 md:py-0 text-xl bg-[#d9d9d9] drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)] ">
-      <div class="app-header-left">
-        <div class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
-        <img src="./assets/icons/logo.png" alt="logo" style="height: 40px; width: 40px;">
-        <span class="text-[24px] ml-5 text-black">FaceCCTV</span>
+      <div class="app-header flex relative items-center justify-between w-full h-[60px] py-4 md:py-0 text-xl bg-[#d9d9d9] drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)] ">
+        <div class="app-header-left">
+          <div class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
+          <img src="./assets/icons/logo.png" alt="logo" style="height: 40px; width: 40px;">
+          <span class="text-[24px] ml-5 text-black">FaceCCTV</span>
+          </div>
+
         </div>
-
+        <div class="app-header-right">
+          <nav>
+          <div class="hidden w-full md:flex md:items-center md:w-auto duration-1000" id="menu">
+            <button class="mode-switch pr-5" id="mode-switch" title="Switch Theme">
+              <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+                <defs></defs>
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+              </svg>
+            </button>
+            <ul
+              class="
+                pt-4
+                text-base text-black
+                md:flex
+                md:justify-between 
+                md:pt-0"
+            >
+              <li>
+                <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"
+                  >Home <i class="fa-sharp fa-solid fa-house"></i></a
+                >
+              </li>
+              <li>
+                <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"
+                  >Notifications <i class="fa-solid fa-bell"></i></a
+                >
+              </li>
+              <li>
+                <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"
+                  >About <i class="fa-sharp fa-solid fa-question"></i></a
+                >
+              </li>
+            </ul>
+          </div>
+          </nav>
+        </div>
       </div>
-      <div class="app-header-right">
-        <nav>
-        <div class="hidden w-full md:flex md:items-center md:w-auto duration-1000" id="menu">
-          <button class="mode-switch pr-5" title="Switch Theme">
-            <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
-              <defs></defs>
-              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-            </svg>
-          </button>
-          <ul
-            class="
-              pt-4
-              text-base text-black
-              md:flex
-              md:justify-between 
-              md:pt-0"
-          >
-            <li>
-              <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"
-                >Home <i class="fa-sharp fa-solid fa-house"></i></a
-              >
-            </li>
-            <li>
-              <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"
-                >Notifications <i class="fa-solid fa-bell"></i></a
-              >
-            </li>
-            <li>
-              <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"
-                >About <i class="fa-sharp fa-solid fa-question"></i></a
-              >
-            </li>
-          </ul>
-        </div>
-        </nav>
+      <div class="app-content">
+        <div class="app-sidebar">
+              <a class="app-sidebar-link active">
+                <i class="fa-sharp fa-solid fa-house"></i>
+                <span class="text-[20px] ml-4">Home</span>
+              </a>
+              <a class="app-sidebar-link">
+                <i class="fa-regular fa-file"></i>
+                <span class="text-[20px] ml-4">About</span>
+              </a>
+              <div class="app-sidebar-link">
+                <i class="fa-solid fa-image"></i>
+                <span class="text-[20px] ml-4">Image Enhancer</span>
+              </div>
+              <div class="app-sidebar-link">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span class="text-[20px] ml-4">Face Detection</span>
+              </div>
+              <div class="app-sidebar-link">
+                <i class="fa-solid fa-bell"></i>
+                <span class="text-[20px] ml-4">Notifications</span>
+              </div>
+              <div class="app-sidebar-link">
+                <i class="fa-sharp fa-solid fa-gear"></i>
+                <span class="text-[20px] ml-4">Settings</span>
+              </div>
+          </div>
+          <div class="app-main">
+            <div class="page home hidden" id="home-page">
+              <div class="image-container">
+                <div class="image-container-header">
+                  <span class="title">Face Detection of CCTV Footage</span>
+                </div>
+                <div class="image-container-subheader">
+                  <span class="subtitle">Upload a image file to detect faces in it.</span>
+                </div>
+                <div class="box">
+                  <div class="js--image-preview"></div>
+                  <div class="upload-options">
+                    <label>
+                      <input type="file" class="image-upload" accept="image/*" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page detection hidden" id="detection-page">
+              <div class="image-container">
+                <div class="image-container-header">
+                  <span class="title">Face Detection of CCTV Footage</span>
+                </div>
+                <div class="image-container-subheader">
+                  <span class="subtitle">Upload a image file to detect faces in it.</span>
+                </div>
+                <div class="box">
+                  <div class="js--image-preview"></div>
+                  <div class="upload-options">
+                    <label>
+                      <input type="file" class="image-upload" accept="image/*" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page enhancer hidden" id="enhancer-page">
+              <div class="image-container">
+                <div class="image-container-header">
+                  <span class="title">Face Detection of CCTV Footage</span>
+                </div>
+                <div class="image-container-subheader">
+                  <span class="subtitle">Upload a image file to detect faces in it.</span>
+                </div>
+                <div class="box">
+                  <div class="js--image-preview"></div>
+                  <div class="upload-options">
+                    <label>
+                      <input type="file" class="image-upload" accept="image/*" />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
       </div>
     </div>
-    <div class="app-content">
-      <div class="app-sidebar">
-            <a class="app-sidebar-link active">
-              <i class="fa-sharp fa-solid fa-house"></i>
-              <span class="text-[20px] ml-4">Home</span>
-            </a>
-            <a class="app-sidebar-link">
-              <i class="fa-regular fa-file"></i>
-              <span class="text-[20px] ml-4">About</span>
-            </a>
-            <div class="app-sidebar-link">
-              <i class="fa-solid fa-image"></i>
-              <span class="text-[20px] ml-4">Image Enhancer</span>
-            </div>
-            <div class="app-sidebar-link">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <span class="text-[20px] ml-4">Face Detection</span>
-            </div>
-            <div class="app-sidebar-link">
-              <i class="fa-solid fa-bell"></i>
-              <span class="text-[20px] ml-4">Notifications</span>
-            </div>
-            <div class="app-sidebar-link">
-              <i class="fa-sharp fa-solid fa-gear"></i>
-              <span class="text-[20px] ml-4">Settings</span>
-            </div>
-        </div>
-        <div class="image-container">
-          <div class="image-container-header">
-            <span class="title">Face Detection of CCTV Footage</span>
-          </div>
-          <div class="image-container-subheader">
-            <span class="subtitle">Upload a image file to detect faces in it.</span>
-          </div>
-          <div class="box">
-            <div class="js--image-preview"></div>
-            <div class="upload-options">
-              <label>
-                <input type="file" class="image-upload" accept="image/*" />
-              </label>
-            </div>
-          </div>
-      </div>
-
-    </div>
-  </div>
-</body>
+  </body>
 </html>

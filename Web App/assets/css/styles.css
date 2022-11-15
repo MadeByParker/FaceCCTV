@@ -1,4 +1,4 @@
-:root {
+html {
     --app-container: #ffffff;
     --main-color: #e3e4e6;
     --secondary-color: #f7f7f7;
@@ -13,7 +13,7 @@
     --base-color: cadetblue;
   }
   
-  .dark:root {
+html.dark {
     --app-container: #1f1d2b;
     --app-container: #111827;
     --main-color: #fff;
@@ -81,7 +81,8 @@ body {
     background-color: transparent;
     border: none;
     padding: 0;
-    color: var(--main-color);
+    margin-right: 15px;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +123,7 @@ width: 100%;
     color: var(--link-color-active);
 }
 
-.image-container {
+.app-main {
     flex: 2;
     display: flex;
     overflow: hidden;
