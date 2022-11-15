@@ -16,19 +16,7 @@
 <body>
   <div class="app-container">
 
-    <div class="app-header           
-      flex
-      relative
-      items-center
-      justify-between
-      w-full
-      h-[60px]
-      py-4
-      md:py-0
-      text-lg
-      bg-[#d9d9d9]
-      drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)]
-      ">
+    <div class="app-header flex relative items-center justify-between w-full h-[60px] py-4 md:py-0 text-xl bg-[#d9d9d9] drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)] ">
       <div class="app-header-left">
         <div class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
         <img src="./assets/icons/logo.png" alt="logo" style="height: 40px; width: 40px;">
@@ -48,7 +36,7 @@
           <ul
             class="
               pt-4
-              text-base text-[#a9afbb]
+              text-base text-black
               md:flex
               md:justify-between 
               md:pt-0"
@@ -91,7 +79,7 @@
               <i class="fa-solid fa-magnifying-glass"></i>
               <span class="text-[20px] ml-4">Face Detection</span>
             </div>
-            <div class="app-sidebar-link ">
+            <div class="app-sidebar-link">
               <i class="fa-solid fa-bell"></i>
               <span class="text-[20px] ml-4">Notifications</span>
             </div>
@@ -100,15 +88,21 @@
               <span class="text-[20px] ml-4">Settings</span>
             </div>
         </div>
-        <div class="flex h-screen items-center justify-center bg-grey-lighter">
-          <label class="w-64 flex flex-col items-center px-4 py-6 bg-white text-blue rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer hover:bg-blue hover:text-white">
-              <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-              </svg>
-              <span class="mt-2 text-base leading-normal">Select a file</span>
-              <input type='file' class="hidden" />
-          </label>
-        </div>
+        <div class="image-container">
+          <div class="image-container-header">
+            <span class="title">Face Detection of CCTV Footage</span>
+          </div>
+          <div class="image-container-subheader">
+            <span class="subtitle">Upload a image file to detect faces in it.</span>
+          </div>
+          <div class="box">
+            <div class="js--image-preview"></div>
+            <div class="upload-options">
+              <label>
+                <input type="file" class="image-upload" accept="image/*" />
+              </label>
+            </div>
+          </div>
       </div>
 
     </div>
