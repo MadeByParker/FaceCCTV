@@ -1,5 +1,10 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "dark-mode-switch": "^1.0.0",
+    "flowbite": "^1.5.4",
+    "install": "^0.13.0"
   }
 }
