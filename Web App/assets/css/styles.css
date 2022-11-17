@@ -8,7 +8,7 @@ html {
     --link-color-active-bg: #277EBD;
     --drop-shadow: rgba(0, 0, 0, 0.4);
     --button-bg: #277EBD;
-    --container-bg: #7fa2bb;
+    --container-bg: rgba(106, 147, 200, 0.6);
     --text-color: #000000;
     --base-color: cadetblue;
   }

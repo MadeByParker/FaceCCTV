@@ -11,6 +11,18 @@
 
     <script src="https://kit.fontawesome.com/d6413e2fbf.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./assets/js/index.js"></script>
+
+    <link class="favicon" rel="apple-touch-icon" sizes="180x180" href="./assets/icons/logo.png">
+		<link class="favicon" rel="icon" type="image/png" sizes="32x32" href="./assets/icons/logo.png">
+		<link class="favicon" rel="icon" type="image/png" sizes="16x16" href="./assets/icons/logo.png">
+		<link class="favicon" rel="shortcut icon" href="./assets/icons/logo.ico">
+
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+    <meta class="browser-theme" name="theme-color" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta charset="UTF-8" />
     <title>FaceCCTV</title>
   </head>
   <body>
@@ -19,7 +31,7 @@
       <div class="app-header flex relative items-center justify-between w-full h-[60px] py-4 md:py-0 text-xl bg-[#d9d9d9] drop-shadow-[0_3px_3px_rgba(0,0,0,0.5)] ">
         <div class="app-header-left">
           <div class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
-          <img src="./assets/icons/logo.png" alt="logo" style="height: 40px; width: 40px;">
+          <img src="./assetS/icons/logo-navbar-brand.png" alt="logo" style="height: 40px; width: 40px;">
           <span class="text-[24px] ml-5 text-black">FaceCCTV</span>
           </div>
 
@@ -125,13 +137,13 @@
                 </div>
               </div>
             </div>
-            <div class="page enhancer hidden" id="enhancer-page">
+            <div class="page enhancer" id="enhancer-page">
               <div class="image-container">
                 <div class="image-container-header">
-                  <span class="title">Face Detection of CCTV Footage</span>
+                  <span class="title">Image Enhacement</span>
                 </div>
                 <div class="image-container-subheader">
-                  <span class="subtitle">Upload a image file to detect faces in it.</span>
+                  <span class="subtitle">Upload a image file to enhance the image itself (Image Quality Enhancement and Colourisation).</span>
                 </div>
                 <div class="box">
                   <div class="js--image-preview"></div>
@@ -144,7 +156,6 @@
               </div>
             </div>
           </div>
-
       </div>
     </div>
   </body>
