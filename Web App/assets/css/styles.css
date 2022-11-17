@@ -1,37 +1,50 @@
-html {
-    --app-container: #ffffff;
-    --main-color: #e3e4e6;
-    --secondary-color: #f7f7f7;
-    --link-color: #a9afbb;
-    --link-color-hover: #ffffff;
-    --link-color-active: #ffffff;
-    --link-color-active-bg: #277EBD;
-    --drop-shadow: rgba(0, 0, 0, 0.4);
-    --button-bg: #277EBD;
-    --container-bg: rgba(106, 147, 200, 0.6);
-    --text-color: #000000;
-    --base-color: cadetblue;
-  }
-  
 html.dark {
-    --app-container: #1f1d2b;
-    --app-container: #111827;
-    --main-color: #fff;
-    --secondary-color: rgba(255,255,255,.8);
-    --projects-section: #1f2937;
-    --link-color: rgba(255,255,255,.8);
-    --link-color-hover: rgba(195, 207, 244, 0.1);
-    --link-color-active-bg: rgba(195, 207, 244, 0.2);
-    --button-bg: #1f2937;
-    --search-area-bg: #1f2937;
-    --message-box-hover: #243244;
-    --message-box-border: rgba(255,255,255,.1);
-    --star: #ffd92c;
-    --light-font: rgba(255,255,255,.8);
-    --more-list-bg: #2f3142;
-    --more-list-bg-hover:  rgba(195, 207, 244, 0.1);
-    --more-list-shadow: rgba(195, 207, 244, 0.1);
-    --message-btn: rgba(195, 207, 244, 0.1);
+  --app-container: #1f1d2b;
+  --main-color: rgb(17, 24, 39);
+  --main-transparent: rgba(17, 24, 39, 0.9);
+  --secondary-color: rgb(41, 49, 59);
+  --secondary-transparent: rgba(41, 49, 59, 0.4);
+  --projects-section: rgb(31, 41, 55);
+  --link-color: rgb(255, 255, 255);
+  --link-color-hover: rgb(255, 255, 255);
+  --link-color-active: rgb(255, 255, 255);
+  --link-color-active-bg: rgb(39, 126, 189);
+  --drop-shadow: rgba(173, 173, 173, 0.4);
+  --button-bg: rgb(39, 126, 189);
+  --container-bg: #445968;
+  --text-color: rgb(255, 255, 255);
+  --base-color: rgb(66, 105, 151);
+  --box-shadow-primary: rgba(209, 209, 209, 0.122);
+  --box-shadow-secondary: rgba(201, 201, 201, 0.239);
+  --button-background-after: rgb(246, 246, 246);
+  --accent-first:rgb(75, 128, 163);
+  --accent-second:rgb(66, 92, 147);
+  --accent-third:rgb(65, 69, 143);
+  --shadow-smooth:0 1px 1px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.075), 0 4px 4px rgba(0,0,0,0.075), 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+html  {
+    --app-container: rgb(255, 255, 255);
+    --main-color: rgb(228, 229, 231);
+    --main-transparent: rgba(228, 229, 231, 0.9);
+    --secondary-color: rgb(247, 247, 247);
+    --secondary-transparent: rgba(247, 247, 247, 0.4);
+    --link-color: rgb(169, 175, 187);
+    --link-color-hover: rgb(255, 255, 255);
+    --link-color-active: rgb(255, 255, 255);
+    --link-color-active-bg: rgb(39, 126, 189);
+    --drop-shadow: rgba(0, 0, 0, 0.4);
+    --button-bg: rgb(39, 126, 189);
+    --container-bg: rgb(127, 162, 187);
+    --text-color: rgb(0, 0, 0);
+    --base-color: rgb(98, 153, 220);
+    --box-shadow-primary: #0000001f;
+    --box-shadow-secondary: #0000003d;
+    --button-background-after: rgb(246, 246, 246);
+    --accent-first:rgb(95, 164, 209);
+    --accent-second:rgb(95, 132, 209);
+    --accent-third:rgb(95, 100, 209);
+    --shadow-smooth:0 1px 1px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.075), 0 4px 4px rgba(0,0,0,0.075), 0 2px 8px rgba(0,0,0,0.15);
   }
 
 html, body {
@@ -47,7 +60,34 @@ body {
 }
 
 .button, a{
+    transition: 0.25s;
     cursor: pointer;
+}
+
+.noscript-wrapper {
+	position:absolute;
+	z-index:890;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	background:rgba(0,0,0,0.7);
+	backdrop-filter:blur(4px);
+}
+.noscript-wrapper span {
+	display:block;
+	text-align:center;
+	width:100%;
+	font-size:20px;
+	font-weight:bold;
+	color:var(--app-container);
+}
+
+#web .app-only {
+	display:none;
 }
 
 .app-container {
@@ -65,6 +105,28 @@ body {
     display: flex;
     height: 100%;
     overflow: hidden;
+}
+
+.app-header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  background-color: var(--app-container);
+  color: var(--text-color);
+  filter: drop-shadow(var(--shadow-smooth));
+
+  @media (max-width: 768px) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 }
 
 .app-header-left {
@@ -111,6 +173,7 @@ width: 100%;
     width: 260px;
     height: 100vh;
     background-color: var(--secondary-color);
+    color: var(--link-color);
 }
 
 .app-sidebar-link:hover {
@@ -165,7 +228,7 @@ width: 100%;
     margin: 10px;
     background-color: var(--base-color);
     border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: var(--shadow-smoth);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     overflow: hidden;
   }
@@ -173,7 +236,7 @@ width: 100%;
   .upload-options {
     position: relative;
     height: 75px;
-    background-color: --base-color;
+    background-color: var(--base-color);
     cursor: pointer;
     overflow: hidden;
     text-align: center;
@@ -181,7 +244,7 @@ width: 100%;
   }
 
 .upload-options:hover {
-      background-color: lighten(--base-color, 10%);
+      background-color: lightenvar(var(--base-color, 10%));
 }
 
 .upload-options input {
@@ -210,7 +273,7 @@ width: 100%;
         font-family: 'Material Icons';
         position: absolute;
         font-size: 2.5rem;
-        color: rgba(230, 230, 230, 1);
+        color: #e6e6e6;
         top: calc(50% - 2.5rem);
         left: calc(50% - 1.25rem);
         z-index: 0;
@@ -238,7 +301,7 @@ width: 100%;
 position: relative;
 overflow: hidden;
 background-image: url('');
-background-color: white;
+background-color: var(--link-color-active);
 background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
@@ -249,7 +312,7 @@ background-size: cover;
     font-family: 'Material Icons';
     position: relative;
     font-size: 4.5em;
-    color: rgba(230, 230, 230, 1);
+    color: var(--button-background-after);
     top: calc(50% - 3rem);
     left: calc(50% - 2.25rem);
     z-index: 0;
@@ -268,14 +331,14 @@ js--image-preview:nth-child(2) {
     transition: color 100ms ease-in-out;
     font-size: 2.25em;
     line-height: 55px;
-    color: white;
+    color: var(--link-color-active);
     display: block;
   }
   
   .drop {
     display: block;
     position: absolute;
-    background: transparentize(--base-color, .8);
+    background: transparentize(var(--base-color, .8));
     border-radius: 100%;
     transform:scale(0);
   }
@@ -286,4 +349,30 @@ js--image-preview:nth-child(2) {
   
   @keyframes ripple {
       100% {opacity: 0; transform: scale(2.5);}
+  }
+
+  .toggle {
+    width: 6rem;
+    height: 6rem;
+    background-color: #eee8e1;
+    position: absolute;
+    top: 7rem;
+    right: 7rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+html.dark .toggle {
+    background-color: #464646;
+  }
+  
+  .toggle i {
+    font-size: 4rem;
+    color: #777;
+  }
+  
+html.dark .toggle i {
+    color: #ddd;
   }
