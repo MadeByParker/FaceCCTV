@@ -5,3 +5,4 @@ AI/Deep Learning/data/
 *.hprof
 out
 AI/Image Enhancement/ESRGAN/
+aug_data/
