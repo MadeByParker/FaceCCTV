@@ -1,8 +1,11 @@
 node_modules
-data/
-AI/Deep Learning/data/
+AI/Deep Learning Model/data/
 .idea
 *.hprof
 out
 AI/Image Enhancement/ESRGAN/
 aug_data/
+logs
+augmented-data/
+AI/Deep Learning Model/AI
+AI/Deep Learning Model/libraries
