@@ -15,6 +15,7 @@
 
     <!-- Preload JS-->
     <script src="https://kit.fontawesome.com/d6413e2fbf.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/jquery-3.6.1.min.js"></script>
 
     <!-- Icons -->
     <link class="favicon" rel="apple-touch-icon" sizes="180x180" href="./assets/icons/logo-navbar-brand.png">
@@ -106,33 +107,33 @@
       </div>
       <div class="app-content" id="app-content">
         <div class="app-sidebar" id="app-sidebar">
-              <a class="app-sidebar-link active" id="app-sidebar-link-active">
+              <a class="app-sidebar-link active" id="app-sidebar-link-active" href="#home-page" >
                 <i class="fa-sharp fa-solid fa-house"></i>
                 <span class="text-[20px] ml-4">Home</span>
               </a>
-              <a class="app-sidebar-link" id="app-sidebar-link">
+              <a class="app-sidebar-link" id="app-sidebar-link" href="#about-page">
                 <i class="fa-regular fa-file"></i>
                 <span class="text-[20px] ml-4">About</span>
               </a>
-              <div class="app-sidebar-link" id="app-sidebar-link">
+              <div class="app-sidebar-link" id="app-sidebar-link" href="#enhancer-page">
                 <i class="fa-solid fa-image"></i>
                 <span class="text-[20px] ml-4">Image Enhancer</span>
               </div>
-              <div class="app-sidebar-link" id="app-sidebar-link">
+              <div class="app-sidebar-link" id="app-sidebar-link" href="#detection-page">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <span class="text-[20px] ml-4">Face Detection</span>
               </div>
-              <div class="app-sidebar-link" id="app-sidebar-link">
+              <div class="app-sidebar-link" id="app-sidebar-link" href="#notifications-page">
                 <i class="fa-solid fa-bell"></i>
                 <span class="text-[20px] ml-4">Notifications</span>
               </div>
-              <div class="app-sidebar-link" id="app-sidebar-link">
+              <div class="app-sidebar-link" id="app-sidebar-link" href="#settings-page">
                 <i class="fa-sharp fa-solid fa-gear"></i>
                 <span class="text-[20px] ml-4">Settings</span>
               </div>
           </div>
           <div class="app-main" id="app-main">
-            <div class="page home" id="home-page">
+            <div class="page home hidden" id="home-page">
               <div class="image-container" id="image-container">
                 <div class="image-container-header" id="image-container-header">
                   <span class="title" id="container-title">Face Detection of CCTV Footage</span>
@@ -196,6 +197,50 @@
                   </label>
               </div> 
               
+              </div>
+            </div>
+            <div class="page notifications" id="notifications-page">
+              <div class="image-container" id="image-container">
+                <div class="image-container-header" id="image-container-header">
+                  <span class="title" id="container-title">Notifications</span>
+                </div>
+                <div class="display-wrapper">
+                  <div class="notification notification--information u-mg-b--sm">
+                    <div class="notification__icon-block"><i class="fa-solid fa-bell"></i></div>
+                    <div class="notification__content-block"><p class="notification__par">Informational Notification</p></div>
+                    <a href="" class="notification__close-link js-close-notification"><i class="fa-solid fa-circle-xmark"></i></a>
+                  </div>
+                   
+                  <div class="notification notification--warning u-mg-b--sm">
+                    <div class="notification__icon-block"><i class="fa-solid fa-bell"></i></div>
+                    <div class="notification__content-block"><p class="notification__par">Warning Notification</p></div>
+                    <a href="" class="notification__close-link js-close-notification"><i class="fa-solid fa-circle-xmark"></i></a>
+                   </div>
+                   
+                  <div class="notification notification--error u-mg-b--sm">
+                    <div class="notification__icon-block"><i class="fa-solid fa-bell"></i></div>
+                    <div class="notification__content-block"><p class="notification__par">User Error Notification</p></div>
+                    <a href="" class="notification__close-link js-close-notification"><i class="fa-solid fa-circle-xmark"></i></a>
+                   </div>
+                   
+                  <div class="notification notification--system u-mg-b--sm">
+                    <div class="notification__icon-block"><i class="fa-solid fa-bell"></i></div>
+                    <div class="notification__content-block"><p class="notification__par">System Down Notification</p></div>
+                    <a href="" class="notification__close-link js-close-notification"><i class="fa-solid fa-circle-xmark"></i></a>
+                   </div>
+                   
+                  <div class="notification notification--success u-mg-b--sm">
+                    <div class="notification__icon-block"><i class="fa-solid fa-bell"></i></div>
+                    <div class="notification__content-block"><p class="notification__par">Success Notification</p></div>
+                    <a href="" class="notification__close-link js-close-notification"><i class="fa-solid fa-circle-xmark"></i></a>
+                   </div>
+                   
+                  <div class="notification notification--new">
+                    <div class="notification__icon-block"><i class="fa-solid fa-bell"></i></div>
+                    <div class="notification__content-block"><p class="notification__par">Pomotional Notification</p></div>
+                    <a href="" class="notification__close-link js-close-notification"><i class="fa-solid fa-circle-xmark"></i></a>
+                   </div>
+                </div>
               </div>
             </div>
           </div>
