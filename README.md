@@ -48,6 +48,7 @@ This repository contains the source code and assets for my Final Year Project at
         <li><a href="#general">General</a></li>
         <li><a href="#ai-face-detection">AI Face Detection</a></li>
         <li><a href="#ai-image-enhancement">AI Image Enhancement</a></li>
+		        <li><a href="#ai-api">AI API</a></li>
         <li><a href="#web-app">Web App</a></li>
         <li><a href="#desktop-app">Desktop App</a></li>
         <li><a href="#mobile-app">Mobile App</a></li>
@@ -116,9 +117,13 @@ You can download the webs app and the mobile app from their respective sections 
 
 ### Setup
 
-## Hosting
+## Tech Stack
 
-- This project will be hosted online for everyone to use freely.
+- FaceCCTV AI Model - Python
+- FaceCCTV AI API:  Flask, Python
+- Web App: HTML, CSS, JavaScript
+- Desktop App: Electron, HTML, CSS, JavaScript
+- Mobile App: React Native, JavaScript
 
 ## Images (coming soon)
 
@@ -126,61 +131,70 @@ You can download the webs app and the mobile app from their respective sections 
 
 ### General
 
-| Resource | URL |
-| --- | --- |
-| Adobe Color | [Website](https://color.adobe.com/create/color-wheel) |
-| Adobe Photoshop 2023 | [Website](https://www.adobe.com/uk/products/photoshop.html) |
-| Figma | [Website](www.figma.com/) |
-| NodeJS | [Website](https://nodejs.org/en/) |
-| Pip - PyPI | [Website](https://pypi.org/project/pip/) |
-| Python | [Website](https://www.python.org) |
-| Visual Studio C++ Build Tools | [Website](https://visualstudio.microsoft.com/downloads/) |
+| Resource                      | URL                                                         |
+| ----------------------------- | ----------------------------------------------------------- |
+| Adobe Color                   | [Website](https://color.adobe.com/create/color-wheel)       |
+| Adobe Photoshop 2023          | [Website](https://www.adobe.com/uk/products/photoshop.html) |
+| Figma                         | [Website](www.figma.com/)                                   |
+| NodeJS                        | [Website](https://nodejs.org/en/)                           |
+| Pip - PyPI                    | [Website](https://pypi.org/project/pip/)                    |
+| Python                        | [Website](https://www.python.org)                           |
+| Visual Studio C++ Build Tools | [Website](https://visualstudio.microsoft.com/downloads/)    |
 
 ### AI Face Detection
 
-| Resource | URL |
-| --- | --- |
-| Imutils | [Github](https://github.com/PyImageSearch/imutils) |
-| Labelme - Image Annotation Tool | [Github](https://github.com/wkentaro/labelme) |
-| Matplotlib | [Website](https://matplotlib.org/stable/users/installing/index.html) |
-| NumPy | [Website](https://numpy.org) |
-| OpenCV | [Website](https://opencv.org) / [Github](https://github.com/opencv/opencv) |
-| Scikit-learn | [Website](https://scikit-learn.org/stable/) |
-| Split-Folders | [Github](https://github.com/jfilter/split-folders) |
-| Tensorflow | [Website](https://www.tensorflow.org) |
-| Tensorflow-GPU | [Website](https://pypi.org/project/tensorflow-gpu/) |
+| Resource                        | URL                                                                        |
+| ------------------------------- | -------------------------------------------------------------------------- |
+| Imutils                         | [Github](https://github.com/PyImageSearch/imutils)                         |
+| Labelme - Image Annotation Tool | [Github](https://github.com/wkentaro/labelme)                              |
+| Matplotlib                      | [Website](https://matplotlib.org/stable/users/installing/index.html)       |
+| NumPy                           | [Website](https://numpy.org)                                               |
+| OpenCV                          | [Website](https://opencv.org) / [Github](https://github.com/opencv/opencv) |
+| Scikit-learn                    | [Website](https://scikit-learn.org/stable/)                                |
+| Split-Folders                   | [Github](https://github.com/jfilter/split-folders)                         |
+| Tensorflow                      | [Website](https://www.tensorflow.org)                                      |
+| Tensorflow-GPU                  | [Website](https://pypi.org/project/tensorflow-gpu/)                        |
+| Tensorflow-keras                | [Website](https://keras.io/getting_started/)                               |
 
 ### AI Image Enhancement
 
-| Resource | URL |
-| --- | --- |
-| ESRGAN | [Github](https://github.com/xinntao/ESRGAN) |
+| Resource            | URL                                                                                           |
+| ------------------- | --------------------------------------------------------------------------------------------- |
+| ESRGAN              | [Github](https://github.com/xinntao/ESRGAN)                                                   |
 | ESRGAN Neural Model | [Google Drive Link](https://drive.google.com/drive/folders/17VYV_SoZZesU6mbxz2dMAIccSSlqLecY) |
-| Glob2 | [Github](https://github.com/miracle2k/python-glob2/) |
-| OpenCV | [Website](https://opencv.org) / [Github](https://github.com/opencv/opencv) |
-| PyTorch | [Website](https://pytorch.org) |
+| Glob2               | [Github](https://github.com/miracle2k/python-glob2/)                                          |
+| OpenCV              | [Website](https://opencv.org) / [Github](https://github.com/opencv/opencv)                    |
+| PyTorch             | [Website](https://pytorch.org)                                                                |
+
+### AI API
+
+| Resource      | URL |
+| ------------- | --- |
+| Python        |     |
+| Flask         |     |
+| Flask RESTful |     |
 
 ### Web App
 
-| Resource | URL |
-| --- | --- |
-| Background | [SVG Backgrounds](https://www.svgbackgrounds.com) |
-| Bootstrap Icons | [Website](https://icons.getbootstrap.com) |
-| Flowbite | [Website](https://flowbite.com) |
-| Font Awesome | [Website](https://fontawesome.com) |
+| Resource          | URL                                                                                               |
+| ----------------- | ------------------------------------------------------------------------------------------------- |
+| Background        | [SVG Backgrounds](https://www.svgbackgrounds.com)                                                 |
+| Bootstrap Icons   | [Website](https://icons.getbootstrap.com)                                                         |
+| Flowbite          | [Website](https://flowbite.com)                                                                   |
+| Font Awesome      | [Website](https://fontawesome.com)                                                                |
 | Inter Font Family | [Website](https://rsms.me/inter/) / [Google Font Family](https://fonts.google.com/specimen/Inter) |
-| JQuery | [Website](https://jquery.com) |
-| Tailwind CSS | [Website](https://tailwindcss.com) |
+| JQuery            | [Website](https://jquery.com)                                                                     |
+| Tailwind CSS      | [Website](https://tailwindcss.com)                                                                |
 
 ### Desktop App
 
-| Resource | URL |
-| --- | --- |
-|   Same as above  |    |
-| Electron | [Website](https://www.electronjs.org) |
+| Resource      | URL                                   |
+| ------------- | ------------------------------------- |
+| Same as above |                                       |
+| Electron      | [Website](https://www.electronjs.org) |
 
 ### Mobile App
 
-| Resource | URL |
-| --- | --- |
-|     |     |
+| Resource     | URL                                                     |
+| ------------ | ------------------------------------------------------- |
+| React Native | [Website](https://reactnative.dev/docs/getting-started) |
