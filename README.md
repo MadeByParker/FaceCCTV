@@ -2,7 +2,7 @@
 
 # FaceCCTV
 
-![Banner](https://imgur.com/P0jOrS9.png)
+![Banner](https://imgur.com/rLwQhsI.png)
 
 ## Before Reading
 
