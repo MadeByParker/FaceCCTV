@@ -48,7 +48,7 @@ This repository contains the source code and assets for my Final Year Project at
         <li><a href="#general">General</a></li>
         <li><a href="#ai-face-detection">AI Face Detection</a></li>
         <li><a href="#ai-image-enhancement">AI Image Enhancement</a></li>
-		        <li><a href="#ai-ai-api">AI API</a></li>
+		        <li><a href="#ai-api">AI API</a></li>
         <li><a href="#web-app">Web App</a></li>
         <li><a href="#desktop-app">Desktop App</a></li>
         <li><a href="#mobile-app">Mobile App</a></li>
