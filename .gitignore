@@ -1,11 +1,16 @@
 node_modules
-AI/Deep Learning Model/data/
-.idea
 *.hprof
 out
-AI/Image Enhancement/ESRGAN/
-aug_data/
-logs
-augmented-data/
-AI/Deep Learning Model/AI
+.vscode
+
+
+# AI Deep Learning Model
+AI/Image Enhancement/ESRGAN
+AI/Deep Learning Model/data
+AI/Deep Learning Model/aug_data
+AI/Deep Learning Model/logs
+AI/Deep Learning Model/augmented-data
 AI/Deep Learning Model/libraries
+
+# API for Deep Learning Model
+API/__pycache__/
