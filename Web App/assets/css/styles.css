@@ -1,4 +1,4 @@
-html.dark {
+html {
   --app-container: #1f1d2b;
   --main-color: rgb(17, 24, 39);
   --main-transparent: rgba(17, 24, 39, 0.9);
@@ -23,7 +23,7 @@ html.dark {
   --shadow-smooth:0 1px 1px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.075), 0 4px 4px rgba(0,0,0,0.075), 0 2px 8px rgba(0,0,0,0.15);
   }
 
-html  {
+html.light  {
     --app-container: rgb(255, 255, 255);
     --main-color: rgb(228, 229, 231);
     --main-transparent: rgba(228, 229, 231, 0.9);
@@ -187,38 +187,40 @@ width: 100%;
 }
 
 .app-main {
-  flex: 2;
-  display: flex;
+  max-width: 2300px;
+  width: 100%;
+  width: calc(100% - 1rem); 
   overflow: hidden;
-  align-items: center;
   padding: 32px 32px 0 32px;
   margin: 30px 30px;
   border-radius: 32px;
-  flex-direction: column;
   height: 100% - 50px;
   background-color: var(--container-bg);
 }
 
 .image-container-header {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   color: var(--container-bg);
-  margin-bottom: 20px;
 }
 
 .image-container-header .title {
-  font-size: 32px;
-  line-height: 32px;
+  display: block;
+  font-size: 2em;
   font-weight: 600;
   color: var(--text-color)
 }
 
 .image-container-subheader .subtitle {
-    font-size: 24px;
-    line-height: 24px;
+    display: block;
+    line-height: 25px;
+    font-size: 16px;
     font-weight: 400;
-    color: var(--text-color)
+    color: var(--text-color);
+}
+
+.image-container-subheader {
+  justify-content: space-between;
+  color: var(--container-bg);
 }
 
 .box {
