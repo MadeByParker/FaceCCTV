@@ -1,52 +1,3 @@
-html {
-  --app-container: #1f1d2b;
-  --main-color: rgb(17, 24, 39);
-  --main-transparent: rgba(17, 24, 39, 0.9);
-  --secondary-color: rgb(41, 49, 59);
-  --secondary-transparent: rgba(41, 49, 59, 0.4);
-  --projects-section: rgb(31, 41, 55);
-  --link-color: rgb(255, 255, 255);
-  --link-color-hover: rgb(255, 255, 255);
-  --link-color-active: rgb(255, 255, 255);
-  --link-color-active-bg: rgb(39, 126, 189);
-  --drop-shadow: rgba(173, 173, 173, 0.4);
-  --button-bg: rgb(39, 126, 189);
-  --container-bg: #445968;
-  --text-color: rgb(255, 255, 255);
-  --base-color: rgb(66, 105, 151);
-  --box-shadow-primary: rgba(209, 209, 209, 0.122);
-  --box-shadow-secondary: rgba(201, 201, 201, 0.239);
-  --button-background-after: rgb(246, 246, 246);
-  --accent-first:rgb(75, 128, 163);
-  --accent-second:rgb(66, 92, 147);
-  --accent-third:rgb(65, 69, 143);
-  --shadow-smooth:0 1px 1px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.075), 0 4px 4px rgba(0,0,0,0.075), 0 2px 8px rgba(0,0,0,0.15);
-  }
-
-html.light  {
-    --app-container: rgb(255, 255, 255);
-    --main-color: rgb(228, 229, 231);
-    --main-transparent: rgba(228, 229, 231, 0.9);
-    --secondary-color: rgb(247, 247, 247);
-    --secondary-transparent: rgba(247, 247, 247, 0.4);
-    --link-color: rgb(169, 175, 187);
-    --link-color-hover: rgb(255, 255, 255);
-    --link-color-active: rgb(255, 255, 255);
-    --link-color-active-bg: rgb(39, 126, 189);
-    --drop-shadow: rgba(0, 0, 0, 0.4);
-    --button-bg: rgb(39, 126, 189);
-    --container-bg: rgb(127, 162, 187);
-    --text-color: rgb(0, 0, 0);
-    --base-color: rgb(98, 153, 220);
-    --box-shadow-primary: #0000001f;
-    --box-shadow-secondary: #0000003d;
-    --button-background-after: rgb(246, 246, 246);
-    --accent-first:rgb(95, 164, 209);
-    --accent-second:rgb(95, 132, 209);
-    --accent-third:rgb(95, 100, 209);
-    --shadow-smooth:0 1px 1px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.075), 0 4px 4px rgba(0,0,0,0.075), 0 2px 8px rgba(0,0,0,0.15);
-  }
-
 html, body {
     width: 100%;
     height: 100%;
@@ -93,18 +44,18 @@ body {
 .app-container {
     width: 100%;
     height: 100%;
-    background: url('../img/rose-petals.png');
-    background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
     transition: 0.25s;
+    z-index: 1;
 }
 
 .app-content {
     display: flex;
     height: 100%;
     overflow: hidden;
+    z-index: 1;
 }
 
 .app-header {
@@ -122,11 +73,13 @@ body {
   background-color: var(--app-container);
   color: var(--text-color);
   filter: drop-shadow(var(--shadow-smooth));
+}
 
-  @media (max-width: 768px) {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
+@media (max-width: 768px) {
+      .app-header {
+            padding-top: 0px;
+            padding-bottom: 0px;
+      }
 }
 
 .app-header-left {
@@ -139,20 +92,10 @@ body {
     align-items: center;
 }
 
-.mode-switch {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin-right: 15px;
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
+
 .page-content {
-flex: 1;
-width: 100%;
+      flex: 1;
+      width: 100%;
 }
 
 .app-sidebar-link {
@@ -329,56 +272,9 @@ js--image-preview:nth-child(2) {
 }
 
   
-i.material-icons {
-  transition: color 100ms ease-in-out;
-  font-size: 2.25em;
-  line-height: 55px;
-  color: var(--link-color-active);
-  display: block;
-}
 
-.drop {
-  display: block;
-  position: absolute;
-  background: transparentize(var(--base-color, .8));
-  border-radius: 100%;
-  transform:scale(0);
-}
 
-.animate {
-  animation: ripple 0.4s linear;
-}
-
-@keyframes ripple {
-    100% {opacity: 0; transform: scale(2.5);}
-}
-
-.toggle {
-  width: 6rem;
-  height: 6rem;
-  background-color: #eee8e1;
-  position: absolute;
-  top: 7rem;
-  right: 7rem;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  cursor: pointer;
-}
   
-html.dark .toggle {
-    background-color: #464646;
-  }
-  
-.toggle i {
-  font-size: 4rem;
-  color: #777;
-}
-  
-html.dark .toggle i {
-    color: #ddd;
-  }
-
 .display-wrapper {
   width: 1200px;
   margin: 0 auto;
