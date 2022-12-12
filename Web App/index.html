@@ -11,7 +11,6 @@
       <link href="./assets/css/styles.css" rel="stylesheet">
       <link href="./assets/css/dark.css" rel="stylesheet">
       <link href="./assets/css/light.css" rel="stylesheet">
-      <link href="./assets/css/slider.css" rel="stylesheet">
 
       <!-- Preload JS-->
       <script src="https://kit.fontawesome.com/d6413e2fbf.js" crossorigin="anonymous"></script>
@@ -34,136 +33,83 @@
       <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
       </head>
       <body>
-            <div class="app-container" id="app-container">
+            <div class="container">
+                  <div class="slider-container">
+                        <div class="image-slider-container">
+                              <img
+                        class="image-before slider-image"
+                       src="./assets/img/samples/original_B&W.jpg"
+                        alt="original photo"
+                              />
+                              <img
+                                    class="image-after slider-image"
+                                    src="./assets/img/samples/enhanced.png"
+                                    alt="enhanced photo"
+                              />
+                        </div>
+                        <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="50"
+                        aria-label="Percentage of before photo shown"
+                        class="slider"
+                        />
+                        <div class="slider-line absolute inset-y-0 w-0 border-overlay-white-70 cursor-resize-horizontal" aria-hidden="true"></div>
+                        <div class="slider-button" aria-hidden="true">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256">
+                                    <rect width="256" height="256" fill="none"></rect>
+                                    <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                                    <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                                    <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+                                    <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                                    <polyline points="208 96 240 128 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+                              </svg>
+                        </div>
 
-                  <div class="app-header" id="app-header">
-                        <div class="app-header-left" id="app-header-left">
-                              <div id="navbar-brand" class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
-                                    <img id="navbar-brand-img" src="./assets/icons/logo-navbar-brand.png" alt="logo" style="height: 40px; width: 40px;">
-                                    <span id="navbar-title" class="text-[24px] ml-5 ">FaceCCTV</span>
-                              </div>
-                        </div>
-                        <div class="app-header-right">
-                              <nav>
-                                    <div class="hidden w-full md:flex md:items-center md:w-auto duration-1000" id="menu">
-                                          <ul class="text-base md:flex md:justify-between md:pt-0">
-                                                <li>
-                                                      <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"> Home <i class="fa-sharp fa-solid fa-house"></i></a>
-                                                </li>
-                                                <li>
-                                                      <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"> About <i class="fa-sharp fa-solid fa-house"></i></a>
-                                                </li>
-                                                <li>
-                                                      <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"> Face Detection <i class="fa-sharp fa-solid fa-house"></i></a>
-                                                </li>
-                                                <li>
-                                                      <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#">Notifications <i class="fa-solid fa-bell"></i></a>
-                                                </li>
-                                                <li>
-                                                      <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#">Settings <i class="fa-sharp fa-solid fa-question"></i></a>
-                                                </li>
-                                          </ul>
-                                    </div>
-                              </nav>
-                        </div>
                   </div>
-                  <div class="app-content" id="app-content">
-                        <div class="app-main flex flex-row min-h-[screen-50px] justify-center items-center" id="app-main">
-                              <div class="page home" id="home-page">
-                                    <div class="image-container" id="image-container">
-                                          <div class="image-container-header text-center" id="image-container-header">
-                                                <span class="title" id="container-title">Detect Faces in One Click</span>
-                                          </div>
-                                          <div class="image-container-subheader w-3/4 text-center" id="image-container-subheader">
-                                                <p class="text-gray-200 line-clamp-2">
-                                                      <span class="subtitle" id="container-subtitle">FaceCCTV's face detection and enhancer improves identifying suspects for crimes.</span>
-                                                </p>
-                                          </div>
-                                          <div class="flex items-center justify-center w-full">
-                                                <label for="dropzone-file" class="flex flex-col items-center justify-center mt-8 w-full h-[80%] border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                                                      <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                                            <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                                                  <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                                                                  <p class="text-xs text-gray-500 dark:text-gray-400">PNG, JPEG or JPG </p>
-                                                      </div>
-                                                      <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                                            <input id="dropzone-file" type="file" name="img" accept="image/png, image/jpg, image/jpeg"/>
-                                                      </div>
-                                                </label>
-                                          </div> 
+                  <div class="app-container" id="app-container">
+                        <div class="app-header" id="app-header">
+                              <div class="app-header-left" id="app-header-left">
+                                    <div id="navbar-brand" class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
+                                          <img id="navbar-brand-img" src="./assets/icons/logo-navbar-brand.png" alt="logo" style="height: 40px; width: 40px;">
+                                          <span id="navbar-title" class="text-[24px] ml-5 ">FaceCCTV</span>
                                     </div>
                               </div>
-                        <div class="page detection hidden" id="detection-page">
-                              <div class="image-container" id="image-container">
-                                    <div class="image-container-header" id="image-container-header">
-                                          <span class="title" id="container-title">Face Detection of CCTV Footage</span>
-                                    </div>
-                                    <div class="image-container-subheader" id="image-container-subheader">
-                                          <span class="subtitle" id="container-subtitle">Upload a image file to detect faces in it.</span>
-                                    </div>
-                                    <div class="flex items-center justify-center w-full">
-                                          <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                                      <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                                      <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                                                      <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-                                                </div>
-                                                <input id="dropzone-file" type="file" class="hidden" />
-                                          </label>
-                                    </div>                       
+                              <div class="app-header-right">
+                                    <nav>
+                                          <div class="hidden w-full md:flex md:items-center md:w-auto duration-1000" id="menu">
+                                                <ul class="text-base md:flex md:justify-between md:pt-0">
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"> Home <i class="fa-sharp fa-solid fa-house"></i></a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"> About <i class="fa-sharp fa-solid fa-house"></i></a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#"> Face Detection <i class="fa-sharp fa-solid fa-house"></i></a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#">Notifications <i class="fa-solid fa-bell"></i></a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD]" href="#">Settings <i class="fa-sharp fa-solid fa-question"></i></a>
+                                                      </li>
+                                                </ul>
+                                          </div>
+                                    </nav>
                               </div>
                         </div>
-                              <div class="page enhancer hidden" id="enhancer-page">
-                                    <div class="image-container" id="image-container">
-                                          <div class="image-container-header" id="image-container-header">
-                                                <span class="title" id="container-title">Face Enhancement in CCTV Footage</span>
-                                          </div>
-                                          <div class="image-container-subheader" id="image-container-subheader">
-                                                <span class="subtitle" id="container-subtitle">Upload a image file to enhance the faces in it.</span>
-                                          </div>
-                                          <div class="flex items-center justify-center w-full">
-                                                <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                                                      <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                                            <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
-                                                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                                                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-                                                      </div>
-                                                      <input id="dropzone-file" type="file" class="hidden" />
-                                                </label>
-                                          </div> 
-                                    </div>
+                        <div class="app-body" id="app-body">
+                              <div class="app-main" id="app-main">
+
                               </div>
-                              <div class="page notifications hidden" id="notifications-page">
-                                    <div class="image-container" id="image-container">
-                                          <div class="image-container-header" id="image-container-header">
-                                                <span class="title" id="container-title">Notifications</span>
-                                          </div>
-                                          <div class="display-wrapper">
-                                                <div class="notification notification--information u-mg-b--sm">
-                                                      <div class="notification__icon-block"><i class="fa-solid fa-bell"></i></div>
-                                                      <div class="notification__content-block"><p class="notification__par">Informational Notification</p></div>
-                                                      <a href="" class="notification__close-link js-close-notification"><i class="fa-solid fa-circle-xmark"></i></a>
-                                                </div>    
-                                                <div class="notification notification--error u-mg-b--sm">
-                                                      <div class="notification__icon-block"><i class="fa-solid fa-bell"></i></div>
-                                                      <div class="notification__content-block"><p class="notification__par">User Error Notification</p></div>
-                                                      <a href="" class="notification__close-link js-close-notification"><i class="fa-solid fa-circle-xmark"></i></a>
-                                                </div>
-                                                <div class="notification notification--success u-mg-b--sm">
-                                                      <div class="notification__icon-block"><i class="fa-solid fa-bell"></i></div>
-                                                      <div class="notification__content-block"><p class="notification__par">Success Notification</p></div>
-                                                      <a href="" class="notification__close-link js-close-notification"><i class="fa-solid fa-circle-xmark"></i></a>
-                                                </div>                             
-                                          </div>
-                                    </div>
+                        <noscript>
+                              <div class="noscript-wrapper noselect">
+                                    <span>JavaScript is required for FaceCCTV to function.</span>
                               </div>
-                        </div>
+                        </noscript>
                   </div>
-                  <noscript>
-                        <div class="noscript-wrapper noselect">
-                              <span>JavaScript is required for CryptoShare to function.</span>
-                        </div>
-                  </noscript>
             </div>
 
             <!--JS Imports -->

@@ -1,4 +1,4 @@
-html  {
+html.light  {
     --app-container: rgb(255, 255, 255);
     --main-color: rgb(228, 229, 231);
     --main-transparent: rgba(228, 229, 231, 0.9);
@@ -20,4 +20,5 @@ html  {
     --accent-second:rgb(95, 132, 209);
     --accent-third:rgb(95, 100, 209);
     --shadow-smooth:0 1px 1px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.075), 0 4px 4px rgba(0,0,0,0.075), 0 2px 8px rgba(0,0,0,0.15);
+    --nav-color: rgb(255, 255, 255, 0.3);
   }
