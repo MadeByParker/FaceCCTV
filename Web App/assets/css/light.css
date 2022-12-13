@@ -4,14 +4,14 @@ html.light  {
     --main-transparent: rgba(228, 229, 231, 0.9);
     --secondary-color: rgb(247, 247, 247);
     --secondary-transparent: rgba(247, 247, 247, 0.4);
-    --link-color: rgb(169, 175, 187);
+    --link-color: rgb(255, 255, 255);
     --link-color-hover: rgb(255, 255, 255);
     --link-color-active: rgb(255, 255, 255);
     --link-color-active-bg: rgb(39, 126, 189);
     --drop-shadow: rgba(0, 0, 0, 0.4);
     --button-bg: rgb(39, 126, 189);
     --container-bg: rgb(127, 162, 187);
-    --text-color: rgb(0, 0, 0);
+    --text-color: rgb(255, 255, 255);
     --base-color: rgb(98, 153, 220);
     --box-shadow-primary: #0000001f;
     --box-shadow-secondary: #0000003d;
