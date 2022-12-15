@@ -29,17 +29,17 @@
       </head>
       <body>
             <div class="container">
-                  <div class="slider-container hidden">
+                  <div class="slider-container">
                         <div class="image-slider-container">
-                              <img class="image-before slider-image" src="./assets/img/samples/original_3.jpg" alt="original photo"/>
-                              <img class="image-after slider-image" src="./assets/img/samples/enhanced_3.jpg" alt="enhanced photo"/>
+                              <img class="image-before slider-image" src="./assets/img/samples/original_3.jpg"    alt="original photo"/>
+                                   <img class="image-after slider-image" src="./assets/img/samples/enhanced_3.jpg"     alt="enhanced photo"/>
                         </div>
-                        <input type="range" min="0" max="50" value="100" aria-label="Percentage of before photo shown" class="slider"/>
-                        <div class="slider-line absolute inset-y-0 w-0 border-overlay-white-70 cursor-resize-horizontal" aria-hidden="true"></div>
-                        <div class="slider-button" aria-hidden="true">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256">
+                            <input type="range" min="0" max="50" value="100" aria-label="Percentage of before photo shown" class="slider"/>
+                        <div class="slider-line absolute inset-y-0 w-0 border-overlay-white-70 cursor-resize-horizontal" aria-hidden="true"></div     >
+                        <div class="slider-button" aria-hidden="true">  
+                              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256">   
                                     <rect width="256" height="256" fill="none"></rect>
-                                    <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                                    <line x1="128" y1="     40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
                                     <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
                                     <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
                                     <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
@@ -47,9 +47,9 @@
                               </svg>
                         </div>
 
-                  </div>
+                  </div>      
                   <div class="app-container" id="app-container">
-                        <div class="app-header font-bold bg-slate-600/40" id="app-header">
+                        <div class="app-header font-bold bg-slate-600/40"     id="app-header">
                               <div class="app-header-left" id="app-header-left">
                                     <div id="navbar-brand" class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
                                           <img id="navbar-brand-img" src="./assets/icons/text-logo.png" alt="logo" style="height: 30px; width: 120px;">
@@ -71,7 +71,7 @@
                                                       <li>
                                                             <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/image-enhancement/index.html">Image Enhancement</a>
                                                       </li>
-                                                      <li>
+                                                      <li>  
                                                             <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/notifications/index.html">Notifications</a>
                                                       </li>
                                                       <li>
@@ -82,8 +82,8 @@
                                     </nav>
                               </div>
                         </div>
-                        <main class="absolute pr-20 z-10 container mt-6 md:mt-12 lg:short:mt-12 lg:mt-2 lg:min-h-[95%] items-center justify-end flex pointer-events-none">
-                              <div class="left-0 lg:mr-0 pointer-events-auto items-center lg:text-left hidden">
+                        <main class="absolute pr-20 z-10 container mt-6 md:mt-12 lg:short:mt-12 lg:mt-2 lg:min-h-[95%] items-center justify-end flex pointer-events-none">    
+                              <div class="left-0 lg:mr-0 pointer-events-auto items-center lg:text-left">
                                     <div class="max-w-screen-lg lg:max-w-md space-y-4 ites-center text-center mb-5 p-2 pr-4 w-[800px] h-content rounded-md bg-slate-600/40 mix-blend-overlay">
                                           <div style="opacity: 1; transform: none;">
                                                 <div class="flex cursor-pointer items-center mb-5 p-2 pr-4 w-content">
@@ -95,13 +95,13 @@
                                           <div style="opacity: 1; transform: none;">
                                                 <div class="flex cursor-pointer items-center mb-5 p-1 pr-4 w-content">
                                                       <p class="paragraph-text text-gray-300">
-                                                            <span class="text-xl font-semibold">FaceCCTV's Face Detection AI and Image Enhancement Tool provides the skillset to identify suspicious people in your CCTV Footage.</span>
+                                                            <span class="text-xl font-semibold">FaceCCTV's Face Detection AI provides the skillset to detect people in your CCTV Footage.</span>
                                                       </p>
                                                 </div>
                                           </div>
                                           <div class="mt-12 max-w-md mx-auto pb-8 pt-10 px-8" style="opacity: 1; transform: none;">
                                                 <input type="file" id="upload" name="upload" accept="image/jpeg, image/jpg, image/png" class="w-[0.1px] h-[0.1px] opacity-0 overflow-hidden absolute z-[-1]">
-                                                <label for="upload" role="button" tabindex="0" class="cursor-pointer block w-420px px-8 pt-10 pb-8 text-center rounded-3xl border-8 border-white mix-blend-overlay bg-neutral-400/50 hover:bg-slate-500/25 text-gray-300 hover:text-gray-100 font-bold transition-colors">
+                                                <label for="upload" role="button" tabindex="0" class="cursor-pointer block w-420px px-8 pt-10 pb-8 text-center rounded-3xl border-3 border-dashed border-stone-200/100 mix-blend-overlay bg-neutral-400/50 hover:bg-slate-500/25 text-gray-300 hover:text-gray-100 font-bold transition-colors">
                                                       <div class="btn btn-primary w-max mx-auto py-1 px-6 pl-8 flex justify-center items-center rounded-full bg-[#277ebd]">
                                                             <span class="text-lg">Upload File</span>
                                                             <ion-icon name="cloud-upload-outline"></ion-icon>
@@ -113,29 +113,6 @@
                                                             <span>Only accept JPEGs, JPGs and PNGs</span>
                                                 </label>
                                           </div>
-                                    </div>
-                              </div>
-                              <div class="page aboutpage bg-black">
-                                    <div class="page__wrapper">
-                                          <section class="section">
-                                                <div class="about__container">
-                                                      <div class="generic">
-                                                            <div class="headline headline-1 text-4xl text-white font-bold">
-                                                                  <h1>A Powerful AI Tool to Identify Suspects in crimes</h1>
-                                                            </div>
-                                                            <div class="text-body text-body-1 text-gray-200 text-2xl">
-                                                                  <p>Upload any CCTV footage or photos. FaceCCTV will detect faces and bring them back in ultra-sharp, high definition.</p>
-                                                            </div>
-                                                            <div class="download-wrapper">
-                                                                  <a class="android-download-btn" href="#" target="_blank" rel="noopener">
-                                                                        <img data-src="./assets/img/badges/google-play-badge.png" src="./assets/img/badges/google-play-store.png">
-                                                                  </a>
-                                                                  <a class="ios-download-btn" href="#" target="_blank" rel="noopener">
-                                                                        <img data-src="./assets/img/badges/app-store-badge.png" src="./assets/img/badges/app-store.png"> 
-                                                            </div>
-                                                      </div>
-                                                </div>
-                                          </section>
                                     </div>
                               </div>
                         </main>
@@ -158,4 +135,4 @@
             <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
             <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
       </body>
-</html>
+</html>     
