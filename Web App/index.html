@@ -29,7 +29,7 @@
       </head>
       <body>
             <div class="container">
-                  <div class="slider-container">
+                  <div class="slider-container hidden">
                         <div class="image-slider-container">
                               <img class="image-before slider-image" src="./assets/img/samples/original_3.jpg" alt="original photo"/>
                               <img class="image-after slider-image" src="./assets/img/samples/enhanced_3.jpg" alt="enhanced photo"/>
@@ -83,7 +83,7 @@
                               </div>
                         </div>
                         <main class="absolute pr-20 z-10 container mt-6 md:mt-12 lg:short:mt-12 lg:mt-2 lg:min-h-[95%] items-center justify-end flex pointer-events-none">
-                              <div class="left-0 lg:mr-0 pointer-events-auto items-center lg:text-left">
+                              <div class="left-0 lg:mr-0 pointer-events-auto items-center lg:text-left hidden">
                                     <div class="max-w-screen-lg lg:max-w-md space-y-4 ites-center text-center mb-5 p-2 pr-4 w-[800px] h-content rounded-md bg-slate-600/40 mix-blend-overlay">
                                           <div style="opacity: 1; transform: none;">
                                                 <div class="flex cursor-pointer items-center mb-5 p-2 pr-4 w-content">
@@ -101,7 +101,7 @@
                                           </div>
                                           <div class="mt-12 max-w-md mx-auto pb-8 pt-10 px-8" style="opacity: 1; transform: none;">
                                                 <input type="file" id="upload" name="upload" accept="image/jpeg, image/jpg, image/png" class="w-[0.1px] h-[0.1px] opacity-0 overflow-hidden absolute z-[-1]">
-                                                <label for="upload" role="button" tabindex="0" class="cursor-pointer block w-420px px-8 pt-10 pb-8 text-center rounded-3xl border-3 border-dashed border-stone-200/100 mix-blend-overlay bg-neutral-400/50 hover:bg-slate-500/25 text-gray-300 hover:text-gray-100 font-bold transition-colors">
+                                                <label for="upload" role="button" tabindex="0" class="cursor-pointer block w-420px px-8 pt-10 pb-8 text-center rounded-3xl border-8 border-white mix-blend-overlay bg-neutral-400/50 hover:bg-slate-500/25 text-gray-300 hover:text-gray-100 font-bold transition-colors">
                                                       <div class="btn btn-primary w-max mx-auto py-1 px-6 pl-8 flex justify-center items-center rounded-full bg-[#277ebd]">
                                                             <span class="text-lg">Upload File</span>
                                                             <ion-icon name="cloud-upload-outline"></ion-icon>
@@ -113,6 +113,29 @@
                                                             <span>Only accept JPEGs, JPGs and PNGs</span>
                                                 </label>
                                           </div>
+                                    </div>
+                              </div>
+                              <div class="page aboutpage bg-black">
+                                    <div class="page__wrapper">
+                                          <section class="section">
+                                                <div class="about__container">
+                                                      <div class="generic">
+                                                            <div class="headline headline-1 text-4xl text-white font-bold">
+                                                                  <h1>A Powerful AI Tool to Identify Suspects in crimes</h1>
+                                                            </div>
+                                                            <div class="text-body text-body-1 text-gray-200 text-2xl">
+                                                                  <p>Upload any CCTV footage or photos. FaceCCTV will detect faces and bring them back in ultra-sharp, high definition.</p>
+                                                            </div>
+                                                            <div class="download-wrapper">
+                                                                  <a class="android-download-btn" href="#" target="_blank" rel="noopener">
+                                                                        <img data-src="./assets/img/badges/google-play-badge.png" src="./assets/img/badges/google-play-store.png">
+                                                                  </a>
+                                                                  <a class="ios-download-btn" href="#" target="_blank" rel="noopener">
+                                                                        <img data-src="./assets/img/badges/app-store-badge.png" src="./assets/img/badges/app-store.png"> 
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </section>
                                     </div>
                               </div>
                         </main>
