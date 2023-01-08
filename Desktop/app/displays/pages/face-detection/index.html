@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" id="web">
+      <head>
+
+      <!-- Custom CSS Files-->
+      <link href="../../../assets/dist/tailwind.css" rel="stylesheet">
+      <link href="../../../assets/css/global.css" rel="stylesheet">
+      <link href="../../../assets/css/styles.css" rel="stylesheet">
+      <link href="../../../assets/css/dark.css" rel="stylesheet">
+      <link href="../../../assets/css/light.css" rel="stylesheet">
+
+      <script src="../../../assets/dist/jquery-3.6.2.min.js"></script>
+
+      <!-- Icons -->
+      <link class="favicon" rel="apple-touch-icon" sizes="180x180" href="../../../assets/icons/logo-navbar-brand.png">
+      <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="../../../assets/icons/logo-navbar-brand.png">
+      <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="../../../assets/icons/logo-navbar-brand.png">
+      <link class="favicon" rel="shortcut icon" href="../../../assets/icons/logo.ico">
+
+      <!-- Meta Tags -->
+      <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+      <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+      <meta class="browser-theme" name="theme-color" content="#000000">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+      <meta charset="UTF-8" />
+
+      <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
+      </head>
+      <body>
+            <div class="container">
+                  <div class="slider-container">
+                        <div class="image-slider-container">
+                              <img class="image-before slider-image" src="../../../assets/img/samples/original_3.jpg" alt="original photo"/>
+                              <img class="image-after slider-image" src="../../../assets/img/samples/detection.png" alt="enhanced photo"/>
+                        </div>
+                        <input type="range" min="0" max="50" value="100" aria-label="Percentage of before photo shown" class="slider"/>
+                        <div class="slider-line absolute inset-y-0 w-0 border-overlay-white-70 cursor-resize-horizontal" aria-hidden="true"></div>
+                        <div class="slider-button" aria-hidden="true">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256">
+                                    <rect width="256" height="256" fill="none"></rect>
+                                    <line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                                    <line x1="96" y1="128" x2="16" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                                    <polyline points="48 160 16 128 48 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+                                    <line x1="160" y1="128" x2="240" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                                    <polyline points="208 96 240 128 208 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+                              </svg>
+                        </div>
+
+                  </div>
+                  <div class="app-container" id="app-container">
+                        <div class="app-header font-bold bg-slate-600/40" id="app-header">
+                              <div class="app-header-left" id="app-header-left">
+                                    <div id="navbar-brand" class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
+                                          <img id="navbar-brand-img" src="../../../assets/icons/text-logo.png" alt="logo" style="height: 30px; width: 120px;">
+                                    </div>
+                              </div>
+                              <div class="app-header-right">
+                                    <nav>
+                                          <div class="hidden w-full md:flex md:items-center md:w-auto duration-1000" id="menu">
+                                                <ul class="text-base md:flex md:justify-between md:pt-0">
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../../index.html">Home</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../about/index.html">About</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../face-detection/index.html">Face Detection</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../image-enhancement/index.html">Image Enhancement</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../notifications/index.html">Notifications</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../settings/index.html">Settings</a>
+                                                      </li>
+                                                </ul>
+                                          </div>
+                                    </nav>
+                              </div>
+                        </div>
+                        <main class="absolute pr-20 z-10 container mt-6 md:mt-12 lg:short:mt-12 lg:mt-2 lg:min-h-[95%] items-center justify-end flex pointer-events-none">
+                              <div class="left-0 lg:mr-0 pointer-events-auto items-center lg:text-left">
+                                    <div class="max-w-screen-lg lg:max-w-md space-y-4 ites-center text-center mb-5 p-2 pr-4 w-[800px] h-content rounded-md bg-slate-600/40 mix-blend-overlay">
+                                          <div style="opacity: 1; transform: none;">
+                                                <div class="flex cursor-pointer items-center mb-5 p-2 pr-4 w-content">
+                                                      <h1 class="title-text font-extrabold text-3xl text-gray-300">
+                                                            <span>Detect Faces</span>
+                                                      </h1>
+                                                </div>
+                                          </div>
+                                          <div style="opacity: 1; transform: none;">
+                                                <div class="flex cursor-pointer items-center mb-5 p-1 pr-4 w-content">
+                                                      <p class="paragraph-text text-gray-300">
+                                                            <span class="text-xl font-semibold">FaceCCTV's Face Detection AI provides the skillset to detect people in your CCTV Footage.</span>
+                                                      </p>
+                                                </div>
+                                          </div>
+                                          <div class="mt-12 max-w-md mx-auto pb-8 pt-10 px-8" style="opacity: 1; transform: none;">
+                                                <input type="file" id="upload" name="upload" accept="image/jpeg, image/jpg, image/png" class="w-[0.1px] h-[0.1px] opacity-0 overflow-hidden absolute z-[-1]">
+                                                <label for="upload" role="button" tabindex="0" class="cursor-pointer block w-420px px-8 pt-10 pb-8 text-center rounded-3xl border-3 border-dashed border-stone-200/100 mix-blend-overlay bg-neutral-400/50 hover:bg-slate-500/25 text-gray-300 hover:text-gray-100 font-bold transition-colors">
+                                                      <div class="btn btn-primary w-max mx-auto py-1 px-6 pl-8 flex justify-center items-center rounded-full bg-[#277ebd]">
+                                                            <span class="text-lg">Upload File</span>
+                                                            <ion-icon name="cloud-upload-outline"></ion-icon>
+                                                      </div>
+                                                      <p class="block info-text mt-4 text-lg font-semibold">
+                                                            <span>Drag and drop your image file here</span>
+                                                      </p>
+                                                      <p class="block info-text text-lg font-semibold">
+                                                            <span>Only accept JPEGs, JPGs and PNGs</span>
+                                                </label>
+                                          </div>
+                                    </div>
+                              </div>
+                        </main>
+                        <noscript>
+                              <div class="noscript-wrapper noselect">
+                                    <span>JavaScript is required for FaceCCTV to function.</span>
+                              </div>
+                        </noscript>
+            </div>
+
+            <!--JS Imports -->
+            <script src="../../../assets/js/index.js"></script>
+            <script src="../../../assets/js/elements.js"></script>
+            <script src="../../../assets/js/themes.js"></script>
+            <script src="../../../assets/js/platform.js"></script>
+            <script src="../../../assets/js/slider.js"></script>
+            <script src=".../../path/to/flowbite/dist/flowbite.bundle.js"></script>
+
+            <!-- Custom Libraries -->
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      </body>
+</html>

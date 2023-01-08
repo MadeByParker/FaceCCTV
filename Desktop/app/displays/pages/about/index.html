@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en" id="web">
+      <head>
+
+      <!-- Custom CSS Files-->
+      <link href="../../../assets/dist/tailwind.css" rel="stylesheet">
+      <link href="../../../assets/css/global.css" rel="stylesheet">
+      <link href="../../../assets/css/styles.css" rel="stylesheet">
+      <link href="../../../assets/css/dark.css" rel="stylesheet">
+      <link href="../../../assets/css/light.css" rel="stylesheet">
+
+      <script src="../../../assets/dist/jquery-3.6.2.min.js"></script>
+
+      <!-- Icons -->
+      <link class="favicon" rel="apple-touch-icon" sizes="180x180" href="../../../assets/icons/logo-navbar-brand.png">
+      <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="../../../assets/icons/logo-navbar-brand.png">
+      <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="../../../assets/icons/logo-navbar-brand.png">
+      <link class="favicon" rel="shortcut icon" href="../../../assets/icons/logo.ico">
+
+      <!-- Meta Tags -->
+      <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+      <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+      <meta class="browser-theme" name="theme-color" content="#000000">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+      <meta charset="UTF-8" />
+
+      <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
+      </head>
+      <body>
+            <div class="bg-black w-full h-full text-white">
+                  <div class="w-full h-full" aria-busy="false" aria-live="polite" style="opacity: 1;">
+                        <div class="app-header font-bold bg-slate-600/40 text-white" id="app-header">
+                              <div class="app-header-left" id="app-header-left">
+                                    <div id="navbar-brand" class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
+                                          <img id="navbar-brand-img" src="../../../assets/icons/text-logo.png" alt="logo" style="height: 30px; width: 120px;">
+                                    </div>
+                              </div>
+                              <div class="app-header-right">
+                                    <nav>
+                                          <div class="hidden w-full md:flex md:items-center md:w-auto duration-1000" id="menu">
+                                                <ul class="text-base md:flex md:justify-between md:pt-0">
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../../index.html">Home</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../about/index.html">About</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../face-detection/index.html">Face Detection</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../image-enhancement/index.html">Image Enhancement</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../notifications/index.html">Notifications</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../settings/index.html">Settings</a>
+                                                      </li>
+                                                </ul>
+                                          </div>
+                                    </nav>
+                              </div>
+                        </div>
+                        <main class="max-w-[24rem] relative items-center text-center justify-content w-full h-full leading-relaxed mx-auto text-[#dcdcdc]">
+                              <span class="text-center text-[48px] font-bold block mb-8">
+                                    <span>Frequently Asked Questions</span>
+                              </span>
+                              <div>
+                                    <h2 class="underline">
+                                          What is FaceCCTV?
+                                    </h2>
+                                    <article class="pb-4">
+                                          <h3>
+                                                <span>How does it work?</span>
+                                          </h3>
+                                          <div>
+                                                <p>
+                                                      <span>
+                                                            FaceCCTV uses Deep Learning Artificial Intelligence to recognize facial features in pictures using the Bounding Box technique and then it uses ESRGAN to enhance the detected faces.
+                                                      </span>
+                                                </p>
+                                          </div>
+                                          <h3>
+                                                <span>Why was it created?</span>
+                                          </h3>
+                                          <div>
+                                                <p>
+                                                      <span>
+                                                            FaceCCTV was created as part of my Final Year Dissertation Project for my Computer Science Degree and I wanted to try and help policing reduce the number of crimes occuring in the UK. 
+                                                      </span>
+                                                </p>
+                                          </div>
+                                    </article>
+                                    <h2 class="underline">
+                                          Troubleshooting Guide
+                                    </h2>
+                                    <article class="pb-4">
+                                          <h3>
+                                                <span>I get an error when trying to upload a file.</span>
+                                          </h3>
+                                          <div>
+                                                <p>
+                                                      <span>
+                                                            If you get an error message relating to uploading a file. Then it is likely that:
+                                                      </span>
+                                                </p>
+                                                <ul>
+                                                      <li>
+                                                            <span>
+                                                                  <b>The format of the photo is not supported</b>
+                                                                  The photo that is uploaded is in a format that is not supported by the application, so changing photo or exporting the same photo in a accepted format in order to be used. Accepted formats are: JPEG, JPG, PNG.
+                                                            </span>
+                                                      </li>
+                                                      <li>
+                                                            <span>
+                                                                  <b>The photo is too big to upload</b>
+                                                                  This could mean that the size of the photo is too large, currently FaceCCTV operates on images with a maximum size of 3840*2160 pixels (4K).
+                                                            </span>
+                                                      </li>
+                                                </ul>
+                                          </div>
+                                          <h3>
+                                                <span>Why was it created?</span>
+                                          </h3>
+                                          <div>
+                                                <p>
+                                                      <span>
+                                                            FaceCCTV was created as part of my Final Year Dissertation Project for my Computer Science Degree and I wanted to try and help policing reduce the number of crimes occuring in the UK. 
+                                                      </span>
+                                                </p>
+                                          </div>
+                                    </article>
+                              </div>
+                        </main>
+                        <noscript>
+                              <div class="noscript-wrapper noselect">
+                                    <span>JavaScript is required for FaceCCTV to function.</span>
+                              </div>
+                        </noscript>
+            </div>
+
+            <!--JS Imports -->
+            <script src="../../../assets/js/index.js"></script>
+            <script src="../../../assets/js/elements.js"></script>
+            <script src="../../../assets/js/themes.js"></script>
+            <script src="../../../assets/js/platform.js"></script>
+            <script src="../../../assets/js/slider.js"></script>
+
+            <!-- Custom Libraries -->
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      </body>
+</html>
