@@ -1,6 +1,6 @@
-django
-djangorestframework
-joblib
-numpy
-sklearn
+django==3.1
+djangorestframework==3.11.1
+joblib==0.16.0
+numpy==1.18.4
+scikit-learn==0.24.2
 requests
