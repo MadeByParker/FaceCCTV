@@ -11,3 +11,7 @@ Split-folders
 Tensorflow
 Tensorflow-GPU
 Keras.io
+Shapely
+Tqdm
+logging
+vlogging
