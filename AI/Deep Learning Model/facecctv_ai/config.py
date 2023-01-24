@@ -1,7 +1,7 @@
 # Config File
 
 # Path to the folder containing the images
-dataset_path = "../data/"
+dataset_path = "../data/test/"
 
 # Log path
 log_path = "../logs/log.txt"
