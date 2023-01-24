@@ -4,14 +4,14 @@ out
 .vscode
 
 
-# AI Deep Learning Model
+# AI face_detection
 AI/Image Enhancement/ESRGAN
-AI/Deep Learning Model/data
-AI/Deep Learning Model/aug_data
-AI/Deep Learning Model/logs
-AI/Deep Learning Model/augmented-data
-AI/Deep Learning Model/libraries
+AI/face_detection/data
+AI/face_detection/aug_data
+AI/face_detection/logs
+AI/face_detection/augmented-data
+AI/face_detection/libraries
 
-# API for Deep Learning Model
+# API for face_detection
 API/__pycache__/
 venv
