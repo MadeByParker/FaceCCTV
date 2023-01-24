@@ -4,9 +4,12 @@ import shapely.geometry
 import numpy as np
 import cv2
 
-import facecctv_ai.utils
-import facecctv_ai.geometry
-import facecctv_ai.processing
+import sys
+sys.path.append('../')
+
+import facecctv_ai.utils as utils
+import facecctv_ai.geometry as geometry
+import facecctv_ai.processing as processing
 
 class FaceCandidateDetermined:
       # Determine what is a face candidate to be detected
@@ -29,10 +32,10 @@ class FaceDetection:
 
             return self.bounding_box.equals(other.bounding_box) and self.accuracy_score == other.accuracy_score
 
-      def __get_scaled(self, scale):
+      def _get_scaled(self, scale):
             # Get the scaled bounding box
 
-            rescaled_bounding_box = facecctv_ai.geometry.scale_bounding_box(self.bounding_box, scale)
+            rescaled_bounding_box = geometry.scale_bounding_box(self.bounding_box, scale)
             return FaceDetection(rescaled_bounding_box, self.accuracy_score)
 
 def get_faces_generator(image, crop_size, stride, batch_size):
@@ -126,7 +129,7 @@ class HeatmapGenerator:
 
             while min(image.shape[:2]) > self.configuration.crop_size:
 
-                  image = facecctv_ai.processing.get_scaled_image(image, self.configuration.image_scaling_ratio)
+                  image = processing.get_scaled_image(image, self.configuration.image_scaling_ratio)
 
                   single_scale_heatmap = SingleScaleHeatmap(image, self.model, self.configuration).get_heatmap()
 
@@ -139,11 +142,11 @@ class HeatmapGenerator:
       def _get_largest_scale_image(self):
             # returns the image with the largest scale
 
-            smallest_face_size = facecctv_ai.processing.get_smallest_face_size(image_shape=self.image.shape, min_face_size=self.configuration.min_face_size, min_face_size_to_image_ratio=self.configuration.min_face_size_to_image_ratio)
+            smallest_face_size = processing.get_smallest_face_size(image_shape=self.image.shape, min_face_size=self.configuration.min_face_size, min_face_size_to_image_ratio=self.configuration.min_face_size_to_image_ratio)
 
             scale = self.configuration.crop_size / smallest_face_size
 
-            return facecctv_ai.processing.get_scaled_image(self.image, scale)
+            return processing.get_scaled_image(self.image, scale)
 
 class ComplexDetection:
       # class to detect faces in an image that are not easy (e.g. faces that are not frontal)
@@ -162,7 +165,7 @@ class ComplexDetection:
                   while unique_id < len(complex_detections) and similar_detection_found is False:
                         complex_detection = complex_detections[unique_id]
 
-                        if facecctv_ai.geometry.bounding_box_iou(detection.bounding_box, complex_detection.bounding_box) > iou_threshold:
+                        if geometry.bounding_box_iou(detection.bounding_box, complex_detection.bounding_box) > iou_threshold:
                               complex_detections[unique_id] = complex_detection \
                                     if complex_detection.accuracy_score < detection.accuracy_score else detection
 
@@ -195,7 +198,7 @@ class ComplexDetection:
 
                               group_member = current_group[member_id]
 
-                              if facecctv_ai.geometry.bounding_box_iou(face_detection.bounding_box, group_member.bounding_box) > iou_threshold:
+                              if geometry.bounding_box_iou(face_detection.bounding_box, group_member.bounding_box) > iou_threshold:
 
                                     current_group.append(face_detection)
                                     group_found = True
@@ -275,7 +278,7 @@ class FaceDetector:
 
             self.input_image_scale = 1 if min(image.shape[:2]) < 500 else 500 / min(image.shape[:2])
 
-            self.image = facecctv_ai.processing.get_scaled_image(image, self.input_image_scale)
+            self.image = processing.get_scaled_image(image, self.input_image_scale)
             self.model = model
             self.configuration = configuration
 
@@ -283,7 +286,7 @@ class FaceDetector:
             # returns the face detections in the image
 
             current_image_scale = self._get_largest_scale()
-            image = facecctv_ai.processing.get_scaled_image(self.image, current_image_scale)
+            image = processing.get_scaled_image(self.image, current_image_scale)
 
             face_detections = []
 
@@ -295,13 +298,13 @@ class FaceDetector:
                   face_detections.extend(rescaled_detections)
 
                   current_image_scale *= self.configuration.image_rescale_ratio
-                  image = facecctv_ai.processing.get_scaled_image(self.image, current_image_scale)
+                  image = processing.get_scaled_image(self.image, current_image_scale)
 
             complex_detections = ComplexDetection.average_scores(face_detections, iou_threshold=0.2)
             return [face_detection.get_scaled(1 / self.input_image_scale) for face_detection in complex_detections]
 
       def _get_largest_scale(self):
-            smallest_face_size = facecctv_ai.processing.get_smallest_face_size(image_shape=self.image.shape, min_face_size=self.configuration.min_face_size, min_face_size_to_image_ratio=self.configuration.min_face_size_to_image_ratio)
+            smallest_face_size = processing.get_smallest_face_size(image_shape=self.image.shape, min_face_size=self.configuration.min_face_size, min_face_size_to_image_ratio=self.configuration.min_face_size_to_image_ratio)
 
             return self.configuration.crop_size / smallest_face_size
                         

@@ -7,9 +7,14 @@ import cv2
 import numpy as np
 import shapely.geometry
 
-import facecctv_ai.config
-import facecctv_ai.geometry
-import facecctv_ai.utils
+import sys
+sys.path.append('../')
+
+
+import facecctv_ai.config as config
+import facecctv_ai.geometry as geometry
+import facecctv_ai.utils as utils
+
 
 class InvalidBoundingBox(Exception):
     pass
@@ -39,25 +44,25 @@ def get_data_batch(image_paths, bounding_box_path, index, batch_size, crop_size)
 
             try:
                   path = image_paths[index]
-                  image = facecctv_ai.utils.get_image(path)
+                  image = utils.get_image(path)
 
                   image_bounding_box = shapely.geometry.box(0, 0, image.shape[1], image.shape[0])
                   face_bounding_box = bounding_box_path(os.path.basename(path))
 
-                  if facecctv_ai.geometry.bounding_box_iou(image_bounding_box, face_bounding_box) < 0.01:
+                  if geometry.bounding_box_iou(image_bounding_box, face_bounding_box) < 0.01:
                         raise InvalidBoundingBox("Invalid bounding box for image {}".format(path))
                   
-                  scale = facecctv_ai.geometry.get_scale(image_bounding_box, crop_size)
+                  scale = geometry.get_scale(image_bounding_box, crop_size)
 
                   scaled_image = get_scaled_image(image, scale)
-                  scaled_bounding_box = facecctv_ai.geometry.get_scaled_bounding_box(face_bounding_box, scale)
+                  scaled_bounding_box = geometry.get_scaled_bounding_box(face_bounding_box, scale)
 
                   # Randomly flip the image
 
                   if random.randint(0, 1) == 1:
                         scaled_image = cv2.flip(scaled_image, flipCode=1)
 
-                        scaled_bounding_box = facecctv_ai.geometry.flip_bounding_box_y_axis(scaled_bounding_box, scaled_image.shape)
+                        scaled_bounding_box = geometry.flip_bounding_box_y_axis(scaled_bounding_box, scaled_image.shape)
 
                   crops, labels = get_image_crop_labels(scaled_image, scaled_bounding_box, crop_size)
 
@@ -117,7 +122,7 @@ def get_random_face_crop(image, face_bounding_box, crop_size):
 
             coordinates_valid = x >= 0 and y >= 0 and x_end < image.shape[1] and y_end < image.shape[0]
 
-            is_iou_high  = facecctv_ai.geometry.bounding_box_iou(face_bounding_box, cropped_region) > 0.7
+            is_iou_high  = geometry.bounding_box_iou(face_bounding_box, cropped_region) > 0.7
 
             if coordinates_valid and is_iou_high:
                   return image[y:y_end, x:x_end]
@@ -141,7 +146,7 @@ def get_random_non_face_crop(image, face_bounding_box, crop_size):
 
             coordinates_valid = x >= 0 and y >= 0 and x_end < image.shape[1] and y_end < image.shape[0]
 
-            is_iou_high  = facecctv_ai.geometry.bounding_box_iou(face_bounding_box, sampled_region) < 0.7
+            is_iou_high  = geometry.bounding_box_iou(face_bounding_box, sampled_region) < 0.7
 
             if coordinates_valid and is_iou_high:
                   return image[y:y_end, x:x_end]
@@ -170,7 +175,7 @@ def get_random_face_part_crop(image, face_bounding_box, crop_size):
 
             coordinates_valid = x >= 0 and y >= 0 and x_end < image.shape[1] and y_end < image.shape[0]
 
-            is_iou_high  = facecctv_ai.geometry.bounding_box_iou(face_bounding_box, cropped_region) < 0.5
+            is_iou_high  = geometry.bounding_box_iou(face_bounding_box, cropped_region) < 0.5
 
             if coordinates_valid and is_iou_high:
                   crop = image[y:y_end, x:x_end]
@@ -205,7 +210,7 @@ def get_random_small_scale_face_crop(image, face_bounding_box, crop_size):
                   coordinates_valid = x >= 0 and x_end < image.shape[1] and \
                                 y >= 0 and y_end < image.shape[0] and crop_width > crop_size
       
-                  is_iou_high  = facecctv_ai.geometry.bounding_box_iou(face_bounding_box, cropped_region) < 0.5
+                  is_iou_high  = geometry.bounding_box_iou(face_bounding_box, cropped_region) < 0.5
       
                   if coordinates_valid and is_iou_high:
                         crop = image[y:y_end, x:x_end]
