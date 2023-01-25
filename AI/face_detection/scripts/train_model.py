@@ -2,14 +2,13 @@ import os
 
 import keras
 
-import facecctv_ai.config
-import facecctv_ai.data_generator
-import facecctv_ai.models
-import facecctv_ai.utils
-
+from ..facecctv_ai import config
+from ..facecctv_ai import models
+from ..facecctv_ai import utils
+from ..facecctv_ai import data_generator
 def get_callbacks():
 
-      model_path = facecctv_ai.config.model_path
+      model_path = config.model_path
       os.makedirs(os.path.dirname(model_path), exist_ok=True)
       model_save_checkpoint = keras.callbacks.ModelCheckpoint(filepath=model_path, save_best_only=True, verbose=1)
 
@@ -22,23 +21,23 @@ def main():
       # dataset = "custom_dataset"
       dataset = "wider_face_dataset"
 
-      dataset_path = os.path.join(facecctv_ai.config.dataset_path, dataset)
+      dataset_path = os.path.join(config.dataset_path, dataset)
 
-      training_image_path_file = facecctv_ai.utils.join(dataset_path, "training_images.txt")
-      training_bounding_box_file = facecctv_ai.utils.join(dataset_path, "training_bounding_boxes.txt")
+      training_image_path_file = utils.join(dataset_path, "training_images.txt")
+      training_bounding_box_file = utils.join(dataset_path, "training_bounding_boxes.txt")
 
-      validation_image_path_file = facecctv_ai.utils.join(dataset_path, "validation_images.txt")
-      validation_bounding_box_file = facecctv_ai.utils.join(dataset_path, "validation_bounding_boxes.txt")
+      validation_image_path_file = utils.join(dataset_path, "validation_images.txt")
+      validation_bounding_box_file = utils.join(dataset_path, "validation_bounding_boxes.txt")
 
-      batch_size = facecctv_ai.config.batch_size
+      batch_size = config.batch_size
 
-      model = facecctv_ai.models.get_vgg_model(image_shape=facecctv_ai.config.image_shape)
+      model = models.get_vgg_model(image_shape=config.image_shape)
 
-      training_data_generator = facecctv_ai.data_generator.get_data_batch_generator(training_image_path_file, training_bounding_box_file, batch_size, facecctv_ai.config.crop_size)
-      validation_data_generator = facecctv_ai.data_generator.get_data_batch_generator(validation_image_path_file, validation_bounding_box_file, batch_size, facecctv_ai.config.crop_size)
+      training_data_generator = data_generator.get_data_batch_generator(training_image_path_file, training_bounding_box_file, batch_size, config.crop_size)
+      validation_data_generator = data_generator.get_data_batch_generator(validation_image_path_file, validation_bounding_box_file, batch_size, config.crop_size)
 
       model.fit_generator(
-            training_data_generator, samples_per_epoch=facecctv_ai.utils.get_file_line_count(training_image_path_file), epochs=100, validation_data=validation_data_generator, val_samples=facecctv_ai.utils.get_file_line_count(validation_image_path_file), callbacks=get_callbacks()
+            training_data_generator, samples_per_epoch=utils.get_file_line_count(training_image_path_file), epochs=100, validation_data=validation_data_generator, val_samples=utils.get_file_line_count(validation_image_path_file), callbacks=get_callbacks()
       )
 
 if __name__ == "__main__":

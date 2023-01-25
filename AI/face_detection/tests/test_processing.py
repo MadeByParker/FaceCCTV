@@ -2,7 +2,7 @@ import numpy as np
 import sys
 sys.path.append('../')
 
-import facecctv_ai.processing as processing
+from ..facecctv_ai import processing
 
 def test_scale_image_height_with_ratio():
 

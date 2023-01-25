@@ -10,10 +10,8 @@ import shapely.geometry
 import sys
 sys.path.append('../')
 
-
-import facecctv_ai.config as config
-import facecctv_ai.geometry as geometry
-import facecctv_ai.utils as utils
+from ..facecctv_ai import utils
+from ..facecctv_ai import geometry
 
 
 class InvalidBoundingBox(Exception):

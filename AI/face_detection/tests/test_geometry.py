@@ -2,7 +2,7 @@ import mock
 
 import shapely.geometry
 
-import facecctv_ai.geometry as geometry
+from ..facecctv_ai import geometry
 
 def test_get_bounding_box(self):
 

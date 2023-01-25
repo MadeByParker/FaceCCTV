@@ -7,7 +7,7 @@ import pytest
 import sys
 sys.path.append('../')
 
-import facecctv_ai.download as download
+from facecctv_ai import download
 
 def test_get_asset_size():
 

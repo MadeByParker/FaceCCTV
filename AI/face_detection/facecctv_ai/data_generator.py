@@ -4,9 +4,9 @@ import sys
 sys.path.append('../')
 
 
-import facecctv_ai.geometry as geometry
-import facecctv_ai.processing as processing
-import facecctv_ai.utils as utils
+import utils
+import detections
+import processing
 
 def get_data_batch(image_paths, bounding_box_path, index, batch_size, crop_size):
 

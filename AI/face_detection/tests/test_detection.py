@@ -4,23 +4,20 @@ import numpy as np
 import pytest
 import shapely.geometry
 
-import sys
-sys.path.append('../')
+import facecctv_ai.config
+import facecctv_ai.detections as detect
 
-import facecctv_ai.config as config
-import facecctv_ai.detections as detections
-import facecctv_ai.geometry as geometry
 
 def test_get_faces_by_stride_larger_than_crop_size():
       with pytest.raises(ValueError):
             
-            generator = detections.get_faces_by_generator(np.zeros(shape=[10, 10]), crop_size=4, stride=5, batch_size=4)
+            generator = detect.get_faces_by_generator(np.zeros(shape=[10, 10]), crop_size=4, stride=5, batch_size=4)
             next(generator)
 
 def test_get_faces_but_return_none_when_image_larger_than_crops():
 
 
-      generator = detections.get_faces_by_generator(np.zeros(shape=[2, 2]), crop_size=4, stride=4, batch_size=4)
+      generator = detect.get_faces_by_generator(np.zeros(shape=[2, 2]), crop_size=4, stride=4, batch_size=4)
 
       with pytest.raises(StopIteration):
 
@@ -33,7 +30,7 @@ def test_get_face_candidates_generator_candidates_single_row_crops():
     crop_size = 4
     stride = 3
 
-    generator = detections.get_face_candidates_generator(image, crop_size, stride, batch_size=2)
+    generator = detect.get_face_candidates_generator(image, crop_size, stride, batch_size=2)
 
     # Get first batch
     batch = next(generator)
@@ -78,7 +75,7 @@ def test_get_face_candidates_generator_single_column_crops():
     crop_size = 5
     stride = 4
 
-    generator = detections.get_faces_generator(image, crop_size, stride, batch_size=2)
+    generator = detect.get_faces_generator(image, crop_size, stride, batch_size=2)
 
     # Get first batch
     batch = next(generator)
@@ -122,7 +119,7 @@ def test_get_face_candidates_generator_simple_grid():
     crop_size = 5
     stride = 4
 
-    generator = detections.get_faces_generator(image, crop_size, stride, batch_size=3)
+    generator = detect.get_faces_generator(image, crop_size, stride, batch_size=3)
 
     # Get first batch
     batch = next(generator)
@@ -182,7 +179,7 @@ def test_get_heatmap_single_batch():
     expected_heatmap[4:9, :4] = 0.6
     expected_heatmap[4:9, 4:9] = 0.8
 
-    computer = detections.SingleScaleHeatmap(image, mock_model, configuration)
+    computer = detect.SingleScaleHeatmap(image, mock_model, configuration)
     actual_heatmap = computer.get_heatmap()
 
     assert np.allclose(actual_heatmap, expected_heatmap)
@@ -199,18 +196,18 @@ class TestUniqueDetectionsComputer:
         ]
 
         face_detections = [
-            detections.FaceDetection(bounding_boxes[0], 0.9),
-            detections.FaceDetection(bounding_boxes[1], 0.98),
-            detections.FaceDetection(bounding_boxes[2], 0.95)
+            detect.FaceDetection(bounding_boxes[0], 0.9),
+            detect.FaceDetection(bounding_boxes[1], 0.98),
+            detect.FaceDetection(bounding_boxes[2], 0.95)
         ]
 
         iou_threshold = 0.5
 
         expected_results = [
-            detections.FaceDetection(bounding_boxes[1], 0.98)
+            detect.FaceDetection(bounding_boxes[1], 0.98)
         ]
 
-        actual_results = detections.ComplexDetection.non_maximum_suppression(
+        actual_results = detect.ComplexDetection.non_maximum_suppression(
             face_detections, iou_threshold)
 
         assert expected_results == actual_results
@@ -226,21 +223,21 @@ class TestUniqueDetectionsComputer:
         ]
 
         face_detections = [
-            detections.FaceDetection(bounding_boxes[0], 0.9),
-            detections.FaceDetection(bounding_boxes[1], 0.98),
-            detections.FaceDetection(bounding_boxes[2], 0.95),
-            detections.FaceDetection(bounding_boxes[3], 0.9),
-            detections.FaceDetection(bounding_boxes[4], 0.95)
+            detect.FaceDetection(bounding_boxes[0], 0.9),
+            detect.FaceDetection(bounding_boxes[1], 0.98),
+            detect.FaceDetection(bounding_boxes[2], 0.95),
+            detect.FaceDetection(bounding_boxes[3], 0.9),
+            detect.FaceDetection(bounding_boxes[4], 0.95)
         ]
 
         iou_threshold = 0.5
 
         expected_results = [
-            detections.FaceDetection(bounding_boxes[1], 0.98),
-            detections.FaceDetection(bounding_boxes[4], 0.95)
+            detect.FaceDetection(bounding_boxes[1], 0.98),
+            detect.FaceDetection(bounding_boxes[4], 0.95)
         ]
 
-        actual_results = detections.C(
+        actual_results = detect.C(
             face_detections, iou_threshold)
 
         assert expected_results == actual_results
@@ -254,15 +251,15 @@ class TestUniqueDetectionsComputer:
         ]
 
         face_detections = [
-            detections.FaceDetection(bounding_boxes[0], 0.9),
-            detections.FaceDetection(bounding_boxes[1], 0.98),
-            detections.FaceDetection(bounding_boxes[2], 0.95)
+            detect.FaceDetection(bounding_boxes[0], 0.9),
+            detect.FaceDetection(bounding_boxes[1], 0.98),
+            detect.FaceDetection(bounding_boxes[2], 0.95)
         ]
 
         iou_threshold = 0.5
 
         expected_results = [
-            detections.FaceDetection(bounding_boxes[1], 0.98)
+            detect.FaceDetection(bounding_boxes[1], 0.98)
         ]
 
         actual_results = detections(
@@ -281,21 +278,21 @@ class TestUniqueDetectionsComputer:
         ]
 
         face_detections = [
-            detections.FaceDetection(bounding_boxes[0], 0.9),
-            detections.FaceDetection(bounding_boxes[1], 0.98),
-            detections.FaceDetection(bounding_boxes[2], 0.95),
-            detections.FaceDetection(bounding_boxes[3], 0.9),
-            detections.FaceDetection(bounding_boxes[4], 0.95)
+            detect.FaceDetection(bounding_boxes[0], 0.9),
+            detect.FaceDetection(bounding_boxes[1], 0.98),
+            detect.FaceDetection(bounding_boxes[2], 0.95),
+            detect.FaceDetection(bounding_boxes[3], 0.9),
+            detect.FaceDetection(bounding_boxes[4], 0.95)
         ]
 
         iou_threshold = 0.25
 
         expected_results = [
-            detections.FaceDetection(bounding_boxes[1], 0.98),
-            detections.FaceDetection(shapely.geometry.box(101, 99, 109, 108), 0.95)
+            detect.FaceDetection(bounding_boxes[1], 0.98),
+            detect.FaceDetection(shapely.geometry.box(101, 99, 109, 108), 0.95)
         ]
 
-        actual_results = detections.ComplexDetection.average_scores(
+        actual_results = detect.ComplexDetection.average_scores(
             face_detections, iou_threshold)
 
         assert expected_results == actual_results

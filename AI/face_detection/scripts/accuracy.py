@@ -5,11 +5,12 @@ import cv2
 import numpy as np
 import tqdm
 
-import facecctv_ai.config
-import facecctv_ai.utils
-import facecctv_ai.models
-import facecctv_ai.detections
-import facecctv_ai.geometry
+
+from ..facecctv_ai import config
+from ..facecctv_ai import utils
+from ..facecctv_ai import models
+from ..facecctv_ai import detections as detect
+from ..facecctv_ai import geometry
 
 def detect_face_correctly(image, face_bounding_box, cascade_classifier):
       # Makes sure that the cascade classifier detects the face correctly
@@ -26,7 +27,7 @@ def detect_face_correctly(image, face_bounding_box, cascade_classifier):
             left, top, width, height = detections[0]
             detection_bounding_box = shapely.geometry.box(left, top, left + width, top + height)
 
-            detection_correct = facecctv_ai.geometry.bounding_box_iou(face_bounding_box, detection_bounding_box) > 0.5
+            detection_correct = geometry.bounding_box_iou(face_bounding_box, detection_bounding_box) > 0.5
 
             return detection_correct
 
@@ -49,7 +50,7 @@ def check_accuracy(image_path, bounding_box_map):
 
             # Only try to search for faces if they are larger than 1% of image. If they are smaller,
             # ground truth bounding box is probably incorrect
-            if facecctv_ai.geometry.bounding_box_iou(image_bounding_box, face_bounding_box) > 0.01:
+            if geometry.bounding_box_iou(image_bounding_box, face_bounding_box) > 0.01:
 
                   value = 1 if detect_face_correctly(image, face_bounding_box, cascade_classifier) else 0
                   detection_scores.append(value)
@@ -60,7 +61,7 @@ def check_accuracy(image_path, bounding_box_map):
 def model_detect_face_correctly(image, face_bounding_box, model, configuration):
       #checks to make sure the model detects the face correctly
 
-      detections = facecctv_ai.detections.FaceCCTVModel(image, model, configuration).get_face_detection()
+      detections = detect.FaceCCTVModel(image, model, configuration).get_face_detection()
 
       # if there isnt a face in the image then return false
 
@@ -68,7 +69,7 @@ def model_detect_face_correctly(image, face_bounding_box, model, configuration):
       if len(detections) != 1:
             return False
       else:
-            is_detection_correct = facecctv_ai.geometry.bounding_box_iou(face_bounding_box, detections[0].bounding_box) > 0.5
+            is_detection_correct = geometry.bounding_box_iou(face_bounding_box, detections[0].bounding_box) > 0.5
 
             return is_detection_correct
 
@@ -77,21 +78,21 @@ def check_model_accuracy(image_path, bounding_box_map, filepath=None):
 
       detection_scores = []
 
-      model = facecctv_ai.models.get_vgg_model(facecctv_ai.config.image_shape)
-      model.load_weights(facecctv_ai.config.model_path)
+      model = models.get_vgg_model(config.image_shape)
+      model.load_weights(config.model_path)
 
 
       for path in tqdm.tqdm(image_path):
-            image = facecctv_ai.utils.get_image(path)
+            image = utils.get_image(path)
 
             image_bounding_box = shapely.geometry.box(0, 0, image.shape[1], image.shape[0])
             face_bounding_box = bounding_box_map[os.path.basename(path)]
 
             # Only try to search for faces if they are larger than 1% of image. If they are smaller,
             # ground truth bounding box is probably incorrect
-            if facecctv_ai.geometry.bounding_box_iou(image_bounding_box, face_bounding_box) > 0.01:
+            if geometry.bounding_box_iou(image_bounding_box, face_bounding_box) > 0.01:
 
-                  value = 1 if model_detect_face_correctly(image, face_bounding_box, model, facecctv_ai.config) else 0
+                  value = 1 if model_detect_face_correctly(image, face_bounding_box, model, config) else 0
                   detection_scores.append(value)
 
                   if filepath is not None:
@@ -105,13 +106,13 @@ def main():
       # dataset = "custom_dataset"
       dataset= "wider_face_dataset"
 
-      dataset_path = os.path.join(facecctv_ai.config.dataset_path, dataset)
+      dataset_path = os.path.join(config.dataset_path, dataset)
 
-      image_path_file = facecctv_ai.utils.join(dataset_path, "training_images.txt")
-      bounding_box_file = facecctv_ai.utils.join(dataset_path, "training_bounding_boxes.txt")
+      image_path_file = utils.join(dataset_path, "training_images.txt")
+      bounding_box_file = utils.join(dataset_path, "training_bounding_boxes.txt")
 
-      image_paths = [path.strip() for path in facecctv_ai.utils.get_file_lines(image_path_file)]
-      bounding_box_map = facecctv_ai.geometry.get_bounding_box_map(bounding_box_file)
+      image_paths = [path.strip() for path in utils.get_file_lines(image_path_file)]
+      bounding_box_map = geometry.get_bounding_box_map(bounding_box_file)
 
       #check accuracy
       check_model_accuracy(image_paths, bounding_box_map, filepath="/logs/model_accuracy_log.txt")

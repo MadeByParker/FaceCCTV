@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-with open('D:\\University Work\\Cyber Security Final Year\\COMP3000\\Github\\FaceCCTV\\AI\\face_detection\\__init__.py') as f:
+with open('FaceCCTV\\AI\\face_detection\\facecctv_ai\\__init__.py') as f:
     info = {}
     for line in f:
       if line.startswith('version'):
@@ -9,7 +9,7 @@ with open('D:\\University Work\\Cyber Security Final Year\\COMP3000\\Github\\Fac
 
 
 setup_info = dict(
-      name='face_detection',
+      name='facecctv_ai',
       version=1.0,
       author='Harry Parker',
       author_email='hspark5@outlook.com',

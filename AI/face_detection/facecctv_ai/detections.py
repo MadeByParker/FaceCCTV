@@ -7,9 +7,10 @@ import cv2
 import sys
 sys.path.append('../')
 
-import facecctv_ai.utils as utils
-import facecctv_ai.geometry as geometry
-import facecctv_ai.processing as processing
+from ..facecctv_ai import utils
+from ..facecctv_ai import geometry
+from ..facecctv_ai import processing
+
 
 class FaceCandidateDetermined:
       # Determine what is a face candidate to be detected

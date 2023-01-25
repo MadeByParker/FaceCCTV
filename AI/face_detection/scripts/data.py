@@ -1,10 +1,8 @@
-import facecctv_ai.config
-import facecctv_ai.data
-
+from ..facecctv_ai import config
+from ..facecctv_ai import data
 def main():
       # Load data
-
-      facecctv_ai.data.DatasetBuilder(facecctv_ai.config.dataset_path).build_dataset()
+      data.DatasetBuilder(config.dataset_path).build_dataset()
 
 if __name__ == "__main__":
       main()
