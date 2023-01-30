@@ -5,6 +5,11 @@ import cv2
 import numpy as np
 import tqdm
 
+import sys
+ 
+# adding Folder_2 to the system path
+sys.path.append('../../face/')
+
 import face.config as config
 import face.utils as utils
 import face.models as models
