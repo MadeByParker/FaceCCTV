@@ -6,13 +6,14 @@ import numpy as np
 import tqdm
 import tqdm
 
-from ..facecctv_ai import config
-from ..facecctv_ai import utils
-from ..facecctv_ai import models
-from ..facecctv_ai import detections as detect
-from ..facecctv_ai import geometry
-from ..facecctv_ai import processing
-from ..facecctv_ai import data_generator
+import face.config as config
+import face.utils as utils
+import face.geometry as geometry
+import face.processing as processing
+import face.data_generator as data_generator
+import face.detections as detect
+import face.models as models
+
 
 def log_data_batch(data_generator, logger):
 

@@ -4,9 +4,9 @@ import numpy as np
 import pytest
 import shapely.geometry
 
-import facecctv_ai.config
-import facecctv_ai.detections as detect
-
+import face.config as config
+import face.detections as detect
+import face.geometry as geometry
 
 def test_get_faces_by_stride_larger_than_crop_size():
       with pytest.raises(ValueError):
@@ -262,7 +262,7 @@ class TestUniqueDetectionsComputer:
             detect.FaceDetection(bounding_boxes[1], 0.98)
         ]
 
-        actual_results = detections(
+        actual_results = detect.ComplexDetection.average_scores(
             face_detections, iou_threshold)
 
         assert expected_results == actual_results

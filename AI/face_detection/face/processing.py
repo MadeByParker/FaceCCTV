@@ -10,8 +10,9 @@ import shapely.geometry
 import sys
 sys.path.append('../')
 
-from ..facecctv_ai import utils
-from ..facecctv_ai import geometry
+import face.utils as utils
+import face.geometry as geometry
+
 
 
 class InvalidBoundingBox(Exception):

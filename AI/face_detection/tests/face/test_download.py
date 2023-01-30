@@ -4,10 +4,7 @@ import mock
 import urllib.error
 import pytest
 
-import sys
-sys.path.append('../')
-
-from facecctv_ai import download
+import face.download as download
 
 def test_get_asset_size():
 

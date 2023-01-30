@@ -1,12 +1,10 @@
 import random
 
-import sys
-sys.path.append('../')
 
+import face.detections as detect
+import face.processing as processing
+import face.utils as utils
 
-import utils
-import detections
-import processing
 
 def get_data_batch(image_paths, bounding_box_path, index, batch_size, crop_size):
 

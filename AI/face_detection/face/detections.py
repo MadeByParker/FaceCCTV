@@ -4,12 +4,9 @@ import shapely.geometry
 import numpy as np
 import cv2
 
-import sys
-sys.path.append('../')
-
-from ..facecctv_ai import utils
-from ..facecctv_ai import geometry
-from ..facecctv_ai import processing
+import face.geometry as geometry
+import face.utils as utils
+import face.processing as processing
 
 
 class FaceCandidateDetermined:

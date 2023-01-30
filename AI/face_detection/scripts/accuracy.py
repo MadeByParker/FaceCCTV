@@ -5,12 +5,11 @@ import cv2
 import numpy as np
 import tqdm
 
-
-from ..facecctv_ai import config
-from ..facecctv_ai import utils
-from ..facecctv_ai import models
-from ..facecctv_ai import detections as detect
-from ..facecctv_ai import geometry
+import face.config as config
+import face.utils as utils
+import face.models as models
+import face.detections as detect
+import face.geometry as geometry
 
 def detect_face_correctly(image, face_bounding_box, cascade_classifier):
       # Makes sure that the cascade classifier detects the face correctly

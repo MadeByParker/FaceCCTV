@@ -2,10 +2,12 @@ import os
 
 import keras
 
-from ..facecctv_ai import config
-from ..facecctv_ai import models
-from ..facecctv_ai import utils
-from ..facecctv_ai import data_generator
+import face.config as config
+import face.models as models
+import face.data_generator as data_generator
+import face.utils as utils
+
+
 def get_callbacks():
 
       model_path = config.model_path
