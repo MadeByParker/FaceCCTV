@@ -4,7 +4,12 @@ import mock
 import urllib.error
 import pytest
 
-import face.download as download
+import sys
+ 
+# adding Folder_2 to the system path
+sys.path.append('../../face')
+
+import download
 
 def test_get_asset_size():
 

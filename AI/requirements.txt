@@ -1,24 +1,14 @@
-python 3.10.9
-PyTorch
 Glob2
-ESRGAN
 Imutils
 Matplotlib
-NNumPy
-OpenCV
-Sklearn
-Split-folders
-Tensorflow
-Tensorflow-GPU
-Keras.io
-Shapely
-Tqdm
-logging
-vlogging
-PIL
-Shutils
-os
-random
-path
-time
+numpy
+opencv-python
+scikit-learn
+split-folders
+tensorflow
+tensorflow-GPU
+shapely
+tqdm
+Pillow
+
 

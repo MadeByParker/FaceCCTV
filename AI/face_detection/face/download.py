@@ -41,7 +41,7 @@ class DatasetDownloader:
 
             try:
                   request = self._get_request()
-                  flags = "wb" if self.download_size_in_bytes is 0 else "ab"
+                  flags == "wb" if self.download_size_in_bytes is 0 else "ab"
                   
                   with self.url_opener(request) as url_connection, self.file_opener(self.path, flags) as file, \
                               tqdm.tqdm(total=self.total, disable=not verbose) as progress_bar:

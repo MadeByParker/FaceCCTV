@@ -1,12 +1,18 @@
-import mock 
+import sys
+ 
+# adding Folder_2 to the system path
+sys.path.append('../../face')
+
+import detections as detect
+import config as config
+import geometry as geometry
+
+import mock
 
 import numpy as np
 import pytest
 import shapely.geometry
 
-import face.config as config
-import face.detections as detect
-import face.geometry as geometry
 
 def test_get_faces_by_stride_larger_than_crop_size():
       with pytest.raises(ValueError):
