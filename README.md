@@ -35,7 +35,6 @@ This repository contains the source code and assets for my Final Year Project at
       </ul>
     </li>
     <li><a href="#security">Security</a></li>
-    <li><a href="#other-miscellanous-items">Project Management Planner</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -84,6 +83,7 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 ### Dataset
 
 - Dataset link [link here to Google Drive](https://drive.google.com/drive/folders/1Y11KhmhUfg3q6JRAv4idBBt-OuFEvQBv?usp=sharing)
+- Link to WIDER Face dataset [here](http://shuoyang1213.me/WIDERFACE/)
 
 ## List of Project Objectives
 
@@ -104,12 +104,6 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 
 - As this project handling with very sensitive data, I am not permitted to allow users store CCTV on my website for later use in case of a data breach or if i had the intent to access the data myself as this could conflict with the rules of the Human Rights Act 1998, 2018 GDPR Regulations and etc... [as stated here](https://www.caughtoncamera.net/news/cctv-legal-requirements-cctv-laws-explained/)
 - As users can upload images to the website via a mobile network connection or through WiFi, the images will be encrypted in transit (using AES-256-CBC mode) to ensure that unauthorised parties can't intercept whilst uploading/downloading.
-
-## Other Miscellanous Items
-
-### Project Management Planner
-
-To view my project planner on Jira, please visit [this link](https://id.atlassian.com/invite/p/jira-software?id=Oz8QbbMWRCyVmXMjr2BcFQ).
 
 ## Getting Started
 
@@ -199,6 +193,11 @@ You can download the webs app and the mobile app from their respective sections 
 
 ### Mobile App
 
-| Resource     | URL                                                     |
-| ------------ | ------------------------------------------------------- |
-| React Native | [Website](https://reactnative.dev/docs/getting-started) |
+| Resource        | URL                                                     	 |
+| --------------- | -----------------------------------------------------------	 |
+| React Native    | [Website](https://reactnative.dev/docs/getting-started) 	 |
+| Expo            | [Website(https://expo.dev) 			            	 |
+| expo-font       | [NPM package](https://www.npmjs.com/package/expo-font)  	 |
+| expo-status-bar | [NPM package](https://www.npmjs.com/package/expo-status-bar) |
+
+
