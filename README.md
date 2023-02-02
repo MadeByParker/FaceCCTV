@@ -3,6 +3,7 @@
 # FaceCCTV
 
 ![Banner](https://github.com/Parker06/Parker06/blob/main/New%20Banner.jpg)
+![Thumbnail](https://github.com/Parker06/FaceCCTV/blob/main/documentation/Thumbnail.png)
 
 ## Before Reading
 
