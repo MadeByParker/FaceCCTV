@@ -101,8 +101,6 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 
 The project will be hosted at [facecctv.co.uk](facecctv.co.uk) to access the web app and available to download at [facecctv.tech](facecctv.tech)
 
-### Setup
-
 ## Tech Stack
 
 - FaceCCTV AI Model - Python, Jupyter Notebook
