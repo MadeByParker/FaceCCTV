@@ -35,15 +35,7 @@ This repository contains the source code and assets for my Final Year Project at
       </ul>
     </li>
     <li><a href="#security">Security</a></li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#setup">Setup</a></li>
-        <li><a href="#hosting">Hosting</a></li>
-      </ul>
-    </li>
+    <li><a href="#hosting">Hosting</a></li>
     <li><a href="#images">Images</a></li>
     <li>
       <a href="#credits-and-resources">Credits / Resources</a>
@@ -64,8 +56,8 @@ This repository contains the source code and assets for my Final Year Project at
 
 ### Topic Research
 
-- Why is the footage on CCTV cameras bad quality? [click here](https://www.scienceabc.com/eyeopeners/why-is-the-quality-of-cctv-footage-still-so-low.html)
-- Youtube Video explaining why CCTV camera have poor quality. [here](https://www.youtube.com/watch?v=KWCPXJXWum8)
+- Why is the footage on CCTV cameras often bad quality? [click here](https://www.scienceabc.com/eyeopeners/why-is-the-quality-of-cctv-footage-still-so-low.html)
+- Youtube Video explaining why CCTV cameras have poor quality. [here](https://www.youtube.com/watch?v=KWCPXJXWum8)
 - UK Crime and Safety Statistics [here](https://crimerate.co.uk/#:~:text=The%20crime%20rate%20in%20the,77.49%20crimes%20per%201%2C000%20people.)
 - Why are CCTV cameras essential to public safety in the UK? [click here](https://www.calipsa.io/blog/cctv-statistics-in-the-uk-your-questions-answered)
 
@@ -104,14 +96,6 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 
 - As this project handling with very sensitive data, I am not permitted to allow users store CCTV on my website for later use in case of a data breach or if i had the intent to access the data myself as this could conflict with the rules of the Human Rights Act 1998, 2018 GDPR Regulations and etc... [as stated here](https://www.caughtoncamera.net/news/cctv-legal-requirements-cctv-laws-explained/)
 - As users can upload images to the website via a mobile network connection or through WiFi, the images will be encrypted in transit (using AES-256-CBC mode) to ensure that unauthorised parties can't intercept whilst uploading/downloading.
-
-## Getting Started
-
-### Prerequisites
-
-### Installation
-
-You can download the webs app and the mobile app from their respective sections of this repository. (once it is deployed) for local use
 
 ## Hosting
 
