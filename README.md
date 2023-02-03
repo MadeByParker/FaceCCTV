@@ -51,7 +51,7 @@ This repository contains the source code and assets for my Final Year Project at
         <li><a href="#general">General</a></li>
         <li><a href="#ai-face-detection">AI Face Detection</a></li>
         <li><a href="#ai-image-enhancement">AI Image Enhancement</a></li>
-		        <li><a href="#ai-api">AI API</a></li>
+                <li><a href="#ai-api">AI API</a></li>
         <li><a href="#web-app">Web App</a></li>
         <li><a href="#desktop-app">Desktop App</a></li>
         <li><a href="#mobile-app">Mobile App</a></li>
@@ -111,14 +111,18 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 
 ### Installation
 
-You can download the webs app and the mobile app from their respective sections of this repository. (once it is deployed)
+You can download the webs app and the mobile app from their respective sections of this repository. (once it is deployed) for local use
+
+## Hosting
+
+The project will be hosted at [facecctv.co.uk](facecctv.co.uk) to access the web app and available to download at [facecctv.tech](facecctv.tech)
 
 ### Setup
 
 ## Tech Stack
 
-- FaceCCTV AI Model - Python
-- FaceCCTV AI API:  Flask, Python
+- FaceCCTV AI Model - Python, Jupyter Notebook
+- FaceCCTV AI API:  Python
 - Web App: HTML, CSS, JavaScript
 - Desktop App: Electron, HTML, CSS, JavaScript
 - Mobile App: React Native, JavaScript
@@ -166,11 +170,10 @@ You can download the webs app and the mobile app from their respective sections 
 
 ### AI API
 
-| Resource      | URL |
-| ------------- | --- |
-| Python        |     |
-| Flask         |     |
-| Flask RESTful |     |
+| Resource              | URL                                              |
+| --------------------- | ------------------------------------------------ |
+| Python                | [Website](https://www.python.org)                |
+| Django REST Framework | [Website](https://www.django-rest-framework.org) |
 
 ### Web App
 
@@ -193,11 +196,25 @@ You can download the webs app and the mobile app from their respective sections 
 
 ### Mobile App
 
-| Resource        | URL                                                     	 |
-| --------------- | -----------------------------------------------------------	 |
-| React Native    | [Website](https://reactnative.dev/docs/getting-started) 	 |
-| Expo            | [Website(https://expo.dev) 			            	 |
-| expo-font       | [NPM package](https://www.npmjs.com/package/expo-font)  	 |
-| expo-status-bar | [NPM package](https://www.npmjs.com/package/expo-status-bar) |
+| Resource                                  | URL                                                                                    |
+| ----------------------------------------- | -------------------------------------------------------------------------------------- |
+| @expo/webpack-config                      | [NPM Package](https://www.npmjs.com/package/@expo/webpack-config)                      |
+| @react-native-async-storage/async-storage | [NPM Package](https://www.npmjs.com/package/@react-native-async-storage/async-storage) |
+| @react-navigation/native                  | [NPM Package](https://www.npmjs.com/package/@react-navigation/native)                  |
+| @react-navigation/stack                   | [NPM Package](https://www.npmjs.com/package/@react-navigation/stack)                   |
+| @reduxjs/toolkit                          | [NPM Package](https://www.npmjs.com/package/@reduxjs/toolkit)                          |
+| Expo                                      | [Website](https://expo.dev)                                                            |
+| expo-font                                 | [NPM Package](https://www.npmjs.com/package/expo-font)                                 |
+| expo-status-bar                           | [NPM Package](https://www.npmjs.com/package/expo-status-bar)                           |
+| expo-updates                              | [NPM Package](https://www.npmjs.com/package/expo-updates)                              |
+| React                                     | [Website](https://reactjs.org)                                                         |
+| react-dom                                 | [NPM Package](https://www.npmjs.com/package/react-dom)                                 |
+| react-native                              | [Website](https://reactnative.dev)                                                     |
+| react-native-elements                     | [NPM Package](https://www.npmjs.com/package/react-native-elements)                     |
+| react-native-gesture-handler              | [NPM Package](https://www.npmjs.com/package/react-native-gesture-handler)              |
+| react-native-safe-area-context            | [NPM Package](https://www.npmjs.com/package/react-native-safe-area-context)            |
+| react-native-vector-icons                 | [NPM Package](https://www.npmjs.com/package/react-native-vector-icons)                 |
+| react-native-web                          | [NPM Package](https://www.npmjs.com/package/)                                          |
+| react-redux                               | [NPM Package](https://www.npmjs.com/package/)                                          |
 
 
