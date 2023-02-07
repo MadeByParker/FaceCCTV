@@ -1,8 +1,12 @@
 <a name="readme-top"></a>
 
-# FaceCCTV
-
 ![Banner](https://github.com/Parker06/Parker06/blob/main/New%20Banner.jpg)
+
+<br>
+
+# FaceCCTV - AI Tool for CCTV Footage
+
+![Thumbnail](https://github.com/Parker06/FaceCCTV/blob/main/documentation/Thumbnail.png)
 
 ## Before Reading
 
@@ -31,16 +35,7 @@ This repository contains the source code and assets for my Final Year Project at
       </ul>
     </li>
     <li><a href="#security">Security</a></li>
-    <li><a href="#other-miscellanous-items">Project Management Planner</a></li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-        <li><a href="#setup">Setup</a></li>
-        <li><a href="#hosting">Hosting</a></li>
-      </ul>
-    </li>
+    <li><a href="#hosting">Hosting</a></li>
     <li><a href="#images">Images</a></li>
     <li>
       <a href="#credits-and-resources">Credits / Resources</a>
@@ -48,7 +43,7 @@ This repository contains the source code and assets for my Final Year Project at
         <li><a href="#general">General</a></li>
         <li><a href="#ai-face-detection">AI Face Detection</a></li>
         <li><a href="#ai-image-enhancement">AI Image Enhancement</a></li>
-		        <li><a href="#ai-api">AI API</a></li>
+                <li><a href="#ai-api">AI API</a></li>
         <li><a href="#web-app">Web App</a></li>
         <li><a href="#desktop-app">Desktop App</a></li>
         <li><a href="#mobile-app">Mobile App</a></li>
@@ -61,8 +56,8 @@ This repository contains the source code and assets for my Final Year Project at
 
 ### Topic Research
 
-- Why is the footage on CCTV cameras bad quality? [click here](https://www.scienceabc.com/eyeopeners/why-is-the-quality-of-cctv-footage-still-so-low.html)
-- Youtube Video explaining why CCTV camera have poor quality. [here](https://www.youtube.com/watch?v=KWCPXJXWum8)
+- Why is the footage on CCTV cameras often bad quality? [click here](https://www.scienceabc.com/eyeopeners/why-is-the-quality-of-cctv-footage-still-so-low.html)
+- Youtube Video explaining why CCTV cameras have poor quality. [here](https://www.youtube.com/watch?v=KWCPXJXWum8)
 - UK Crime and Safety Statistics [here](https://crimerate.co.uk/#:~:text=The%20crime%20rate%20in%20the,77.49%20crimes%20per%201%2C000%20people.)
 - Why are CCTV cameras essential to public safety in the UK? [click here](https://www.calipsa.io/blog/cctv-statistics-in-the-uk-your-questions-answered)
 
@@ -80,6 +75,7 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 ### Dataset
 
 - Dataset link [link here to Google Drive](https://drive.google.com/drive/folders/1Y11KhmhUfg3q6JRAv4idBBt-OuFEvQBv?usp=sharing)
+- Link to WIDER Face dataset [here](http://shuoyang1213.me/WIDERFACE/)
 
 ## List of Project Objectives
 
@@ -101,26 +97,14 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 - As this project handling with very sensitive data, I am not permitted to allow users store CCTV on my website for later use in case of a data breach or if i had the intent to access the data myself as this could conflict with the rules of the Human Rights Act 1998, 2018 GDPR Regulations and etc... [as stated here](https://www.caughtoncamera.net/news/cctv-legal-requirements-cctv-laws-explained/)
 - As users can upload images to the website via a mobile network connection or through WiFi, the images will be encrypted in transit (using AES-256-CBC mode) to ensure that unauthorised parties can't intercept whilst uploading/downloading.
 
-## Other Miscellanous Items
+## Hosting
 
-### Project Management Planner
-
-To view my project planner on Jira, please visit [this link](https://id.atlassian.com/invite/p/jira-software?id=Oz8QbbMWRCyVmXMjr2BcFQ).
-
-## Getting Started
-
-### Prerequisites
-
-### Installation
-
-You can download the webs app and the mobile app from their respective sections of this repository. (once it is deployed)
-
-### Setup
+The project will be hosted at [facecctv.co.uk](facecctv.co.uk) to access the web app and available to download at [facecctv.tech](facecctv.tech)
 
 ## Tech Stack
 
-- FaceCCTV AI Model - Python
-- FaceCCTV AI API:  Flask, Python
+- FaceCCTV AI Model - Python, Jupyter Notebook
+- FaceCCTV AI API:  Python
 - Web App: HTML, CSS, JavaScript
 - Desktop App: Electron, HTML, CSS, JavaScript
 - Mobile App: React Native, JavaScript
@@ -168,11 +152,10 @@ You can download the webs app and the mobile app from their respective sections 
 
 ### AI API
 
-| Resource      | URL |
-| ------------- | --- |
-| Python        |     |
-| Flask         |     |
-| Flask RESTful |     |
+| Resource              | URL                                              |
+| --------------------- | ------------------------------------------------ |
+| Python                | [Website](https://www.python.org)                |
+| Django REST Framework | [Website](https://www.django-rest-framework.org) |
 
 ### Web App
 
@@ -195,6 +178,25 @@ You can download the webs app and the mobile app from their respective sections 
 
 ### Mobile App
 
-| Resource     | URL                                                     |
-| ------------ | ------------------------------------------------------- |
-| React Native | [Website](https://reactnative.dev/docs/getting-started) |
+| Resource                                  | URL                                                                                    |
+| ----------------------------------------- | -------------------------------------------------------------------------------------- |
+| @expo/webpack-config                      | [NPM Package](https://www.npmjs.com/package/@expo/webpack-config)                      |
+| @react-native-async-storage/async-storage | [NPM Package](https://www.npmjs.com/package/@react-native-async-storage/async-storage) |
+| @react-navigation/native                  | [NPM Package](https://www.npmjs.com/package/@react-navigation/native)                  |
+| @react-navigation/stack                   | [NPM Package](https://www.npmjs.com/package/@react-navigation/stack)                   |
+| @reduxjs/toolkit                          | [NPM Package](https://www.npmjs.com/package/@reduxjs/toolkit)                          |
+| Expo                                      | [Website](https://expo.dev)                                                            |
+| expo-font                                 | [NPM Package](https://www.npmjs.com/package/expo-font)                                 |
+| expo-status-bar                           | [NPM Package](https://www.npmjs.com/package/expo-status-bar)                           |
+| expo-updates                              | [NPM Package](https://www.npmjs.com/package/expo-updates)                              |
+| React                                     | [Website](https://reactjs.org)                                                         |
+| react-dom                                 | [NPM Package](https://www.npmjs.com/package/react-dom)                                 |
+| react-native                              | [Website](https://reactnative.dev)                                                     |
+| react-native-elements                     | [NPM Package](https://www.npmjs.com/package/react-native-elements)                     |
+| react-native-gesture-handler              | [NPM Package](https://www.npmjs.com/package/react-native-gesture-handler)              |
+| react-native-safe-area-context            | [NPM Package](https://www.npmjs.com/package/react-native-safe-area-context)            |
+| react-native-vector-icons                 | [NPM Package](https://www.npmjs.com/package/react-native-vector-icons)                 |
+| react-native-web                          | [NPM Package](https://www.npmjs.com/package/)                                          |
+| react-redux                               | [NPM Package](https://www.npmjs.com/package/)                                          |
+
+
