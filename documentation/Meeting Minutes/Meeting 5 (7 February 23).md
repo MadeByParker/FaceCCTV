@@ -1,6 +1,6 @@
-# Meeting 4
+# Meeting 5
 
-### Date: 10th January 2023
+### Date: 7th February 2023
 
 ### Participants
 
@@ -86,12 +86,10 @@
   - Tech Stack
     
     - What did I use and justify why I chose those tools over similar ones
-    
-    - 
 
 ##### Challenges:
 
-
+  - Making sure the AI model can easily identify faces
 
 #### Expected in the next sprint?
 
