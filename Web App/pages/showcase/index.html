@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en" id="web">
+      <head>
+
+      <!-- Custom CSS Files-->
+      <link href="./assets/dist/tailwind.css" rel="stylesheet">
+      <link rel="stylesheet" href="./assets/css/showcase.css">
+      <link href="./assets/css/global.css" rel="stylesheet">
+      <link href="./assets/css/styles.css" rel="stylesheet">
+      <link href="./assets/css/dark.css" rel="stylesheet">
+      <link href="./assets/css/light.css" rel="stylesheet">
+
+      <script src="./assets/dist/jquery-3.6.2.min.js"></script>
+
+      <!-- Icons -->
+      <link class="favicon" rel="apple-touch-icon" sizes="180x180" href="./assets/logos/logo-with-bg.png">
+      <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="./assets/logos/logo-with-bg.png">
+      <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="./assets/logos/logo-with-bg.png">
+      <link class="favicon" rel="shortcut icon" href="./assets/logos/logo.ico">
+
+      <!-- Meta Tags -->
+      <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+      <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+      <meta class="browser-theme" name="theme-color" content="#000000">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+      <meta charset="UTF-8" />
+
+      <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
+      </head>
+      <body>
+            <div class="container">   
+                  <div class="app-container" id="app-container">
+                        <div class="app-header font-bold bg-slate-600/40" id="app-header">
+                              <div class="app-header-left" id="app-header-left">
+                                    <div id="navbar-brand" class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
+                                          <img id="navbar-logo-img" src="./assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
+                                          <img id="navbar-brand-img" src="./assets/icons/text-logo.png" alt="logo" style="height: 30px; width: 120px;">
+                                    </div>
+                              </div>
+                              <div class="app-header-right">
+                                    <nav>
+                                          <div class="hidden w-full md:flex md:items-center md:w-auto duration-1000" id="menu">
+                                                <ul class="text-base md:flex md:justify-between md:pt-0">
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../../index.html">Home</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/about/index.html">About</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/face-detection/index.html">Face Detection</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/image-enhancement/index.html">Image Enhancement</a>
+                                                      </li>
+                                                      <li>  
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/notifications/index.html">Notifications</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/settings/index.html">Settings</a>
+                                                      </li>
+                                                </ul>
+                                          </div>
+                                    </nav>
+                              </div>
+                        </div>
+                        <main class="absolute pr-20 z-10 container mt-6 md:mt-12 lg:short:mt-12 lg:mt-2 lg:min-h-[95%] items-center justify-end flex pointer-events-none">
+                              <div class="min-h-screen flex justify-center items-center p-16 sm:p-8 bg-white banner">
+                                    <div class="flex items-center flex-row md:flex-col w-11/12 sm:w-full minmd:w-3/4">
+                                          <div class="flex-1 w-full flex justify-start flex-col md:mb-10 fadeRightMini text-left">
+                                                <h1 class="text-black font-bold font-IBMPlex text-5xl sm:text-4xl minmd:text-6xl minlg:text-8xl leading-12 minmd:leading-13">
+                                                      Start Solving Crimes.
+                                                </h1>
+                                                <p class="text-black my-5 minmd:my-10 font-IBMPlex font-light text-xl minmd:text-3xl minlg:text-4xl minmd:leading-16">
+                                                      FaceCCTV is a facial recognition app that allows users to upload images of people they want to identify. The app then uses deep learning facial detection technology to identify the person in the image, alongside image enhancement technology to improve the quality.
+                                                </p>
+                                                <button>
+                                                      <div class="bg-black flex items-center py-2 px-4 rounded-md mt-2 w-fit cursor-pointer" onclick="expoStore()" target="_blank">
+                                                            <img src="../../assets/img/expo.png" alt="expo-icon" class="w-5 h-5 minmd:w-10 minmd:h-10 object-contain"/>
+                                                            <div class="flex flex-col justify-start ml-4">
+                                                                  <p class="font-normal text-xs text-white font-IBMPlex minmd:text-lg">
+                                                                        View it on
+                                                                  </p> 
+                                                                  <p class="font-bold text-sm text-white font-IBMPlex minmd:text-lg">
+                                                                        Expo Store
+                                                                  </p>
+                                                            </div>
+                                                      </div>
+                                                </button>
+                                                <button>
+                                                      <div class="bg-black flex items-center py-2 px-4 rounded-md mt-2 w-fit cursor-pointer" onclick="expoStore()" target="_blank">
+                                                            <img src="../../assets/img/expo.png" alt="expo-icon" class="w-5 h-5 minmd:w-10 minmd:h-10 object-contain"/>
+                                                            <div class="flex flex-col justify-start ml-4">
+                                                                  <p class="font-normal text-xs text-white font-IBMPlex minmd:text-lg">
+                                                                        View it on
+                                                                  </p> 
+                                                                  <p class="font-bold text-sm text-white font-IBMPlex minmd:text-lg">
+                                                                        Expo Store
+                                                                  </p>
+                                                            </div>
+                                                      </div>
+                                                </button>
+                                                <button>
+                                                      <div class="bg-black flex items-center py-2 px-4 rounded-md mt-2 w-fit cursor-pointer" onclick="expoStore()" target="_blank">
+                                                            <img src="../../assets/img/expo.png" alt="expo-icon" class="w-5 h-5 minmd:w-10 minmd:h-10 object-contain"/>
+                                                            <div class="flex flex-col justify-start ml-4">
+                                                                  <p class="font-normal text-xs text-white font-IBMPlex minmd:text-lg">
+                                                                        View it on
+                                                                  </p> 
+                                                                  <p class="font-bold text-sm text-white font-IBMPlex minmd:text-lg">
+                                                                        Expo Store
+                                                                  </p>
+                                                            </div>
+                                                      </div>
+                                                </button>
+                                          </div>
+                                          <div class="flex-1 p-8 sm:px-0 flex justify-center items-center">
+                                                <!-- Mockup Image-->
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="min-h-screen flex justify-center items-center p-16 sm:p-8 bg-primary">
+                                    <div class="flex items-center flex-row-reverse md:flex-col-reverse w-11/12 sm:w-full minmd:w-3/4">
+                                          <div class="flex-1 w-full flex justify-start flex-col md:mb-10 fadeLeftMini text-right">
+                                                <h1 class="text-white font-bold font-IBMPlex text-5xl sm:text-4xl minmd:text-6xl minlg:text-8xl leading-12 minmd:leading-13">
+                                                      Hands Free.
+                                                </h1>
+                                                <p class="text-white my-5 minmd:my-10 font-IBMPlex font-light text-xl minmd:text-3xl minlg:text-4xl minmd:leading-16">
+                                                      Just upload an image and let the AI do the rest. FaceCCTV will automatically detect the face(s) in the image and enhance the image.
+                                                </p>
+                                          </div>
+                                          <div class="flex-1 p-8 sm:px-0 flex justify-center items-center">
+                                                <!-- Mockup Image-->
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="min-h-screen flex justify-center items-center p-16 sm:p-8 bg-primary">
+                                    <div class="flex items-center flex-row-reverse md:flex-col-reverse w-11/12 sm:w-full minmd:w-3/4">
+                                          <div class="flex-1 w-full flex justify-start flex-col md:mb-10 fadeLeftMini text-right">
+                                                <h1 class="text-white font-bold font-IBMPlex text-5xl sm:text-4xl minmd:text-6xl minlg:text-8xl leading-12 minmd:leading-13">
+                                                      Deployment
+                                                </h1>
+                                                <p class="text-white my-5 minmd:my-10 font-IBMPlex font-light text-xl minmd:text-3xl minlg:text-4xl minmd:leading-16">
+                                                      FaceCCTV provides cross platform functionality using numerous technologies, React Native and Electron. The app is available on both iOS and Android. The app is also available on the web and desktop.
+                                                </p>
+                                          </div>
+                                          <div class="flex-1 p-8 sm:px-0 flex justify-center items-center">
+                                                <!-- Mockup Image-->
+                                          </div>
+                                    </div>
+                              </div>
+                              <div class="min-h-screen flex justify-center items-center p-16 sm:p-8 bg-white banner02"
+                                    <div class="flex items-center flex-row md:flex-col w-11/12 sm:w-full minmd:w-3/4">
+                                          <div class="flex-1 w-full flex justify-start flex-col md:mb-10 fadeRightMini text-left">
+                                                <h1 class="text-black font-bold font-IBMPlex text-5xl sm:text-4xl minmd:text-6xl minlg:text-8xl leading-12 minmd:leading-13">
+                                                      User Friendly Interface and Experience
+                                                </h1>
+                                                <p class="text-black my-5 minmd:my-10 font-IBMPlex font-light text-xl minmd:text-3xl minlg:text-4xl minmd:leading-16">
+                                                      The app was built with a user friendly interface and experience in mind by using  Tailwind's modern styling framework. The app is easy to use and navigate. Along with customisable settings and options are available to the user.
+                                                </p>
+                                          </div>
+                                          <div class="flex-1 p-8 sm:px-0 flex justify-center items-center">
+                                                <!-- Mockup Image-->
+                                          </div>
+                                    </div>
+                              </div>
+                        </main>
+                        
+                        <noscript>
+                              <div class="noscript-wrapper noselect">
+                                    <span>JavaScript is required for FaceCCTV to function.</span>
+                              </div>
+                        </noscript>
+            </div>
+
+            <!--JS Imports -->
+            <script src="./assets/js/index.js"></script>
+            <script src="./assets/js/elements.js"></script>
+            <script src="./assets/js/themes.js"></script>
+            <script src="./assets/js/platform.js"></script>
+            <script src="./assets/js/slider.js"></script>
+            <script src="../path/to/flowbite/dist/flowbite.bundle.js"></script>
+
+            <!-- Custom Libraries -->
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+            <script>
+                  function expoStore() {
+                        window.open("https://expo.dev/@adrianhajdin/react_native_app?serviceType=classic&distribution=expo-go");
+                  }
+            </script>
+      </body>
+</html>     

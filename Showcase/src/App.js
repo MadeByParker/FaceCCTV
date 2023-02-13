@@ -10,8 +10,6 @@ const App = () => {
         title="Start Solving Crimes."
         description="FaceCCTV is a facial recognition app that allows users to upload images of people they want to identify. The app then uses deep learning facial detection technology to identify the person in the image, alongside image enhancement technology to improve the quality."
         showBtn
-        showBtn
-        showBtn
         mockupImg={assets.homeHero}
         banner="banner"
       />
