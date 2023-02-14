@@ -99,7 +99,7 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 
 ## Hosting
 
-The project will be hosted at [facecctv.co.uk](facecctv.co.uk) to access the web app and available to download at [facecctv.tech](facecctv.tech)
+The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access the web app and available to download on windows and mobile.
 
 ## Tech Stack
 
