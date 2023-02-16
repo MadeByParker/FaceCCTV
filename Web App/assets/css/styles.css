@@ -1,54 +1,11 @@
 /* Start of CSS */
 
-/* Essential CSS */
-*,
-*::after,
-*::before {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background-color: black;
-    color: white;
-}
-
-body {
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-}
 
 .button, a{
     transition: 0.25s;
     cursor: pointer;
 }
 
-.noscript-wrapper {
-	position:absolute;
-	z-index:890;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	background:rgba(0,0,0,0.7);
-	backdrop-filter:blur(4px);
-}
-.noscript-wrapper span {
-	display:block;
-	text-align:center;
-	width:100%;
-	font-size:20px;
-	font-weight:bold;
-	color:var(--app-container);
-}
 
 
 /* desktop only */
@@ -63,11 +20,6 @@ body {
       max-width: 100%;
 }
 
-.container {
-      position: relative;
-      max-width: 100%;
-      height: auto;
-}
 
 .slider-container {
       position: absolute;
@@ -186,73 +138,6 @@ body {
 .app-header-right {
     display: flex;
     align-items: center;
-}
-
-#background {
-	pointer-events:none;
-	transform:rotate(180deg);
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-	opacity:1;
-	background-size:cover;
-	background-attachment:fixed;
-	z-index:1;
-}
-
-.toggle-wrapper {
-	width:50px;
-	height:25px;
-	background:var(--main-third);
-	border-radius:12.5px;
-	position:relative;
-	cursor:pointer;
-	display:inline-block;
-	box-shadow:var(--shadow-smooth);
-}
-.toggle-wrapper.active {
-	background:var(--accent-first);
-}
-.toggle-container {
-	transform:scale(1.05);
-	width:50%;
-	height:100%;
-	border-radius:50%;
-	background:var(--main-fifth);
-	transition:0.25s;
-	left:0;
-	top:0;
-	position:absolute;
-}
-html.light .toggle-container {
-	background:var(--main-second);
-}
-html.dark.alternate-background .toggle-container {
-	background:var(--main-first-transparent);
-}
-.toggle-wrapper.active .toggle-container {
-	left:50%;
-	background:var(--main-fourth);
-}
-.toggle-container svg {
-	width:70%;
-	height:60%;
-	padding:20% 15% 20% 15%;
-	fill:var(--accent-first);
-}
-.toggle-container .moon-icon {
-	display:block;
-}
-.toggle-wrapper.active .moon-icon {
-	display:none;
-}
-.toggle-wrapper.active .sun-icon {
-	display:block;
-}
-.sun-icon {
-	display:none;
 }
 
 .page-container.settings {
