@@ -63,7 +63,7 @@
                                                             <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../../index.html">Home</a>
                                                       </li>
                                                       <li>
-                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/showcase/index.html">About</a>
+                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./showcase/index.html">About</a>
                                                       </li>
                                                       <li>
                                                             <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../face-detection/index.html">Face Detection</a>
@@ -71,9 +71,7 @@
                                                       <li>
                                                             <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../image-enhancement/index.html">Image Enhancement</a>
                                                       </li>
-                                                      <li>
-                                                            <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../notifications/index.html">Notifications</a>
-                                                      </li>
+
                                                       <li>
                                                             <a class="md:p-4 py-2 block hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../settings/index.html">Settings</a>
                                                       </li>
@@ -83,35 +81,46 @@
                               </div>
                         </div>
                         <main class="absolute pr-20 z-10 container mt-6 md:mt-12 lg:short:mt-12 lg:mt-2 lg:min-h-[95%] items-center justify-end flex pointer-events-none">
-                              <div class="left-0 lg:mr-0 pointer-events-auto items-center lg:text-left">
-                                    <div class="max-w-screen-lg lg:max-w-md space-y-4 ites-center text-center mb-5 p-2 pr-4 w-[800px] h-content rounded-md bg-slate-600/40 mix-blend-overlay">
-                                          <div style="opacity: 1; transform: none;">
-                                                <div class="flex cursor-pointer items-center mb-5 p-2 pr-4 w-content">
-                                                      <h1 class="title-text font-extrabold text-3xl text-gray-300">
-                                                            <span>Enhance Faces</span>
-                                                      </h1>
+                              <div class="page settings hidden" id="settings-page">
+                                    <div class="page-container full settings">
+                                          <div class="settings-navbar noselect" id="settings-navbar">
+                                                <div class="item appearance active" id="settings-navbar-appearance">
+                                                      <span>Appearance</span>
                                                 </div>
                                           </div>
-                                          <div style="opacity: 1; transform: none;">
-                                                <div class="flex cursor-pointer items-center mb-5 p-1 pr-4 w-content">
-                                                      <p class="paragraph-text text-gray-300">
-                                                            <span class="text-xl font-semibold">FaceCCTV's Image Enhancement Tool provides the skillset to enhance low quality photos of people in your CCTV Footage.</span>
-                                                      </p>
-                                                </div>
-                                          </div>
-                                          <div class="mt-12 max-w-md mx-auto pb-8 pt-10 px-8" style="opacity: 1; transform: none;">
-                                                <input type="file" id="upload" name="upload" accept="image/jpeg, image/jpg, image/png" class="w-[0.1px] h-[0.1px] opacity-0 overflow-hidden absolute z-[-1]">
-                                                <label for="upload" role="button" tabindex="0" class="cursor-pointer block w-420px px-8 pt-10 pb-8 text-center rounded-3xl border-3 border-dashed border-stone-200/100 mix-blend-overlay bg-neutral-400/50 hover:bg-slate-500/25 text-gray-300 hover:text-gray-100 font-bold transition-colors">
-                                                      <div class="btn btn-primary w-max mx-auto py-1 px-6 pl-8 flex justify-center items-center rounded-full bg-[#277ebd]">
-                                                            <span class="text-lg">Upload File</span>
-                                                            <ion-icon name="cloud-upload-outline"></ion-icon>
+                                          <div class="settings-page appearance" id="settings-page-appearance">
+                                                <div class="settings-section noselect">
+                                                      <span class="title">Theme</span>
+                                                      <div class="content">
+                                                            <div class="toggle-wrapper theme" id="settings-toggle-theme">
+                                                                  <div class="toggle-container">
+                                                                        <svg class="moon-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path class="audible-switch" d="M1390 1303q-54 9-110 9-182 0-337-90t-245-245-90-337q0-192 104-357-201 60-328.5 229t-127.5 384q0 130 51 248.5t136.5 204 204 136.5 248.5 51q144 0 273.5-61.5t220.5-171.5zm203-85q-94 203-283.5 324.5t-413.5 121.5q-156 0-298-61t-245-164-164-245-61-298q0-153 57.5-292.5t156-241.5 235.5-164.5 290-68.5q44-2 61 39 18 41-15 72-86 78-131.5 181.5t-45.5 218.5q0 148 73 273t198 198 273 73q118 0 228-51 41-18 72 13 14 14 17.5 34t-4.5 38z"/></svg>
+                                                                        <svg class="sun-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path class="audible-switch" d="M1472 896q0-117-45.5-223.5t-123-184-184-123-223.5-45.5-223.5 45.5-184 123-123 184-45.5 223.5 45.5 223.5 123 184 184 123 223.5 45.5 223.5-45.5 184-123 123-184 45.5-223.5zm276 277q-4 15-20 20l-292 96v306q0 16-13 26-15 10-29 4l-292-94-180 248q-10 13-26 13t-26-13l-180-248-292 94q-14 6-29-4-13-10-13-26v-306l-292-96q-16-5-20-20-5-17 4-29l180-248-180-248q-9-13-4-29 4-15 20-20l292-96v-306q0-16 13-26 15-10 29-4l292 94 180-248q9-12 26-12t26 12l180 248 292-94q14-6 29 4 13 10 13 26v306l292 96q16 5 20 20 5 16-4 29l-180 248 180 248q9 12 4 29z"/></svg>
+                                                                  </div>
+                                                            </div>
                                                       </div>
-                                                      <p class="block info-text mt-4 text-lg font-semibold">
-                                                            <span>Drag and drop your image file here</span>
-                                                      </p>
-                                                      <p class="block info-text text-lg font-semibold">
-                                                            <span>Only accept JPEGs, JPGs and PNGs</span>
-                                                </label>
+                                                </div>
+                                                <div class="settings-section noselect" data-key="alternateBackground">
+                                                      <span class="title">Alternate Background</span>
+                                                      <div class="content">
+                                                            <button class="choice-button" data-value="disabled">Disabled</button>
+                                                            <button class="choice-button" data-value="enabled">Enabled</button>
+                                                      </div>
+                                                </div>
+                                                <div class="settings-section noselect" data-key="navbarStyle">
+                                                      <span class="title">Navigation Bar Style</span>
+                                                      <div class="content">
+                                                            <button class="choice-button" data-value="normal">Normal</button>
+                                                            <button class="choice-button" data-value="opaque">Opaque</button>
+                                                      </div>
+                                                </div>
+                                                <div class="settings-section noselect" data-key="settingsSync">
+                                                      <span class="title">Settings Sync</span>
+                                                      <div class="content">
+                                                            <button class="choice-button" data-value="disabled">Disabled</button>
+                                                            <button class="choice-button" data-value="enabled">Enabled</button>
+                                                      </div>
+                                                </div>
                                           </div>
                                     </div>
                               </div>
