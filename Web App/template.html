@@ -5,8 +5,7 @@
       <!-- Custom CSS Files-->
       <link href="./assets/dist/tailwind.css" rel="stylesheet">
       <link href="./assets/css/global.css" rel="stylesheet">
-      <link href="./assets/css/dist.css" rel="stylesheet">
-      <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+      <link href="./assets/css/index.css" rel="stylesheet">
 
       <script src="./assets/dist/jquery-3.6.2.min.js"></script>
 
@@ -15,6 +14,8 @@
       <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="./assets/logos/logo-with-bg.png">
       <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="./assets/logos/logo-with-bg.png">
       <link class="favicon" rel="shortcut icon" href="./assets/logos/logo.ico">
+
+
 
       <!-- Meta Tags -->
       <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
@@ -25,49 +26,60 @@
       <meta charset="UTF-8" />
 
       <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
-
-      <style>
-            		body{
-			font-family: "HelveticaNeue-Regular","Helvetica Neue Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
-			background: url('./assets/img/backgrounds/rose-petals.png') center center;
-			background-size: cover;
-		}
-		body *{
-			transition: all 0.4s;
-		}
-      </style>
       </head>
-      <body class="h-screen flex flex-col justify-center">
-            <div class="container">
-                  <!--<div class="loading-overlay active noselect hidden" id="loading-overlay"><div class="loading-icon"><div></div><div></div></div></div>-->
-                  <nav class="flex justify-between items-center text-white px-5 py-3 text-sm absolute top-0 left-0 right-0">
-                        <div>
-                              <img class="h-12 w-12" src="./assets/logos/app-icon.png" alt="logo">
-                              <img class="h-8 w-28" src="./assets/icons/text-logo.png" alt="logo">
-                        </div>
-                        <div class="text-md md:block">
-                                          <a class="mx-2 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./index.html">Home</a>
-                                          <a class="mx-2 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/showcase/index.html">About</a>
-                                          <a class="mx-2 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/face-detection/index.html">Face Detection</a>
-                                          <a class="mx-2 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/image-enhancement/index.html">Image Enhancement</a>
-                                          <a class="mx-2 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/settings/index.html">Settings</a>
-                        </div>
-                  </nav>
-                  <div class="flex flex-col justify-center items-center -mt-64">
-                        <p class="text-white text-5xl p-4 text-center">Model S</p>
-                        <div class="flex flex-col sm:flex-row w-1/2 mb-4">
-                              <button class="bg-white text-black rounded-full mx-2 my-2 flex-grow border-4 border-white py-2 w-100 sm:w-1/2 uppercase text-xs">Custom Order</button>
-                              <button class="hover:text-black hover:bg-white text-white rounded-full mx-2 my-2 flex-grow border-4 border-white py-2 w-100 sm:w-1/2 uppercase text-xs">Existing Inventory</button>
-                        </div>
-                        <a href="#" class="underline text-white text-sm tracking-wider">Visit a store</a>
+
+      <body class="bg-black">           
+                  <nav role="navigation" class="flex justify-between items-center h-16 text-white relative text-[20px] font-extrabold leading-9 py-4 bg-gradient-to-r from-blue to-darkblue">
+                  <div id="navbar-brand" class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
+                        <img id="navbar-logo-img" src="./assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
+                        <img id="navbar-brand-img" src="./assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
                   </div>
-                  
-                        <noscript>
-                              <div class="noscript-wrapper noselect">
-                                    <span>JavaScript is required for FaceCCTV to function.</span>
-                              </div>
-                        </noscript>
+                  <div class="px-4 cursor-pointer md:hidden" id="bars">
+                        <svg class="w-8 h-8 xs:w-4 xs:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                  </div>
+                  <div class="pr-8 md:block hidden" id="nav-content">
+                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./index.html">Home</a>
+                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/showcase/index.html">About</a>
+                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/face-detection/index.html">Face Detection</a>
+                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/image-enhancement/index.html">Image Enhancement</a>
+                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./pages/settings/index.html">Settings</a>
+            </nav>
+            <div class="bg-no-repeat h-screen bg-center bg-cover">
+                  <div class="image-slider-container">
+                  <figure class="cd-image-container">
+                        <img class="slider-image" src="./assets/img/samples/enhanced.jpg" alt="Original Image">
+                        <span class="cd-image-label" data-type="original">After</span>
+            
+                        <div class="cd-resize-img slider-image"> <!-- the resizable image on top -->
+                              <img src="./assets/img/samples/original.jpg" alt="Modified Image">
+                              <span class="cd-image-label" data-type="modified">Before</span>
+                        </div>
+            
+                        <span class="cd-handle"></span>
+                  </figure>
             </div>
+            <div class="h-screen font-sans text-gray-900 bg-gray-300 border-box">
+                  <div class="flex justify-center w-full mx-auto sm:max-w-lg">
+              
+                      <div class="flex flex-col items-center justify-center w-full h-auto my-20 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
+                          <div class="mt-10 mb-10 text-center">
+                              <h2 class="text-2xl font-semibold mb-2">Upload your files</h2>
+                              <p class="text-xs text-gray-500">File should be of format .mp4, .avi, .mov or .mkv</p>
+                          </div>
+                          <form action="#" class="relative w-4/5 h-32 max-w-xs mb-10 bg-white bg-gray-100 rounded-lg shadow-inner">
+                              <input type="file" id="file-upload" class="hidden">
+                              <label for="file-upload" class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
+                                  <p class="z-10 text-xs font-light text-center text-gray-500">Drag & Drop your files here</p>
+                                  <svg class="z-10 w-8 h-8 text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
+                                  </svg>
+                              </label>
+                          </form>
+                      </div>
+                  </div>
+              </div>
 
             <!--JS Imports -->
             <script src="./assets/js/index.js"></script>
@@ -81,4 +93,5 @@
             <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
             <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
       </body>
+      
 </html>     
