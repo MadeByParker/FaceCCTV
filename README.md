@@ -6,7 +6,7 @@
 
 # FaceCCTV - AI Tool for CCTV Footage
 
-![Thumbnail](https://github.com/Parker06/FaceCCTV/blob/main/documentation/Thumbnail.png)
+![Thumbnail](https://github.com/Parker06/FaceCCTV/blob/main/documentation/Showcase/Thumbnail.png)
 
 ## Before Reading
 
