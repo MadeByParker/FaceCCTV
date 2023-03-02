@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" id="web">
+      <head>
+
+      <!-- Custom CSS Files-->
+      <link href="../assets/dist/tailwind.css" rel="stylesheet">
+      <link href="../assets/css/global.css" rel="stylesheet">
+      <link href="../assets/css/index.css" rel="stylesheet">
+
+      <script src="../assets/dist/jquery-3.6.2.min.js"></script>
+
+      <!-- Icons -->
+      <link class="favicon" rel="apple-touch-icon" sizes="180x180" href="../assets/logos/logo-with-bg.png">
+      <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="../assets/logos/logo-with-bg.png">
+      <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="../assets/logos/logo-with-bg.png">
+      <link class="favicon" rel="shortcut icon" href="../assets/logos/logo.ico">
+
+
+
+      <!-- Meta Tags -->
+      <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+      <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+      <meta class="browser-theme" name="theme-color" content="#000000">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+      <meta charset="UTF-8" />
+
+      <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
+      </head>
+
+      <body class="overflow-hidden">           
+            <nav role="navigation" class="flex h-16 items-center justify-between bg-gradient-to-r from-blue-400 to-blue-700 bg-opacity-80 py-4 text-[20px] font-extrabold leading-9 text-gray-300">
+                  <div id="navbar-brand" class="flex cursor-pointer items-center p-2.5 px-4 duration-300">
+                    <img id="navbar-logo-img" src="../assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;" />
+                    <img id="navbar-brand-img" src="../assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;" />
+                  </div>
+                  <div class="cursor-pointer px-4 md:hidden" id="bars">
+                    <svg class="xs:w-4 xs:h-4 h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                  </div>
+                  <div class="hidden pr-8 md:block" id="nav-content">
+                    <a class="p-4 hover:rounded-md hover:bg-[#277EBD] ease-in-out duration-200 hover:text-white" href="../">Home</a>
+                    <a class="p-4 hover:rounded-md hover:bg-[#277EBD] ease-in-out duration-200 hover:text-white" href="../showcase">About</a>
+                    <a class="p-4 hover:rounded-md hover:bg-[#277EBD] ease-in-out duration-200 hover:text-white" href="../face-detection">Face Detection</a>
+                    <a class="p-4 hover:rounded-md hover:bg-[#277EBD] ease-in-out duration-200 hover:text-white" href="../image-enhancement">Image Enhancement</a>
+                    <a class="p-4 hover:rounded-md hover:bg-[#277EBD] ease-in-out duration-200 hover:text-white" href="/">Settings</a>
+                  </div>
+            </nav>    
+            <section class="bg-white dark:bg-gray-900 relative h-screen">
+            <div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16">
+                  <h2 class="mb-8 text-center text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white md:text-4xl lg:mb-16">Settings</h2>
+                  <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+                  <h3 class="mb-4 text-xl font-semibold dark:text-white">Appearance</h3>
+                  <div class="mb-6">
+                        <label for="settings-navbar" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Navbar background</label>
+                        <select id="settings-navbar" name="Navbar background" class="bg-gray-50 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                              <option>Default</option>
+                              <option>Black and White</option>
+                              <option>Transparent</option>
+                              <option>Blue and Pink</option>
+                              <option>White</option>
+                              <option>Gray</option>
+                              <option>Black</option>
+                              <option>Dark Blue</option>
+                        </select>
+                  </div>
+                  <div class="mb-6">
+                        <label for="settings-background-color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">App Background</label>
+                        <select id="settings-background-color" name="background-color" class="bg-gray-50 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                              <option>Default</option>
+                              <option>Black and White</option>
+                              <option>Transparent</option>
+                              <option>Blue and Pink</option>
+                              <option>White</option>
+                              <option>Gray</option>
+                              <option>Black</option>
+                              <option>Dark Blue</option>
+                        </select>
+                  </div>
+                  <div class="mb-6">
+                        <label for="settings-text-color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Text Color</label>
+                        <select id="settings-text-color" name="countries" class="bg-gray-50 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                              <option>White</option>
+                              <option>Gray</option>
+                              <option>Black</option>
+                              <option>Dark Blue</option>
+                        </select>
+                  </div>
+                  <div class="mb-6">
+                        <label for="font-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Font Size</label>
+                        <input id="font-range" type="range" min="12" max="36" value="24" step="4" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
+                        <div class="w-full flex justify-between text-xs px-2 text-white">
+                              <span>12px</span>
+                              <span>16px</span>
+                              <span>20px</span>
+                              <span>24px</span>
+                              <span>28px</span>
+                              <span>32px</span>
+                              <span>36px</span>
+                        </div>
+                  </div>
+                  <!--<div>
+                        <button class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Save all</button>
+                  </div>-->
+                  </div>
+            </div>
+            </section>
+                
+    
+            <!--JS Imports -->
+            <script src="../assets/js/index.js"></script>
+            <script src="../assets/js/elements.js"></script>
+            <script src="../assets/js/themes.js"></script>
+            <script src="../assets/js/platform.js"></script>
+            <script src="../assets/js/slider.js"></script>
+            <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+            <!-- Custom Libraries -->
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      </body>
+      
+</html>     
