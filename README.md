@@ -7,12 +7,21 @@
 # FaceCCTV - AI Tool for CCTV Footage
 
 ![Thumbnail](https://github.com/Parker06/FaceCCTV/blob/main/documentation/Showcase/Thumbnail.png)
+![Main Page](https://github.com/Parker06/FaceCCTV/blob/main/Screenshots/Main.png)
 
 ## Before Reading
 
 This repository contains the source code and assets for my Final Year Project at University.
 
 #### **DISCLAIMER ALERT: This is a piece of software that was made for my final year university project so there might be unintentional bugs with the software or the AI itself so if you are going to use it in real life applications, please be aware that the AI may not perform well for your particular user case.**
+
+### Brief Demo
+
+A brief video has been recorded to [show the application running [TBC]().
+
+### Setup Instructions
+
+Please see the [following README](./SETUP.md) for setup instructions.
 
 <!-- TABLE OF CONTENTS -->
 
@@ -36,8 +45,13 @@ This repository contains the source code and assets for my Final Year Project at
     </li>
     <li><a href="#security">Security</a></li>
     <li><a href="#hosting">Hosting</a></li>
-    <li><a href="#images">Images</a></li>
     <li>
+      <a href="#screenshots">Screenshots</a>
+      <ul>
+        <li><a href="#web-app">Web App</a></li>
+        <li><a href="#desktop-app">Desktop App</li>
+      </ul>
+    </li>
       <a href="#credits-and-resources">Credits / Resources</a>
       <ul>
         <li><a href="#general">General</a></li>
@@ -109,7 +123,24 @@ The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access
 - Desktop App: Electron, HTML, CSS, JavaScript
 - Mobile App: React Native, JavaScript
 
-## Images (coming soon)
+## Screenshots
+
+### Web App
+
+<details>
+	<summary><b>Main Page</b></summary>
+	<img src="https://github.com/Parker06/FaceCCTV/blob/main/Screenshots/Main.png"/><br>
+</details>
+<details>
+	<summary><b>Showcase</b></summary>
+	<img src="https://github.com/Parker06/FaceCCTV/blob/main/Screenshots/Showcase.png"/><br>
+</details>
+<details>
+	<summary><b>Settings</b></summary>
+	<img src="https://github.com/Parker06/FaceCCTV/blob/main/Screenshots/Settings.png"/><br>
+</details>
+
+### Desktop App
 
 ## Credits and Resources
 
