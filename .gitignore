@@ -19,3 +19,11 @@ venv
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+.firebaserc
+firebase.json
+.firebase
+template.html
+.elasticbeanstalk
+
+package.json
+package-lock.json
