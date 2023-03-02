@@ -6,9 +6,6 @@
       <link href="./assets/dist/tailwind.css" rel="stylesheet">
       <link href="./assets/css/global.css" rel="stylesheet">
       <link href="./assets/css/index.css" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="node_modules/img-slider/distr/imgslider.min.css">
-
-      <script type="text/javascript" src="node_modules/img-slider/distr/imgslider.min.js"></script>
 
       <script src="./assets/dist/jquery-3.6.2.min.js"></script>
 
@@ -43,55 +40,22 @@
                         </svg>
                   </div>
                   <div class="pr-8 md:block hidden" id="nav-content">
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md"  href="/">Home</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./showcase">About</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./face-detection">Face Detection</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./image-enhancement">Image Enhancement</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./settings">Settings</a>
-                  </nav>
-                  <div class="bg-no-repeat h-screen bg-center bg-cover">
-                    <div class="image-slider-container">
-                    <figure class="cd-image-container">
-                          <img class="slider-image" src="./assets/img/samples/enhanced.jpg" alt="Original Image">
-                          <span class="cd-image-label" data-type="original">After</span>
-              
-                          <div class="cd-resize-img slider-image"> <!-- the resizable image on top -->
-                                <img src="./assets/img/samples/original.jpg" alt="Modified Image">
-                                <span class="cd-image-label" data-type="modified">Before</span>
-                          </div>
-              
-                          <span class="cd-handle"></span>
-                    </figure>
-              </div>
-              </div>
-              <div class="h-screen font-sans text-gray-900 bg-gray-300 border-box">
-                <div class="flex justify-center mt-8 z-20">
-                    <div class="w-auto rounded-lg shadow-xl bg-gray-50">
-                        <div class="m-4">
-                            <label class="inline-block mb-2 text-gray-500">File Upload</label>
-                            <div class="flex items-center justify-center w-auto">
-                                <label
-                                    class="flex flex-col w-auto h-auto border-4 border-blue-200 border-dashed hover:bg-gray-100 hover:border-gray-300">
-                                    <div class="flex flex-col items-center justify-center pt-7">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-gray-400 group-hover:text-gray-600"
-                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                                        </svg>
-                                        <p class="pt-1 text-sm tracking-wider text-gray-400 group-hover:text-gray-600">
-                                            Attach a file</p>
-                                    </div>
-                                    <input type="file" class="opacity-0" />
-                                </label>
-                            </div>
-                        </div>
-                        <div class="flex justify-center p-2">
-                            <button class="w-full px-4 py-2 text-white bg-blue-500 rounded shadow-xl">Create</button>
-                        </div>
-                    </div>
-                </div> 
+                    <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md"  href="/">Home</a>
+                    <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./showcase">About</a>
+                    <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./face-detection">Face Detection</a>
+                    <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./image-enhancement">Image Enhancement</a>
+                    <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="./settings">Settings</a>
                 </div>
+            </nav>
+            <div class='container'>
+                <div class='img background-img'></div>
+                <div class='img foreground-img'></div>
+                <input type="range" min="1" max="100" value="50" class="slider" name='slider' id="slider">
+                <div class='slider-button'></div>
+              
+            </div>
 
+            
             <!--JS Imports -->
             <script src="./assets/js/index.js"></script>
             <script src="./assets/js/elements.js"></script>
