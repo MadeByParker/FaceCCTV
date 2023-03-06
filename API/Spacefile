@@ -1,0 +1,13 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+icon: ./icons/icon.png
+micros:
+  - name: api
+    src: ./api
+    engine: python3.9
+    primary: true
+    public_routes:
+      - "/facecctv"
+    commands:
+      - go get
+      - go build main.go
