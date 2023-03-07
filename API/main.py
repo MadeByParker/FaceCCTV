@@ -25,11 +25,29 @@ def detect_faces(image):
         #x, y, w, h = face
         #cv2.rectangle(image_copy, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
+    sample_coords = [1][0]
     global message
     message = {"num_faces": len(faces[0])}
     # interpret the prediction
-    if faces[0][0] > 0.9:
-            return True
+    if faces[0] > 0.8:
+        # Controls the main rectangle
+        cv2.rectangle(image, 
+                      tuple(np.multiply(sample_coords[:2], [450,450]).astype(int)),
+                      tuple(np.multiply(sample_coords[2:], [450,450]).astype(int)), 
+                            (255,0,0), 2)
+        # Controls the label rectangle
+        cv2.rectangle(image, 
+                      tuple(np.add(np.multiply(sample_coords[:2], [450,450]).astype(int), 
+                                    [0,-30])),
+                      tuple(np.add(np.multiply(sample_coords[:2], [450,450]).astype(int),
+                                    [80,0])), 
+                            (255,0,0), -1)
+        
+        # Controls the text rendered
+        cv2.putText(image, 'face', tuple(np.add(np.multiply(sample_coords[:2], [450,450]).astype(int),
+                                               [0,-5])),
+                    cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2, cv2.LINE_AA)
+        return True
     else:
             return False
 
