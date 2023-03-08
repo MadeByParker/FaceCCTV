@@ -17,11 +17,11 @@ This repository contains the source code and assets for my Final Year Project at
 
 ### Brief Demo
 
-A brief video has been recorded to [show the application running [TBC]().
+A brief video has been recorded to show the application running - not done yet (coming soon).
 
 ### Setup Instructions
 
-Please see the [following README](./SETUP.md) for setup instructions.
+Please see the [following README](./WALKTHROUGH.md) for setup instructions.
 
 <!-- TABLE OF CONTENTS -->
 
@@ -57,7 +57,7 @@ Please see the [following README](./SETUP.md) for setup instructions.
         <li><a href="#general">General</a></li>
         <li><a href="#ai-face-detection">AI Face Detection</a></li>
         <li><a href="#ai-image-enhancement">AI Image Enhancement</a></li>
-                <li><a href="#ai-api">AI API</a></li>
+        <li><a href="#api">AI API</a></li>
         <li><a href="#web-app">Web App</a></li>
         <li><a href="#desktop-app">Desktop App</a></li>
         <li><a href="#mobile-app">Mobile App</a></li>
@@ -115,14 +115,14 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 
 ## Hosting
 
-The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access the web app and available to download on windows and mobile.
+The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access the web app and available to download on windows and mobile. The API is hosted on a third party server which stores the latest version of the AI model which is a h5 file.
 
 ## Tech Stack
 
 - FaceCCTV AI Model - Python, Jupyter Notebook
-- FaceCCTV AI API:  Python
-- Web App: HTML, CSS, JavaScript
-- Desktop App: Electron, HTML, CSS, JavaScript
+- FaceCCTV AI API:  Python, FastAPI
+- Web App: HTML, CSS, JavaScript, TailwindCSS
+- Desktop App: Electron, HTML, CSS, JavaScript, Tailwind CSS
 - Mobile App: React Native, JavaScript
 
 ## Screenshots
@@ -141,6 +141,22 @@ The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access
 	<summary><b>Settings</b></summary>
 	<img src="https://github.com/Parker06/FaceCCTV/blob/main/Screenshots/Settings.png"/><br>
 </details>
+<details>
+	<summary><b>Face Detection</b></summary>
+	<img src="https://github.com/Parker06/FaceCCTV/blob/main/Screenshots/Face-Detection.png"/><br>
+</details>
+<details>
+	<summary><b>Image Enhancement</b></summary>
+	<img src="https://github.com/Parker06/FaceCCTV/blob/main/Screenshots/Image-Enhancement.png"/><br>
+</details>
+<details>
+	<summary><b>Uploading</b></summary>
+	<img src="https://github.com/Parker06/FaceCCTV/blob/main/Screenshots/Uploading.png"/><br>
+</details>
+<!--Screenshot Template<details>
+	<summary><b></b></summary>
+	<img src=""/><br>
+</details>-->
 
 ### Desktop App
 
@@ -183,12 +199,12 @@ The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access
 | OpenCV              | [Website](https://opencv.org) / [Github](https://github.com/opencv/opencv)                    |
 | PyTorch             | [Website](https://pytorch.org)                                                                |
 
-### AI API
+### API
 
-| Resource              | URL                                              |
-| --------------------- | ------------------------------------------------ |
-| Python                | [Website](https://www.python.org)                |
-| Django REST Framework | [Website](https://www.django-rest-framework.org) |
+| Resource               | URL                                              |
+| ---------------------  | ------------------------------------------------ |
+| AWS Web Services       | [Documentation](https://docs.aws.amazon.com)     |
+| FastAPI REST Framework | [Website](https://fastapi.tiangolo.com)          |
 
 ### Web App
 
@@ -198,6 +214,7 @@ The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access
 | Bootstrap Icons   | [Website](https://icons.getbootstrap.com)                                                         |
 | Flowbite          | [Website](https://flowbite.com)                                                                   |
 | Font Awesome      | [Website](https://fontawesome.com)                                                                |
+| Google Firebase   | [Website](https://firebase.google.com) [Documentation](https://firebase.google.com/docs)          |
 | Inter Font Family | [Website](https://rsms.me/inter/) / [Google Font Family](https://fonts.google.com/specimen/Inter) |
 | JQuery            | [Website](https://jquery.com)                                                                     |
 | Tailwind CSS      | [Website](https://tailwindcss.com)                                                                |
@@ -231,5 +248,3 @@ The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access
 | react-native-vector-icons                 | [NPM Package](https://www.npmjs.com/package/react-native-vector-icons)                 |
 | react-native-web                          | [NPM Package](https://www.npmjs.com/package/)                                          |
 | react-redux                               | [NPM Package](https://www.npmjs.com/package/)                                          |
-
-
