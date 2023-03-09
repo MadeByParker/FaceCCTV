@@ -1,6 +1,6 @@
 # FaceCCTV Web App
 
-This section hosts the development of the FaceCCTV Desktop App. Read the README in the main repository to learn more.
+This section hosts the development of the FaceCCTV Web App which can be found at https://facecctv.co.uk/ Read the README in the main repository to learn more.
 
 ### The App itself
 
@@ -20,10 +20,10 @@ This section hosts the development of the FaceCCTV Desktop App. Read the README 
 - Fully Customisable UI
   - Zoom
   - Font Size
-  - Dark Mode
+  - Customiable themes
 - Face Detection
 - Image Enhancer
-- Notifications
+- Download for Desktop at https://facecctv.co.uk/showcase
 
 #### Resources
 
