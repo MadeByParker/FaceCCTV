@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import File, UploadFile, APIRouter
 from fastapi.responses import FileResponse
 import uvicorn
 import numpy as np
@@ -6,11 +6,13 @@ import cv2
 from PIL import Image
 import io
 import tensorflow as tf
+from tensorflow.keras.models import load_model
 
-app = FastAPI()
+router = APIRouter()
 
 # Load the face detection model
-model = tf.keras.models.load_model("./models/facecctv.h5")
+model_path = "./API/models/facecctv.h5"
+model = load_model(model_path)
 
 # Define a function to detect faces in an image
 def detect_faces(image):
@@ -53,7 +55,7 @@ def detect_faces(image):
 
 
 # Define an API endpoint to handle image uploads
-@app.post("/uploadfile/")
+@router.post("/")
 async def create_upload_file(file: UploadFile = File(...)):
     contents = await file.read()
     # Load the image from memory
@@ -73,6 +75,3 @@ async def create_upload_file(file: UploadFile = File(...)):
     else:
         return {"message": "No face detected"}
 
-# Start the FastAPI app
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
