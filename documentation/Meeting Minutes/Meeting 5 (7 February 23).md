@@ -89,7 +89,7 @@
 
 ##### Challenges:
 
-  - Making sure the AI model can easily identify faces
+- Making sure the AI model can easily identify faces
 
 #### Expected in the next sprint?
 

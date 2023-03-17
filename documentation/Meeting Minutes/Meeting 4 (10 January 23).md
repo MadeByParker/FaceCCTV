@@ -22,8 +22,6 @@
 
 - What is to be done in the next sprint?
 
-
-
 #### What has been done in the last sprint?
 
 - Created the desktop app using electron.
@@ -45,7 +43,6 @@
   - this is likely due to the size of the model
   
   - This is not a PC issue as desktop has enough CPU and GPU to run
-
 
 #### Expected in the next sprint?
 
