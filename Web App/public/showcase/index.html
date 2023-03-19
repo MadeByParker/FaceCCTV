@@ -35,31 +35,31 @@
       <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
       </head>
 
-      <body>           
-                  <nav role="navigation" class="flex justify-between items-center h-16 text-white relative text-[20px] font-extrabold leading-9 py-4 bg-gradient-to-r from-blue-400 to-blue-800">
-                  <div id="navbar-brand" class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
-                        <img id="navbar-logo-img" src="../assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
-                        <img id="navbar-brand-img" src="../assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
-                  </div>
-                  <div class="px-4 cursor-pointer md:hidden" id="bars">
-                        <svg class="w-8 h-8 xs:w-4 xs:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                  </div>
-                  <div class="pr-8 md:block hidden" id="nav-content">
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md"  href="../">Home</a>
-
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="/">About</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../face-detection">Face Detection</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../image-enhancement">Image Enhancement</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../settings">Settings</a>
-            </nav>
-
+      <body>        
+        <nav class="flex items-center justify-between flex-wrap text-white relative text-xl font-extrabold leading-9 py-4 bg-gradient-to-r from-blue-400 to-blue-800">
+            <div class="flex items-center flex-shrink-0 text-white mx-6">
+                <img id="navbar-logo-img" src="../assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
+                <img id="navbar-brand-img" src="../assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
+            </div>
+          
+            <label class="md:hidden duration-300 ease-in-out cursor-pointer flex items-center px-3 py-3 mr-8 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white" for="menu-toggle"><svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg></label>
+            <input class="hidden" type="checkbox" id="menu-toggle" />
+          
+            <div class="hidden duration-300 ease-in w-full md:flex flex-col justify-center items-center md:items-center md:w-auto" id="menu">
+              <div class="pr-8 md:block flex flex-col items-end " id="nav-content">
+                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md"  href="../">Home</a>
+                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="/">About</a>
+                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../face-detection">Face Detection</a>
+                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../image-enhancement">Image Enhancement</a>
+                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../settings">Settings</a>
+            </div>
+            </div>
+          </nav>
             <section class="bg-white dark:bg-gray-900">
                   <div class="mx-auto grid max-w-screen-xl py-8 px-4 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0">
                     <div class="mr-auto place-self-center lg:col-span-7">
-                      <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none dark:text-white md:text-5xl xl:text-6xl">FaceCCTV</h1>
-                      <p class="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">Deep Learning Face Detection and Image Enhancement tool</p>
+                      <h1 class="mb-4 max-w-2xl text-[36px] font-extrabold leading-none dark:text-white md:text-5xl ">FaceCCTV</h1>
+                      <p class="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-base lg:mb-8 lg:text-lg">Face Detection and Image Enhancement Tool</p>
                       <a href="#" class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg py-3 px-5 text-center text-base font-medium text-white focus:ring-4">
                         Download for Desktop 
                         <svg class="ml-2 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -74,7 +74,7 @@
                 
                 <section class="bg-white dark:bg-gray-900">
                   <div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16">
-                    <h2 class="mb-8 text-center text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white md:text-4xl lg:mb-16">Tech Stack</h2>
+                    <h2 class="mb-8 text-center text-[36px] font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white lg:mb-16">Tech Stack</h2>
                     <div class="grid grid-cols-2 gap-8 text-gray-500 dark:text-gray-400 sm:gap-12 md:grid-cols-3 lg:grid-cols-6">
                       <a href="#" class="flex items-center justify-center">
                         <svg class="hover:text-gray-900 dark:hover:text-white" viewBox="0 0 512 512" fill="currentColor" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
@@ -104,8 +104,8 @@
                 <section class="bg-gray-50 dark:bg-gray-800">
                   <div class="mx-auto max-w-screen-xl py-8 px-4 sm:py-16 lg:px-6">
                     <div class="mb-8 max-w-screen-md lg:mb-16">
-                      <h2 class="mb-4 text-4xl font-extrabold text-gray-900 dark:text-white">About FaceCCTV</h2>
-                      <p class="text-gray-500 dark:text-gray-400 sm:text-xl">FaceCCTV was developed for the sole purpose of helping individuals and organisations to identify suspects of crimes from CCTV footage.</p>
+                      <h2 class="mb-4 text-[36px] font-extrabold text-gray-900 dark:text-white">About FaceCCTV</h2>
+                      <p class="text-gray-500 dark:text-gray-400 sm:text-[24px]">FaceCCTV was developed for the sole purpose of helping individuals and organisations to identify suspects of crimes from CCTV footage.</p>
                     </div>
                     <div class="space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
                       <div>
@@ -162,14 +162,14 @@
                 
                 <section class="bg-gray-50 dark:bg-gray-900">
                   <div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16 lg:px-6">
-                    <div class="max-w-screen-lg text-gray-500 dark:text-gray-400 sm:text-lg">
-                      <h2 class="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Hoping to solve crimes <span class="font-extrabold">worldwide</span>.</h2>
-                      <p class="mb-4 font-medium">After doing research on the crime rate percentage and seeing a 1% increase of crimes committed in 2021 from 2020 to approximately 79,000 in the last 12 months and only a 5% of those result in a charge.</p>
+                    <div class="max-w-screen-lg text-gray-500 dark:text-gray-400 sm:text-[24px]">
+                      <h2 class="mb-4 text-[36px] font-bold text-gray-900 dark:text-white">Hoping to solve crimes <span class="font-extrabold">worldwide</span>.</h2>
+                      <p class="mb-4 font-light">After doing research on the crime rate percentage and seeing a 1% increase of crimes committed in 2021 from 2020 to approximately 79,000 in the last 12 months and only a 5% of those result in a charge.</p>
                       <p class="mb-4 font-extrabold"> You wonder why? </p>
-                      <p class="mb-4 font-medium">This is partly due to the poor quality of CCTV, which makes finding the right person more difficult. Adding to this, higher-resolution cameras are on the expensive side which most businesses can’t afford, due to high costs or budget restrictions, resulting in them purchasing lower-resolution CCTV cameras which could lead to poor image quality. If you ever tried to upscale an image, it will become very pixelated and may require photo editing skills to do it professionally, which potentially adds to the costs.</p>
+                      <p class="mb-4 font-light">This is partly due to the poor quality of CCTV, which makes finding the right person more difficult. Adding to this, higher-resolution cameras are on the expensive side which most businesses can’t afford, due to high costs or budget restrictions, resulting in them purchasing lower-resolution CCTV cameras which could lead to poor image quality. If you ever tried to upscale an image, it will become very pixelated and may require photo editing skills to do it professionally, which potentially adds to the costs.</p>
                       <p class="mb-4 font-extrabold">FaceCCTV is a step towards a better place.</p>
                       <a href="#" class="text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700 inline-flex items-center font-medium">
-                        Learn more from my Github.
+                        Learn more from my Github
                         <svg class="ml-1 h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
                       </a>
                     </div>
@@ -179,7 +179,7 @@
             <section class="bg-white dark:bg-gray-900">
                   <div class="mx-auto max-w-screen-xl py-8 px-4 sm:py-16 lg:px-6">
                   <div class="mx-auto max-w-screen-sm text-center">
-                  <h2 class="mb-4 text-4xl font-extrabold leading-tight text-gray-900 dark:text-white">Give it a go</h2>
+                  <h2 class="mb-4 text-[36px] font-extrabold leading-tight text-gray-900 dark:text-white">Give it a go</h2>
                   <a href="#" class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 mr-2 mb-2 rounded-lg px-5 py-2.5 text-sm font-medium text-white focus:outline-none focus:ring-4">Download on Desktop</a>
                   <a href="../" class="bg-indigo-700 mr-2 mb-2 rounded-lg px-5 py-2.5 text-sm font-medium text-white focus:outline-none focus:ring-4 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-700 ease-in-out duration-300">Try FaceCCTV out</a>
                   </div>
