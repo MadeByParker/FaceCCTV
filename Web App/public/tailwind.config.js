@@ -10,6 +10,18 @@ module.exports = {
       ],
       theme: {
         extend: {
+            fontSize: {
+                'xs': '1rem',
+                'sm': '1.25rem',
+                'base': '1.5em',
+                'lg': '1.75rem',
+                'xl': '2rem',
+                '2xl': '2.25rem',
+                '3xl': '2.5rem',
+                '4xl': '2.75rem',
+                '5xl': '3rem',
+                '6xl': '4rem',
+            },
             screens: {
                   xs: "350px",
                   mobile: "860px",
