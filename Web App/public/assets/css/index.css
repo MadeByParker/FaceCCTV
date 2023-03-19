@@ -34,7 +34,57 @@ html {
     --linkblue: #3b82f6;
     --pink: #bb1960;
     --textColor: #d1d5db;
+    --text-xs: 16px;
+    --text-sm: 18px;
+    --text-base: 20px;
+    --text-lg: 24px;
+    --text-xl: 28px;
+    --text-2xl: 36px;
+    --text-3xl: 48px;
+    --text-4xl: 64px;
+    --text-5xl: 96px;
+    --text-6xl: 128px;
 }
+
+.text-xs {
+    font-size: var(--text-xs);
+  }
+  
+  .text-sm {
+    font-size: var(--text-sm);
+  }
+  
+  .text-base {
+    font-size: var(--text-base);
+  }
+  
+  .text-lg {
+    font-size: var(--text-lg);
+  }
+  
+  .text-xl {
+    font-size: var(--text-xl);
+  }
+  
+  .text-2xl {
+    font-size: var(--text-2xl);
+  }
+  
+  .text-3xl {
+    font-size: var(--text-3xl);
+  }
+  
+  .text-4xl {
+    font-size: var(--text-4xl);
+  }
+  
+  .text-5xl {
+    font-size: var(--text-5xl);
+  }
+  
+  .text-6xl {
+    font-size: var(--text-6xl);
+  }
 
 /*Standard Styling*/
 *,
@@ -290,74 +340,7 @@ body {
     height: auto;
 }
 
-header .header-left {
-    display: flex;
-    align-items: center;
-}
-
-header .header-left nav {
-    margin-left: 50px;
-}
-header .header-left nav ul {
-    display: flex;
-}
-nav ul li a {
+#menu-toggle:checked+#menu {
     display: block;
-    color: #cfd9e0;
-    font-size: 18px;
-    padding: 5px 10px;
-    transition: 0.2s;
-}
-header .header-right {
-    display: flex;
-    align-items: center;
-}
-
-header .header-right .hamburger {
-    margin-left: 20px;
-    cursor: pointer;
-    display: none;
-}
-header .header-right .hamburger div {
-    width: 30px;
-    height: 2px;
-    margin: 6px 0;
-    background: #fff;
-}
-
-@media only screen and (max-width: 1100px) {
-    header {
-        padding: 0 20px;
-    }
-    header .header-right .hamburger {
-        display: block;
-    }
-    header .header-left nav {
-        margin: 0;
-        position: absolute;
-        top: -100%;
-        left: 0;
-        width: 100%;
-        height: fit-content;
-        background-color: #0b2239;
-        padding: 30px;
-        transition: 0.3s;
-        text-align: center;
-        z-index: -1;
-    }
-    header .header-left nav.active {
-        top: 70px;
-    }
-    header .header-left nav ul {
-        display: block;
-    }
-}
-@media only screen and (max-width: 500px) {
-    nav .login-signup {
-        display: block;
-        margin-top: 20px;
-    }
-    header .header-right .login-signup {
-        display: none;
-    }
-}
+  }
+  
