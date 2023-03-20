@@ -86,7 +86,7 @@ After doing research on the crime rate percentage and seeing a 1% increase of cr
 
 My solution is an app called FaceCCTV, where users can upload an image then the app uses deep learning AI (trained beforehand with a dataset of pre-collected images). the AI can detect the faces in an image and then enhance the faces, which the user can export and use later on. The main goal is to provide a tool that is easy to use and powered by AI to help people identify criminals easier without the unnecessary costs of cameras or professionals.
 
-![Poster](https://github.com/Parker06/FaceCCTV/blob/main/documentation/Showcase/Poster.png)
+![Poster](https://github.com/Parker06/FaceCCTV/blob/main/documentation/Showcase/Poster.jpg)
 
 ### Dataset
 
