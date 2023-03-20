@@ -41,7 +41,25 @@ def detect_faces(image):
 
 
 # Define an API endpoint to handle image uploads
-@app.post("/facecctv/1")
+@app.post("/task/full-image-examination")
+async def create_upload_file(file: UploadFile = File(...)):
+    contents = await file.read()
+    # Load the image from memory
+    image = cv2.imdecode(np.frombuffer(contents, np.uint8), cv2.IMREAD_COLOR)
+    # Detect faces in the image
+    result_image = detect_faces(image)
+    # enhance the image
+    if result_image != False:
+        byte_io = io.BytesIO()
+        result_image.save(byte_io, 'JPEG')
+        byte_io.seek(0)
+        return StreamingResponse(byte_io, media_type='image/jpeg', headers={'Content0-Disposition': 'attachment; filename=result.jpg'})
+    else:
+        return {"message": "No face detected"}
+
+
+# Define an API endpoint to handle image uploads
+@app.post("/task/face-detection")
 async def create_upload_file(file: UploadFile = File(...)):
     contents = await file.read()
     # Load the image from memory
@@ -52,10 +70,25 @@ async def create_upload_file(file: UploadFile = File(...)):
         byte_io = io.BytesIO()
         result_image.save(byte_io, 'JPEG')
         byte_io.seek(0)
-        return StreamingResponse(byte_io, media_type='image/jpeg', headers={'Content-Disposition': 'attachment; filename=result.jpg'})
+        return StreamingResponse(byte_io, media_type='image/jpeg', headers={'Content0-Disposition': 'attachment; filename=result.jpg'})
     else:
         return {"message": "No face detected"}
 
+# Define an API endpoint to handle image uploads
+@app.post("/task/image-enhancement")
+async def create_upload_file(file: UploadFile = File(...)):
+    contents = await file.read()
+    # Load the image from memory
+    image = cv2.imdecode(np.frombuffer(contents, np.uint8), cv2.IMREAD_COLOR)
+    # enhance the image
+    result_image = enhance_image(image)
+    if result_image != False:
+        byte_io = io.BytesIO()
+        result_image.save(byte_io, 'JPEG')
+        byte_io.seek(0)
+        return StreamingResponse(byte_io, media_type='image/jpeg', headers={'Content0-Disposition': 'attachment; filename=result.jpg'})
+    else:
+        return {"message": "No image uploaded"}
 
 # Start the FastAPI app
 if __name__ == "__main__":
