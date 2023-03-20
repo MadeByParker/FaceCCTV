@@ -2,7 +2,7 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import StreamingResponse
 import cv2
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageEnhance
 import io
 import tensorflow as tf
 from keras.models import load_model
@@ -41,6 +41,8 @@ def detect_faces(image):
             cv2.rectangle(image_copy, (x, y), (x + w, y + h), (255, 0, 0), 2)
     else:
         return False
+    
+
 
 
 # Define an API endpoint to handle image uploads
@@ -84,10 +86,16 @@ async def create_upload_file(file: UploadFile = File(...)):
     # Load the image from memory
     image = cv2.imdecode(np.frombuffer(contents, np.uint8), cv2.IMREAD_COLOR)
     # enhance the image
-    result_image = enhance_image(image)
-    if result_image != False:
+    enhancer = ImageEnhance.Sharpness(Image)
+    enhanced_img = enhancer.enhance(2.0)
+
+    # Convert the enhanced image to bytes
+    enhanced_img_bytes = io.BytesIO()
+    enhanced_img.save(enhanced_img_bytes, format='JPEG')
+    enhanced_img_bytes.seek(0)
+    if enhanced_img != False:
         byte_io = io.BytesIO()
-        result_image.save(byte_io, 'JPEG')
+        enhanced_img.save(byte_io, 'JPEG')
         byte_io.seek(0)
         return StreamingResponse(byte_io, media_type='image/jpeg', headers={'Content0-Disposition': 'attachment; filename=result.jpg'})
     else:
