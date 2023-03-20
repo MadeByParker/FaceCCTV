@@ -6,10 +6,13 @@ from PIL import Image
 import io
 import tensorflow as tf
 from keras.models import load_model
+import uvicorn
+from mangum import Mangum
 
 app = FastAPI()
+handler = Mangum(app)
 
-model = load_model('model.h5')
+model = load_model('./models/model.h5')
     
 @app.get("/")
 async def root():
