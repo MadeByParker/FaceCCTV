@@ -1,5 +1,6 @@
-from fastapi import FastAPI, File, UploadFile
-from fastapi.responses import StreamingResponse
+from fastapi import FastAPI, File, Request, UploadFile
+from fastapi.responses import StreamingResponse, HTMLResponse
+from fastapi.staticfiles import StaticFiles
 import cv2
 import numpy as np
 from PIL import Image, ImageEnhance
@@ -8,15 +9,23 @@ import tensorflow as tf
 from keras.models import load_model
 import uvicorn
 from mangum import Mangum
+import h5py
+import pandas as pd
 
 app = FastAPI()
 handler = Mangum(app)
 
-model = load_model('./models/model.h5')
+
+
+model = load_model('./models/facecctv.h5')
     
 @app.get("/")
 async def root():
-    return {"message": "Hello and Welcome to the Face Detection API, this is the default route."}
+    return {"message": "Hello and Welcome to the Face Detection API, this is the default route. Please use the /docs route to access the API documentation. Or go to Github Repository for more information. URL: https://github.com/Parker06/FaceCCTV"}
+
+# first 'static' specify route path, second 'static' specify html files directory.
+app.mount('/api', StaticFiles(directory='showcase',html=True))
+
 
 # Define a function to detect faces in an image
 def detect_faces(image):
@@ -39,6 +48,9 @@ def detect_faces(image):
         for face in faces:
             x, y, w, h = face
             cv2.rectangle(image_copy, (x, y), (x + w, y + h), (255, 0, 0), 2)
+        # Convert the image to bytes
+        image_bytes = io.BytesIO()
+        return Image.fromarray(image_copy) 
     else:
         return False
     
@@ -47,7 +59,7 @@ def detect_faces(image):
 
 # Define an API endpoint to handle image uploads
 @app.post("/task/full-image-examination")
-async def create_upload_file(file: UploadFile = File(...)):
+async def full_image_examination(file: UploadFile = File(...)):
     contents = await file.read()
     # Load the image from memory
     image = cv2.imdecode(np.frombuffer(contents, np.uint8), cv2.IMREAD_COLOR)
@@ -65,7 +77,7 @@ async def create_upload_file(file: UploadFile = File(...)):
 
 # Define an API endpoint to handle image uploads
 @app.post("/task/face-detection")
-async def create_upload_file(file: UploadFile = File(...)):
+async def detect(file: UploadFile = File(...)):
     contents = await file.read()
     # Load the image from memory
     image = cv2.imdecode(np.frombuffer(contents, np.uint8), cv2.IMREAD_COLOR)
@@ -81,7 +93,7 @@ async def create_upload_file(file: UploadFile = File(...)):
 
 # Define an API endpoint to handle image uploads
 @app.post("/task/image-enhancement")
-async def create_upload_file(file: UploadFile = File(...)):
+async def enhance(file: UploadFile = File(...)):
     contents = await file.read()
     # Load the image from memory
     image = cv2.imdecode(np.frombuffer(contents, np.uint8), cv2.IMREAD_COLOR)
