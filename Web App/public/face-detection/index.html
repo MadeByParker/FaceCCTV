@@ -28,24 +28,26 @@
       <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
       </head>
 
-      <body>           
-                  <nav role="navigation" class="flex justify-between items-center h-16 text-white relative text-[20px] font-extrabold leading-9 py-4 bg-gradient-to-r from-blue-400 to-blue-800">
-                  <div id="navbar-brand" class="p-2.5 flex items-center px-4 duration-300 cursor-pointer">
-                        <img id="navbar-logo-img" src="../assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
-                        <img id="navbar-brand-img" src="../assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
-                  </div>
-                  <div class="px-4 cursor-pointer md:hidden" id="bars">
-                        <svg class="w-8 h-8 xs:w-4 xs:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                  </div>
-                  <div class="pr-8 md:block hidden" id="nav-content">
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md"  href="../">Home</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../showcase">About</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="/">Face Detection</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../image-enhancement">Image Enhancement</a>
-                        <a class="p-4 hover:text-white hover:bg-[#277EBD] hover:rounded-md" href="../settings">Settings</a>
-            </nav>
+      <body>
+        <nav class="flex items-center justify-between flex-wrap text-white relative font-extrabold leading-9 py-4 bg-gradient-to-r from-blue-400 to-blue-800">
+            <div class="flex items-center flex-shrink-0 text-white mx-6">
+                <img id="navbar-logo-img" src="../assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
+                <img id="navbar-brand-img" src="../assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
+            </div>
+          
+            <label class="md:hidden duration-300 ease-in-out cursor-pointer flex items-center px-3 py-3 mr-8 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white" for="menu-toggle"><svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg></label>
+            <input class="hidden" type="checkbox" id="menu-toggle" />
+          
+            <div class="hidden duration-300 ease-in w-full md:flex flex-col justify-center items-center md:items-center md:w-auto text-lg md:text-lg" id="menu">
+              <div class="pr-8 md:block flex flex-col items-end " id="nav-content">
+                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md"  href="../">Home</a>
+                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../showcase">About</a>
+                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="/">Face Detection</a>
+                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../image-enhancement">Image Enhancement</a>
+                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../settings">Settings</a>
+            </div>
+            </div>
+          </nav>
             <div class="bg-no-repeat h-screen bg-center bg-cover">
                   <div class="image-slider-container">
                   <figure class="cd-image-container">
