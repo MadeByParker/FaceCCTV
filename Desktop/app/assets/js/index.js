@@ -1,19 +1,6 @@
-// The app's platform ("web" or "app") depends on the ID of the document element.
-const appPlatform = document.documentElement.id;
-
-// In order to have the same codebase across the web and desktop app, there are a few empty variables that are only given a value when the app platform is set to "app".
-let electron = null;
-let ipcRenderer = null;
-
-if(appPlatform !== "app" && typeof require === "undefined") {
-	var require = () => { 
-		return "";
-	};
+// Converts HTML tags to avoid them being rendered. Prevents XSS attacks.
+function stripHTMLCharacters(string) {
+	string = replaceAll(string, "<", "&lt;");
+	string = replaceAll(string, ">", "&gt;");
+	return string;
 }
-
-let defaultSettings = {
-	"theme": "light"
-};
-
-
-

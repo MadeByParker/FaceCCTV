@@ -1,25 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @import url("../fonts/Inter/Inter.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 html {
-	--border-radius:10px;
-	--blur:blur(2px);
-	--font-family:"Inter", Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
-@supports not (font-variation-settings: normal) {
-	html {
-		--font-family:"Inter", Tahoma, Verdana, Arial, Helvetica, sans-serif;
-	}
-}
-
-@supports (font-variation-settings: normal) {
-	html { 
-		--font-family:"Inter var", sans-serif; 
-	}
-}
