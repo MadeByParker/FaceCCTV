@@ -24,13 +24,13 @@ app.on("ready", function() {
 	}
 
     const localWindow = new BrowserWindow({
-            icon: path.join(__dirname, "/assets/img/logos/logo.ico"),
+        icon: path.join(__dirname, "/assets/img/logos/logo.ico"),
 		width: 1920,
 		height: 1080,
 		resizable: true,
 		frame: true,
 		transparent: false,
-            autoHideMenuBar: true,
+        autoHideMenuBar: false,
 		x: 0,
 		y: 0,
             title: "FaceCCTV",
@@ -41,12 +41,15 @@ app.on("ready", function() {
 			nodeIntegrationInWorker: true
 		}
 	});
-
+        
     app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) {
           createWindow();
+          app.maximize();
         }
       });
+  
+
     
     app.on('window-all-closed', () => {
       if (process.platform !== 'darwin') {
