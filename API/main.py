@@ -8,14 +8,8 @@ import io
 import tensorflow as tf
 from keras.models import load_model
 import uvicorn
-from mangum import Mangum
-import h5py
-import pandas as pd
 
 app = FastAPI()
-handler = Mangum(app)
-
-
 
 model = load_model('./models/facecctv.h5')
     
