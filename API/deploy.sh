@@ -8,4 +8,4 @@ sudo sh cuda_12.1.0_530.30.02_linux.run
 # This script is used to deploy the API to the server
 pip install --upgrade pip
 pip install -r requirements.txt
-pip install tensoRT
+pip install nvidia-tensorrt
