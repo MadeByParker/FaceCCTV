@@ -29,61 +29,74 @@
       </head>
 
       <body class="">
-        <nav class="flex items-center justify-between flex-wrap text-white relative font-extrabold leading-9 py-4 bg-gradient-to-r from-blue-400 to-blue-800">
-            <div class="flex items-center flex-shrink-0 text-white mx-6">
-                <img id="navbar-logo-img" src="../assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
-                <img id="navbar-brand-img" src="../assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
+        <nav class="bg-gradient-to-r from-blue-400 to-blue-800">
+            <div class="logo">
+                <img id="navbar-logo-img" src="./assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
+                <img id="navbar-brand-img" src="./assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
             </div>
-          
-            <label class="md:hidden duration-300 ease-in-out cursor-pointer flex items-center px-3 py-3 mr-8 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white" for="menu-toggle"><svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg></label>
-            <input class="hidden" type="checkbox" id="menu-toggle" />
-          
-            <div class="hidden duration-300 ease-in w-full md:flex flex-col justify-center items-center md:items-center md:w-auto text-lg md:text-lg" id="menu">
-              <div class="pr-8 md:block flex flex-col items-end " id="nav-content">
-                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md"  href="../">Home</a>
-                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../showcase">About</a>
-                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../face-detection">Face Detection</a>
-                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../image-enhancement">Image Enhancement</a>
-                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="/">Settings</a>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
-            </div>
-          </nav>
-            <div class="bg-no-repeat h-screen bg-center bg-cover">
-                <div class="hidden mobile:block image-slider-container">
-                <figure class="cd-image-container">
-                      <img class="slider-image" src="./assets/img/samples/enhanced.jpg" alt="Original Image">
-                      <span class="cd-image-label" data-type="original">After</span>
-          
-                      <div class="cd-resize-img slider-image"> <!-- the resizable image on top -->
-                            <img src="./assets/img/samples/original.jpg" alt="Modified Image">
-                            <span class="cd-image-label" data-type="modified">Before</span>
-                      </div>
-          
-                      <span class="cd-handle"></span>
-                </figure>
-          </div>
-          <div class="h-screen font-sans text-gray-900 bg-gray-300 border-box">
-                <div class="flex justify-center w-full mx-auto sm:max-w-lg">
+            <ul class="nav-links">
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md"  href="/">Home</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="./showcase">About</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="./face-detection">Face Detection</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="./image-enhancement">Image Enhancement</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="./settings">Settings</a></li>
+            </ul>
+        </nav>
+            <div class="">
+                <div class="image-slider-container">
+                    <figure class="cd-image-container">
+                        <img class="slider-image" src="./assets/img/samples/enhanced.jpg" alt="Original Image">
+                        <span class="cd-image-label" data-type="original">After</span>
             
-                    <div class="flex flex-col items-center justify-center w-full h-auto my-20 bg-white sm:w-3/4 sm:rounded-lg sm:shadow-xl">
-                        <div class="mt-10 mb-10 text-center">
-                            <h2 class="text-2xl font-semibold mb-2">Upload your files</h2>
-                            <p class="text-xs text-gray-500">File should be of format .jpeg, .jpg or .png</p>
+                        <div class="cd-resize-img slider-image"> <!-- the resizable image on top -->
+                                <img src="./assets/img/samples/original.jpg" alt="Modified Image">
+                                <span class="cd-image-label" data-type="modified">Before</span>
                         </div>
-                        <form action="#" class="relative w-4/5 h-32 max-w-xs mb-10 bg-white bg-gray-100 rounded-lg shadow-inner">
-                            <input type="file" id="file-upload" class="hidden">
-                            <label for="file-upload" class="z-20 flex flex-col-reverse items-center justify-center w-full h-full cursor-pointer">
-                                <p class="z-10 text-xs font-light text-center text-gray-500">Drag & Drop your files here</p>
-                                <svg class="z-10 w-8 h-8 text-indigo-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"></path>
-                                </svg>
-                            </label>
-                        </form>
-                    </div>
+            
+                        <span class="cd-handle"></span>
+                    </figure>
                 </div>
             </div>
-            </div>
+            <div class="mobile-bg"></div>
+            <form id="my-form" action="http://127.0.0.1:8000/task/full-image-examination" method="POST" enctype="multipart/form-data">
+                <label for="drag-drop">Upload your images for face detection and image enhancement.</label>
+                <input type="file" name="images[]" id="drag-drop" multiple/>
+                <div id="uploads"></div>
+                <div class="dropzone" id="dropzone">Drag and drop the images</div>
+                <button type="submit" class="card-button"><a>Submit</a></button>
+            </form>
+            <img src="" id="output_image" style="display: none;">
+	        <a href="" id="download_link" style="display: none;" download>Download</a>
 
+            <script>
+                	// Send a request to the FastAPI endpoint on form submission
+                    const form = document.querySelector('form');
+                    form.addEventListener('submit', e => {
+                        e.preventDefault();
+                        const formData = new FormData(form);
+                        fetch('/detect_face', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.blob())
+                        .then(blob => {
+                            const outputImage = document.querySelector('#output_image');
+                            const downloadLink = document.querySelector('#download_link');
+                            outputImage.src = URL.createObjectURL(blob);
+                            outputImage.style.display = 'block';
+                            downloadLink.href = outputImage.src;
+                            downloadLink.style.display = 'block';
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                        });
+                    });
+            </script>
             
             <!--JS Imports -->
             <script src="./assets/js/index.js"></script>

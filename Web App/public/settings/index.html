@@ -15,6 +15,8 @@
       <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="../assets/logos/logo-with-bg.png">
       <link class="favicon" rel="shortcut icon" href="../assets/logos/logo.ico">
 
+
+
       <!-- Meta Tags -->
       <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
       <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
@@ -26,30 +28,28 @@
       <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
       </head>
 
-      <body class="h-screen">
-        <nav class="flex items-center justify-between flex-wrap text-white relative font-extrabold leading-9 py-4 bg-gradient-to-r from-blue-400 to-blue-800">
-            <div class="flex items-center flex-shrink-0 text-white mx-6">
+      <body class="">
+        <nav class="bg-gradient-to-r from-blue-400 to-blue-800">
+            <div class="logo">
                 <img id="navbar-logo-img" src="../assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
                 <img id="navbar-brand-img" src="../assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
             </div>
-          
-            <label class="md:hidden duration-300 ease-in-out cursor-pointer flex items-center px-3 py-3 mr-8 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white" for="menu-toggle"><svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg></label>
-            <input class="hidden" type="checkbox" id="menu-toggle" />
-          
-            <div class="hidden duration-300 ease-in w-full md:flex flex-col justify-center items-center md:items-center md:w-auto text-lg md:text-lg" id="menu">
-              <div class="pr-8 md:block flex flex-col items-end " id="nav-content">
-                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md"  href="../">Home</a>
-                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../showcase">About</a>
-                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../face-detection">Face Detection</a>
-                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../image-enhancement">Image Enhancement</a>
-                <a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="/">Settings</a>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
-            </div>
-          </nav>
-          
-        <section class="bg-white dark:bg-gray-900 relative h-screen">
-            <div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16">
-                  <h2 class="mb-8 text-center text-[48px] font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white md:text-4xl lg:mb-16">Settings</h2>
+            <ul class="nav-links">
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md"  href="../">Home</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../showcase">About</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../face-detection">Face Detection</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../image-enhancement">Image Enhancement</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="/">Settings</a></li>
+            </ul>
+        </nav>
+        <section class="bg-white dark:bg-gray-900 relative h-screen pt-10">
+            <div class="mx-auto max-w-screen-xl py-10 px-4 lg:py-16">
+                  <h2 class="py-4 mb-8 text-center text-[48px] font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white md:text-4xl lg:mb-16">Settings</h2>
                   <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
                   <h3 class="mb-4 text-xl font-semibold dark:text-white">Appearance</h3>
                   <div class="mb-6" data-key="navbarBackground">
