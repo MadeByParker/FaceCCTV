@@ -60,7 +60,6 @@ Please see the [following README](./WALKTHROUGH.md) for setup instructions.
         <li><a href="#api">AI API</a></li>
         <li><a href="#web-app">Web App</a></li>
         <li><a href="#desktop-app">Desktop App</a></li>
-        <li><a href="#mobile-app">Mobile App</a></li>
       </ul>
     </li>
   </ol>
@@ -103,7 +102,6 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 
 ### Side Objectives
 
-- The AI can identify objects such as car registration plates, car models, locations.
 - The AI is optimally developed so there aren't any performance issues.
 - The AI should be able to handle any image, in size and resolution.
 - The Image could be colurised with AI after the enhancement process.
@@ -225,26 +223,3 @@ The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access
 | ------------- | ------------------------------------- |
 | Same as above |                                       |
 | Electron      | [Website](https://www.electronjs.org) |
-
-### Mobile App
-
-| Resource                                  | URL                                                                                    |
-| ----------------------------------------- | -------------------------------------------------------------------------------------- |
-| @expo/webpack-config                      | [NPM Package](https://www.npmjs.com/package/@expo/webpack-config)                      |
-| @react-native-async-storage/async-storage | [NPM Package](https://www.npmjs.com/package/@react-native-async-storage/async-storage) |
-| @react-navigation/native                  | [NPM Package](https://www.npmjs.com/package/@react-navigation/native)                  |
-| @react-navigation/stack                   | [NPM Package](https://www.npmjs.com/package/@react-navigation/stack)                   |
-| @reduxjs/toolkit                          | [NPM Package](https://www.npmjs.com/package/@reduxjs/toolkit)                          |
-| Expo                                      | [Website](https://expo.dev)                                                            |
-| expo-font                                 | [NPM Package](https://www.npmjs.com/package/expo-font)                                 |
-| expo-status-bar                           | [NPM Package](https://www.npmjs.com/package/expo-status-bar)                           |
-| expo-updates                              | [NPM Package](https://www.npmjs.com/package/expo-updates)                              |
-| React                                     | [Website](https://reactjs.org)                                                         |
-| react-dom                                 | [NPM Package](https://www.npmjs.com/package/react-dom)                                 |
-| react-native                              | [Website](https://reactnative.dev)                                                     |
-| react-native-elements                     | [NPM Package](https://www.npmjs.com/package/react-native-elements)                     |
-| react-native-gesture-handler              | [NPM Package](https://www.npmjs.com/package/react-native-gesture-handler)              |
-| react-native-safe-area-context            | [NPM Package](https://www.npmjs.com/package/react-native-safe-area-context)            |
-| react-native-vector-icons                 | [NPM Package](https://www.npmjs.com/package/react-native-vector-icons)                 |
-| react-native-web                          | [NPM Package](https://www.npmjs.com/package/)                                          |
-| react-redux                               | [NPM Package](https://www.npmjs.com/package/)                                          |
