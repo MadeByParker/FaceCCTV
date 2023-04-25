@@ -28,6 +28,11 @@ template.html
 package.json
 package-lock.json
 notes.txt
-AI/output/my_model.h5
+/AI/output/my_model.h5
+/AI/face_detection/cnn_sdd_model.h5
+/AI/face_detection/facecctv.h5
+/AI/face_detection/models/facetracker.h5
+/API/models/
 
-Mobile
+/Mobile/
+
