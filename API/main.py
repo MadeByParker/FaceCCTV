@@ -3,7 +3,7 @@ from fastapi.responses import StreamingResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 import cv2
 import numpy as np
-from PIL import Image, ImageEnhance, ImageFilter
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 import io
 import tensorflow as tf
 from keras.models import load_model
@@ -58,8 +58,19 @@ async def full_image_examination(file: UploadFile = File(...)):
     # Detect faces in the image
     result_image = detect_faces(image)
     if result_image is not None:
+        img = Image.fromarray(result_image)
+
+        # Unblur the image using ImageFilter.UnsharpMask
+        unblurred_img = img.filter(ImageFilter.UnsharpMask(radius=2, percent=150, threshold=3))
+        # Convert to RGB color mode if not already in that mode
+        if unblurred_img.mode != 'RGB':
+            unblurred_img = unblurred_img.convert('RGB')
+        # Improve the image quality using ImageEnhance.Sharpness
+        sharpness_enhancer = ImageEnhance.Sharpness(unblurred_img)
+        enhanced_img = sharpness_enhancer.enhance(2)
+
         # Convert the result image to bytes and return it as a response
-        result_image_bytes = cv2.imencode('.jpg', result_image)[1].tobytes()
+        result_image_bytes = cv2.imencode('.jpg', enhanced_img)[1].tobytes()
         return StreamingResponse(io.BytesIO(result_image_bytes), media_type='image/jpeg')
     else:
         # If no face is detected, return an error message
@@ -88,13 +99,13 @@ async def enhance(file: UploadFile = File(...)):
     contents = await file.read()
     # Load the image from memory
     image = cv2.imdecode(np.frombuffer(contents, np.uint8), cv2.IMREAD_COLOR)
-    img = Image.open(image.file)
+    img = Image.fromarray(image)
 
     # Unblur the image using ImageFilter.UnsharpMask
     unblurred_img = img.filter(ImageFilter.UnsharpMask(radius=2, percent=150, threshold=3))
     # Convert to RGB color mode if not already in that mode
-    if unblurred_img.mode != "RGB":
-        unblurred_img = unblurred_img.convert("RGB")
+    if unblurred_img.mode != 'RGB':
+        unblurred_img = unblurred_img.convert('RGB')
     # Improve the image quality using ImageEnhance.Sharpness
     sharpness_enhancer = ImageEnhance.Sharpness(unblurred_img)
     enhanced_img = sharpness_enhancer.enhance(2)
@@ -103,13 +114,9 @@ async def enhance(file: UploadFile = File(...)):
     enhanced_img_bytes = io.BytesIO()
     enhanced_img.save(enhanced_img_bytes, format='JPEG')
     enhanced_img_bytes.seek(0)
-    if enhanced_img != False:
-        byte_io = io.BytesIO()
-        enhanced_img.save(byte_io, 'JPEG')
-        byte_io.seek(0)
-        return StreamingResponse(byte_io.getvalue(), media_type='image/jpeg', headers={'Content0-Disposition': 'attachment; filename=result.jpg'})
-    else:
-        return {"message": "No image uploaded"}
+
+    return StreamingResponse(enhanced_img_bytes, media_type='image/jpeg', headers={'Content-Disposition': 'attachment; filename=result.jpg'})
+
 
 # Start the FastAPI app
 if __name__ == "__main__":
