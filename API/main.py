@@ -1,11 +1,10 @@
-from fastapi import FastAPI, File, Request, UploadFile
-from fastapi.responses import StreamingResponse, HTMLResponse
+from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 import cv2
 import numpy as np
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 import io
-import tensorflow as tf
 from keras.models import load_model
 import uvicorn
 
