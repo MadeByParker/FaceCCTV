@@ -92,6 +92,11 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 - Dataset link [link here to Google Drive](https://drive.google.com/drive/folders/1Y11KhmhUfg3q6JRAv4idBBt-OuFEvQBv?usp=sharing)
 - Link to WIDER Face dataset [here](http://shuoyang1213.me/WIDERFACE/)
 
+
+# Models
+
+The trained models are on Google Drive [link here for download if you wish to use the models](https://drive.google.com/drive/folders/1uvfchtz6BeO0tNeOHRmjQnztngTclMSs?usp=sharing)
+
 ## List of Project Objectives
 
 ### Main Objectives:
