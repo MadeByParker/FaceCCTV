@@ -4,6 +4,7 @@ from fastapi.staticfiles import StaticFiles
 import cv2
 import numpy as np
 from PIL import Image, ImageEnhance, ImageFilter
+import tensorflow
 import io
 from keras.models import load_model
 import uvicorn
