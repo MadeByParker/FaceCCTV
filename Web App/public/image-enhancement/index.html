@@ -47,56 +47,67 @@
                 <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../settings">Settings</a></li>
             </ul>
         </nav>
-            <div class="">
-                <div class="image-slider-container">
-                    <figure class="cd-image-container">
-                        <img class="slider-image" src="../assets/img/samples/enhanced.jpg" alt="Original Image">
-                        <span class="cd-image-label" data-type="original">After</span>
-            
-                        <div class="cd-resize-img slider-image"> <!-- the resizable image on top -->
-                                <img src="../assets/img/samples/original.jpg" alt="Modified Image">
+        <div class="facecctv-page-container">
+            <div class="main-container">
+                <div class="image-slider">
+                    <div class="image-slider-container">
+                        <figure class="cd-image-container">
+                            <img class="slider-image" src="../assets/img/samples/enhanced.jpg" alt="Original Image">
+                            <span class="cd-image-label" data-type="original">After</span>
+                
+                            <div class="cd-resize-img slider-image">
+                                <img src="../assets/img/samples/blurred.png" alt="Modified Image">
                                 <span class="cd-image-label" data-type="modified">Before</span>
-                        </div>
-            
-                        <span class="cd-handle"></span>
-                    </figure>
+                            </div>
+                
+                            <span class="cd-handle"></span>
+                        </figure>
+                    </div>
+                </div>        
+                <div class="form-container">
+                    <form id="my-form" action="http://127.0.0.1:8000/task/face-detection" method="POST" enctype="multipart/form-data">
+                        <label for="drag-drop">Upload your images for face detection and image enhancement.</label>
+                        <input type="file" name="file" id="drag-drop" multiple/>
+                        <div id="uploads"></div>
+                        <div class="dropzone" id="dropzone">Drag and drop the images</div>
+                        <button type="submit" class="card-button" onclick="previewImage()"><a>Submit</a></button>
+                    </form>
                 </div>
             </div>
-            <div class="mobile-bg"></div>
-            <form id="my-form" action="http://127.0.0.1:8000/task/full-image-examination" method="POST" enctype="multipart/form-data">
-                <label for="drag-drop">Upload your images for face detection and image enhancement.</label>
-                <input type="file" name="images[]" id="drag-drop" multiple/>
-                <div id="uploads"></div>
-                <div class="dropzone" id="dropzone">Drag and drop the images</div>
-                <button type="submit" class="card-button"><a>Submit</a></button>
-            </form>
-            <img src="" id="output_image" style="display: none;">
-	        <a href="" id="download_link" style="display: none;" download>Download</a>
-
-            <script>
-                	// Send a request to the FastAPI endpoint on form submission
-                    const form = document.querySelector('form');
-                    form.addEventListener('submit', e => {
-                        e.preventDefault();
-                        const formData = new FormData(form);
-                        fetch('/detect_face', {
-                            method: 'POST',
-                            body: formData
-                        })
-                        .then(response => response.blob())
-                        .then(blob => {
-                            const outputImage = document.querySelector('#output_image');
-                            const downloadLink = document.querySelector('#download_link');
-                            outputImage.src = URL.createObjectURL(blob);
-                            outputImage.style.display = 'block';
-                            downloadLink.href = outputImage.src;
-                            downloadLink.style.display = 'block';
-                        })
-                        .catch(error => {
-                            console.error('Error:', error);
-                        });
-                    });
-            </script>
+            <div id="preview-container">
+                <div id="preview"></div>
+            </div>
+        </div>
+        
+        <script>
+            async function previewImage() {
+                const form = document.getElementById('my-form');
+                const formData = new FormData(form);
+                const response = await fetch('http://127.0.0.1:8000/task/face-detection', {
+                    method: 'POST',
+                    body: formData,
+                });
+                const data = await response.json();
+                const img = new Image();
+                img.src = 'data:image/jpeg;base64,' + data.img_data;
+        
+                // Add image to preview div
+                const preview = document.getElementById('preview');
+                preview.appendChild(img);
+        
+                // Add event listener to download button
+                const downloadButton = document.getElementById('download-button');
+                downloadButton.addEventListener('click', () => {
+                    const link = document.createElement('a');
+                    link.download = 'image.jpeg';
+                    link.href = img.src;
+                    link.click();
+                });
+            }
+            previewImage();
+        </script>
+        
+            
             
             <!--JS Imports -->
             <script src="../assets/js/index.js"></script>

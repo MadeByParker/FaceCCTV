@@ -105,6 +105,7 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 
 /*Specific classes*/
@@ -165,18 +166,127 @@ body {
     cursor: pointer;
 }
 
-/* Before and After Slider */
-.cd-image-container {
-    max-width: 100vw;
-    margin: 0em auto;
-    height: auto;
+/*Styling Navigation Bar*/
+nav{
+    height: 5rem;
+    width: 100vw;
+    color: white;
+    background-color: #131418;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    justify-content: center;
+    align-items: center;
+    place-content: center;
+    display: flex;
+}
+
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    transition: letter-spacing 0.5s ease-in-out;
+    transform: translateX(0px);
+}
+.nav-links li a:hover {
+    color: var(--white);
+    letter-spacing: 5px;
+    transform: translateX(10px);
+    transition: all 0.5s ease-in-out;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: var(--iconblue);
     position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+.nav-links li a:hover::before{
+    width: 80%;
+}
+
+.nav-links li a::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color: var(--iconblue);
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 10% 0 0;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+.facecctv-page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+}
+
+/* Before and After Slider */
+
+.image-slider {
+    max-width: none;
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+.image-slider-container {
+    position: relative;
     overflow: hidden;
+}
+
+.cd-image-container {
+    height: auto;
+    position: relative;
     --position: 50%;
 }
 
 .cd-image-container img {
-    display: grid;
+    display: block;
+    height: auto;
     max-width: 100%;
 }
   
@@ -185,7 +295,6 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: left;
-    overflow: hidden;
 }
 
 .cd-image-label {
@@ -336,23 +445,51 @@ body {
     transition: transform 0.3s 0.7s, opacity 0s 0.7s;
 }
 
-.image-slider-container {
-    max-width: 100%;
-    height: auto;
-}
-
 #menu-toggle:checked+#menu {
     display: block;
+}
+
+/*upload image form*/
+
+.form-container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: #192736;
+    color: #fff;
+}
+
+.project-info {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    background-color: #192736;
+    margin-bottom: 1rem;
   }
 
-  form {
+  .project-info h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-info p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  
+
+form {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     max-width: 800px;
-    background: linear-gradient(180deg, var(--blue) 0%, var(--lightblue ) 100%);
+    opacity: 0.8;
+    background: #2c3e50;
     border-radius: 5px;
     box-shadow: 0 2px 5px #ccc;
     padding: 30px;
@@ -363,11 +500,12 @@ body {
     text-align: center;
     transition: all 0.5s ease-in-out;
     color: white;
+    font-size: 16px;
 }
 
 form:hover {
     box-shadow: 0 2px 5px #ccc;
-    opacity: 0.9;
+    opacity: 0.6;
     transition: all 0.5s ease-in-out;
 }   
 
@@ -404,9 +542,9 @@ input[type="file"] {
 
 #dropzone:hover {
     cursor: pointer;
-    background-color: #2b5187;
+    background-color: #4e6b88;
     color: #fff;
-    border: 2px solid #2b5187;
+    border: 2px solid #4e6b88;
     transition: all 0.5s ease-in-out;
 }
 
@@ -440,7 +578,7 @@ input[type="file"] {
     background: linear-gradient(
         135deg,
         var(--buttonblue) 50%,
-        #400f6d 50%
+        var(--iconblue) 50%
     );
     color: (var(--white));
     background-position: 100%;
@@ -450,107 +588,79 @@ input[type="file"] {
     cursor: pointer;
 }
 
+@media only screen and (min-width: 768px) {
+    .form-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .project-info {
+      margin-right: 1rem;
+      margin-bottom: 0;
+    }
+  
+    form {
+      flex-grow: 1;
+    }
+  }
 
-/*Styling Navigation Bar*/
-nav{
-    height: 5rem;
-    width: 100vw;
-    color: white;
-    background-color: #131418;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
-    display: flex;
-    position: fixed;
-    z-index: 10;
-}
-
-/*Styling logo*/
-.logo{
-    padding:1vh 1vw;
-    justify-content: center;
-    align-items: center;
-    place-content: center;
-    display: flex;
-}
-
-
-/*Styling Links*/
-.nav-links{
-    display: flex;
-    list-style: none; 
-    width: 88vw;
-    padding: 0 0.7vw;
-    color: white;
-    justify-content: space-evenly;
-    align-items: center;
-    text-transform: uppercase;
-}
-.nav-links li a{
-    text-decoration: none;
-    margin: 0 0.7vw;
-    transition: letter-spacing 0.5s ease-in-out;
-    transform: translateX(0px);
-}
-.nav-links li a:hover {
-    color: var(--white);
-    letter-spacing: 5px;
-    transform: translateX(10px);
-    transition: all 0.5s ease-in-out;
-}
-.nav-links li {
-    position: relative;
-}
-.nav-links li a::before {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 0%;
-    background-color: var(--iconblue);
-    position: absolute;
-    transition: all ease-in-out 250ms;
-    margin: 0 0 0 10%;
-}
-.nav-links li a:hover::before{
-    width: 80%;
-}
-
-.nav-links li a::after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 0%;
-    background-color: var(--iconblue);
-    position: absolute;
-    transition: all ease-in-out 250ms;
-    margin: 0 10% 0 0;
-}
-
-/*Styling Hamburger Icon*/
-.hamburger div{
-    width: 30px;
-    height:3px;
-    background: #f2f5f7;
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-.hamburger{
-    display: none;
-}
+@media (min-width: 1250px) {
+    form {
+      left: 15%;
+      margin: 0 6rem;
+      max-width: 740px;
+    }
+  }
+  
 
 /*Stying for small screens*/
-@media screen and (max-width: 1000px){
-    .image-slider-container {
-        display: none;
-        transition: all 0.3s ease;
+@media screen and (max-width: 1200px){
+
+    .facecctv-page-container {
+        flex-direction: column;
     }
-    .mobile-bg {
+
+    .cd-handle {
+        top: 50%;
+    }
+
+    .form-container {
+        width: 100%;
+        order: 1;
+        margin-top: 1em;
+    }
+
+    .image-slider {
+        height: 50vh;
+        order: 2;
+    }
+
+    .main-container {
         display: flex;
-        transition: all 0.3s ease;
-        height: 100vh;
-        width: 100vw;
-        position: fixed;
-        z-index: 1;
-        background-color: #131418;
-        opacity: 0.9;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-bottom: 2em;
+      }
+
+    form {
+        padding: 20px;
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 0.75rem;
+    }
+
+    #my-form {
+        max-width: none;
+        width: 100%;
+        padding: 1em;
+    }
+    body {
+        overflow-x: hidden;
+        background-color: #111827;
     }
     nav{
         position: fixed;
@@ -639,4 +749,21 @@ nav{
     background-color: #131418;
     opacity: 0.9;
 
+}
+
+#preview-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  #preview {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+
+section {
+    padding-top: 100px;
 }
