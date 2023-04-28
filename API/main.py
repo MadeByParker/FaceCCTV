@@ -6,6 +6,7 @@ import numpy as np
 from PIL import Image, ImageEnhance, ImageFilter
 import tensorflow
 import io
+import base64
 from keras.models import load_model
 import uvicorn
 
@@ -23,7 +24,12 @@ async def root():
 # first 'static' specify route path, second 'static' specify html files directory.
 app.mount('/api', StaticFiles(directory='showcase',html=True))
 
+import base64
+import io
+from PIL import Image
+from fastapi import FastAPI, Header
 
+app = FastAPI()
 
 # Define an API endpoint to handle image uploads
 @app.post("/task/full-image-examination")
@@ -83,9 +89,8 @@ async def detect(file: UploadFile = File(...)):
     # Convert image to bytes for streaming response
     _, img_encoded = cv2.imencode('.jpg', img)
     img_bytes = img_encoded.tobytes()
-
-    # Return image with bounding boxes as a downloadable response
-    return StreamingResponse(io.BytesIO(img_bytes), media_type="image/jpeg", headers={"Content-Disposition": "attachment;filename=faces_detected_image.jpg"})
+    
+    return StreamingResponse(io.BytesIO(img_bytes), media_type="image/jpeg")
 
 # Define an API endpoint to handle image uploads
 @app.post("/task/image-enhancement")
