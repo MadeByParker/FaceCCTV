@@ -29,8 +29,10 @@ RUN pip install tqdm --no-cache-dir
 RUN apt-get update && apt-get install libgl1 -y
 RUN apt-get install ffmpeg libsm6 libxext6  -y
 
-ENV PORT 8000
+EXPOSE 8080
+ENV PORT 8080
+ENV HOST 0.0.0.0
  
 # Run
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
 
