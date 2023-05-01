@@ -4,14 +4,11 @@ from fastapi.staticfiles import StaticFiles
 import cv2
 import numpy as np
 from PIL import Image, ImageEnhance, ImageFilter, ImageOps
-import tensorflow
 import io
 from keras.models import load_model
 import uvicorn
-from mangum import Mangum
 
 app = FastAPI()
-api_handler = Mangum(app)
 
 model = load_model('./models/facecctv.h5', compile=False)
 # Load face detection model
