@@ -3,14 +3,15 @@ from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 import cv2
 import numpy as np
-from PIL import Image, ImageEnhance, ImageFilter
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 import tensorflow
 import io
-import base64
 from keras.models import load_model
 import uvicorn
+from mangum import Mangum
 
 app = FastAPI()
+api_handler = Mangum(app)
 
 model = load_model('./models/facecctv.h5', compile=False)
 # Load face detection model
@@ -24,16 +25,9 @@ async def root():
 # first 'static' specify route path, second 'static' specify html files directory.
 app.mount('/api', StaticFiles(directory='showcase',html=True))
 
-import base64
-import io
-from PIL import Image
-from fastapi import FastAPI, Header
-
-app = FastAPI()
-
 # Define an API endpoint to handle image uploads
 @app.post("/task/full-image-examination")
-async def full_image_examination(file: UploadFile = File(...)):
+async def DetectFacesAndImproveQualityImage(file: UploadFile = File(...)):
     contents = await file.read()
     nparr = np.frombuffer(contents, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
@@ -71,7 +65,7 @@ async def full_image_examination(file: UploadFile = File(...)):
 
 # Define an API endpoint to handle image uploads
 @app.post("/task/face-detection")
-async def detect(file: UploadFile = File(...)):
+async def DetectFacesInImage(file: UploadFile = File(...)):
     contents = await file.read()
     nparr = np.frombuffer(contents, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
@@ -94,29 +88,33 @@ async def detect(file: UploadFile = File(...)):
 
 # Define an API endpoint to handle image uploads
 @app.post("/task/image-enhancement")
-async def enhance(file: UploadFile = File(...)):
+async def EnhanceImageQuality(file: UploadFile = File(...)):
     contents = await file.read()
-    # Load the image from memory
-    image = cv2.imdecode(np.frombuffer(contents, np.uint8), cv2.IMREAD_COLOR)
 
-    # Unblur the image using ImageFilter.UnsharpMask
-    unblurred_img = Image.fromarray(image)
-    unblurred_img = unblurred_img.filter(ImageFilter.UnsharpMask(radius=2, percent=150, threshold=3))
+    # Load the image from memory using Pillow
+    image = Image.open(io.BytesIO(contents))
 
     # Convert to RGB color mode if not already in that mode
-    if unblurred_img.mode != "RGB":
-        unblurred_img = unblurred_img.convert("RGB")
+    if image.mode != "RGB":
+        image = image.convert("RGB")
+
+    # Unblur the image using ImageFilter.UnsharpMask
+    unblurred_img = image.filter(ImageFilter.UnsharpMask(radius=2, percent=150, threshold=3))
 
     # Improve the image quality using ImageEnhance.Sharpness
     sharpness_enhancer = ImageEnhance.Sharpness(unblurred_img)
     enhanced_img = sharpness_enhancer.enhance(2)
 
-    # Convert the enhanced image to bytes
-    enhanced_img_bytes = io.BytesIO()
-    enhanced_img.save(enhanced_img_bytes, format='JPEG')
-    enhanced_img_bytes.seek(0)
+    # Colorize the image
+    colorized_img = enhanced_img.convert('L')
+    colorized_img = ImageOps.colorize(colorized_img, "black", "red")
 
-    return StreamingResponse(enhanced_img_bytes, media_type='image/jpeg', headers={'Content-Disposition': 'attachment; filename=enhanced.jpg'})
+    # Convert the colorized image to bytes
+    colorized_img_bytes = io.BytesIO()
+    colorized_img.save(colorized_img_bytes, format='JPEG')
+    colorized_img_bytes.seek(0)
+
+    return StreamingResponse(colorized_img_bytes, media_type='image/jpeg', headers={'Content-Disposition': 'attachment; filename=colorized.jpg'})
 
 
 # Start the FastAPI app

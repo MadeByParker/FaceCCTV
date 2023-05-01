@@ -65,8 +65,8 @@
                     </div>
                 </div>        
                 <div class="form-container">
-                    <form id="my-form" action="http://127.0.0.1:8000/task/face-detection" method="POST" enctype="multipart/form-data">
-                        <label for="drag-drop">Upload your images for face detection and image enhancement.</label>
+                    <form id="my-form" action="http://127.0.0.1:8000/task/image-enhancement" method="POST" enctype="multipart/form-data">
+                        <label for="drag-drop">Upload your images for image enhancement.</label>
                         <input type="file" name="file" id="drag-drop" multiple/>
                         <div id="uploads"></div>
                         <div class="dropzone" id="dropzone">Drag and drop the images</div>
@@ -83,7 +83,7 @@
             async function previewImage() {
                 const form = document.getElementById('my-form');
                 const formData = new FormData(form);
-                const response = await fetch('http://127.0.0.1:8000/task/face-detection', {
+                const response = await fetch('http://127.0.0.1:8000/task/image-enhancement', {
                     method: 'POST',
                     body: formData,
                 });
