@@ -3,6 +3,7 @@ node_modules
 out
 .vscode
 
+AI\face_detection\Face-detection-1
 
 # AI face_detection
 AI/Image Enhancement/ESRGAN
