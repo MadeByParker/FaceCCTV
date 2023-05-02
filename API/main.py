@@ -7,12 +7,14 @@ from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 import io
 from keras.models import load_model
 import uvicorn
+import autocolorize
 
 app = FastAPI()
 
 model = load_model('./models/facecctv.h5', compile=False)
 # Load face detection model
 face_cascade = cv2.CascadeClassifier('./models/facecctv.xml')
+colouriser = autocolorize.load_default_classifier()
 
     
 @app.get("/")
@@ -26,48 +28,46 @@ app.mount('/api', StaticFiles(directory='showcase',html=True))
 @app.post("/task/full-image-examination")
 async def DetectFacesAndImproveQualityImage(file: UploadFile = File(...)):
     contents = await file.read()
+
+    # Convert the byte stream into a numpy array
     nparr = np.frombuffer(contents, np.uint8)
+
+    # Read the numpy array as an image using OpenCV
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-    # Convert image to grayscale
+    # Convert the image to grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    # Detect faces in the image
 
+    # Detect faces
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
 
     # Draw bounding boxes on the image
     for (x, y, w, h) in faces:
         cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
-        
-    # Convert image to bytes for streaming response
-    _, img_encoded = cv2.imencode('.jpg', img)
-    img_bytes = img_encoded.tobytes()
+    # Apply a bilateral filter to reduce noise while preserving edges
+    bilateral_img = cv2.bilateralFilter(img, 9, 75, 75)
 
-    # Return image with bounding boxes as a downloadable response
+    rgb = autocolorize.colorize(bilateral_img, colouriser)
 
-    # Unblur the image using ImageFilter.UnsharpMask
-    unblurred_img = img.filter(ImageFilter.UnsharpMask(radius=2, percent=150, threshold=3))
-    # Convert to RGB color mode if not already in that mode
-    if unblurred_img.mode != 'RGB':
-        unblurred_img = unblurred_img.convert('RGB')
-    # Improve the image quality using ImageEnhance.Sharpness
-    sharpness_enhancer = ImageEnhance.Sharpness(unblurred_img)
-    enhanced_img = sharpness_enhancer.enhance(2)
+    # Convert the enhanced image back to bytes
+    enhanced_img_bytes = cv2.imencode(".jpg", bilateral_img)[1].tobytes()
 
-    # Convert the result image to bytes and return it as a response
-    result_image_bytes = cv2.imencode('.jpg', enhanced_img)[1].tobytes()
-    return StreamingResponse(io.BytesIO(result_image_bytes), media_type='image/jpeg', headers={'Content-Disposition': 'attachment; filename=improved_image.jpg'})
-
+    # Return the enhanced image as a StreamingResponse
+    return StreamingResponse(io.BytesIO(enhanced_img_bytes), media_type="image/jpeg", headers={'Content-Disposition': 'attachment; filename=result.jpg'})
 
 # Define an API endpoint to handle image uploads
 @app.post("/task/face-detection")
 async def DetectFacesInImage(file: UploadFile = File(...)):
     contents = await file.read()
+
+    # Convert the byte stream into a numpy array
     nparr = np.frombuffer(contents, np.uint8)
+
+    # Read the numpy array as an image using OpenCV
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-    # Convert image to grayscale
+    # Convert the image to grayscale
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # Detect faces
@@ -83,29 +83,32 @@ async def DetectFacesInImage(file: UploadFile = File(...)):
     
     return StreamingResponse(io.BytesIO(img_bytes), media_type="image/jpeg")
 
-# Define an API endpoint to handle image uploads
 @app.post("/task/image-enhancement")
 async def EnhanceImageQuality(file: UploadFile = File(...)):
-# Load the image from memory using Pillow
-    image = Image.open(io.BytesIO(file))
+# Read the uploaded image file as a byte stream
+    contents = await file.read()
 
-    # Convert to RGB color mode if not already in that mode
-    if image.mode != "RGB":
-        image = image.convert("RGB")
+    # Convert the byte stream into a numpy array
+    nparr = np.frombuffer(contents, np.uint8)
 
-    # Unblur the image using ImageFilter.UnsharpMask
-    unblurred_img = image.filter(ImageFilter.UnsharpMask(radius=2, percent=150, threshold=3))
+    # Read the numpy array as an image using OpenCV
+    img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-    # Improve the image quality using ImageEnhance.Sharpness
-    sharpness_enhancer = ImageEnhance.Sharpness(unblurred_img)
-    enhanced_img = sharpness_enhancer.enhance(2)
+    # Convert the image to grayscale
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    # Convert the colorized image to bytes
-    enhanced_img_bytes = io.BytesIO()
-    enhanced_img.save(enhanced_img_bytes, format='JPEG')
-    enhanced_img_bytes.seek(0)
+    # Apply the CLAHE (Contrast Limited Adaptive Histogram Equalization) algorithm to enhance the contrast
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+    clahe_img = clahe.apply(gray)
 
-    return StreamingResponse(enhanced_img_bytes, media_type='image/jpeg', headers={'Content-Disposition': 'attachment; filename=colorized.jpg'})
+    # Apply a bilateral filter to reduce noise while preserving edges
+    bilateral_img = cv2.bilateralFilter(clahe_img, 9, 75, 75)
+
+    # Convert the enhanced image back to bytes
+    enhanced_img_bytes = cv2.imencode(".jpg", bilateral_img)[1].tobytes()
+
+    # Return the enhanced image as a StreamingResponse
+    return StreamingResponse(io.BytesIO(enhanced_img_bytes), media_type="image/jpeg", headers={'Content-Disposition': 'attachment; filename=enhanced.jpg'})
 
 
 # Start the FastAPI app
