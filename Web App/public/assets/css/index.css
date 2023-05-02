@@ -428,6 +428,27 @@ nav{
     transform: translate3d(0, 0, 0) scale(0);
 }
 
+.cd-handle {
+    position: absolute;
+    height: 44px;
+    width: 44px;
+    /* center the element */
+    left: 50%;
+    top: 25%;
+    margin-left: -22px;
+    margin-top: -22px;
+    border-radius: 50%;
+    background: #ffffff url("https://images.clickfunnels.com/09/a714400d3211e7a0bd7d7140585054/cd-arrows.svg") no-repeat center center;
+    cursor: move;
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.2), 0 0 10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) scale(0);
+    -moz-transform: translate3d(0, 0, 0) scale(0);
+    -ms-transform: translate3d(0, 0, 0) scale(0);
+    -o-transform: translate3d(0, 0, 0) scale(0);
+    transform: translate3d(0, 0, 0) scale(0);
+}
+
 .cd-handle.draggable {
     /* change background color when element is active */
     background-color: #445b7c;

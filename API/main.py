@@ -86,10 +86,8 @@ async def DetectFacesInImage(file: UploadFile = File(...)):
 # Define an API endpoint to handle image uploads
 @app.post("/task/image-enhancement")
 async def EnhanceImageQuality(file: UploadFile = File(...)):
-    contents = await file.read()
-
-    # Load the image from memory using Pillow
-    image = Image.open(io.BytesIO(contents))
+# Load the image from memory using Pillow
+    image = Image.open(io.BytesIO(file))
 
     # Convert to RGB color mode if not already in that mode
     if image.mode != "RGB":
@@ -102,16 +100,12 @@ async def EnhanceImageQuality(file: UploadFile = File(...)):
     sharpness_enhancer = ImageEnhance.Sharpness(unblurred_img)
     enhanced_img = sharpness_enhancer.enhance(2)
 
-    # Colorize the image
-    colorized_img = enhanced_img.convert('L')
-    colorized_img = ImageOps.colorize(colorized_img, "black", "red")
-
     # Convert the colorized image to bytes
-    colorized_img_bytes = io.BytesIO()
-    colorized_img.save(colorized_img_bytes, format='JPEG')
-    colorized_img_bytes.seek(0)
+    enhanced_img_bytes = io.BytesIO()
+    enhanced_img.save(enhanced_img_bytes, format='JPEG')
+    enhanced_img_bytes.seek(0)
 
-    return StreamingResponse(colorized_img_bytes, media_type='image/jpeg', headers={'Content-Disposition': 'attachment; filename=colorized.jpg'})
+    return StreamingResponse(enhanced_img_bytes, media_type='image/jpeg', headers={'Content-Disposition': 'attachment; filename=colorized.jpg'})
 
 
 # Start the FastAPI app
