@@ -22,7 +22,7 @@ By default, port `8000` is used.
 
 #### Web App local use
 
-After following the instructions above, you should be able to use the web app immediately by simply going to the IP address of the host device (or http://127.0.0.1:8080 / http://localhost:8080 if using the host device itself to access it).
+After following the instructions above, you should be able to use the web app immediately by simply going to the IP address of the host device (or http://127.0.0.1:3000 / http://localhost:3000 if using the host device itself to access it).
 
 ### Desktop App
 
@@ -42,7 +42,7 @@ You should see the <b>Home Page</b>
 
 3. It may take a few seconds to run the AI through the API. Afterwards it will redirect you to the results page where you can download the result as a .jpeg or .png
 
-![Result]()
+![Result](https://github.com/Parker06/FaceCCTV/blob/main/Screenshots/Result.jpg)
 
 Notes:
 
