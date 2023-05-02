@@ -3,6 +3,7 @@ Lib
 Scripts
 .ebextensions
 pyvenv.cfg
-
+lib.zip
+.
 
 .space
