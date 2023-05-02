@@ -89,13 +89,13 @@ My solution is an app called FaceCCTV, where users can upload an image then the 
 
 ### Dataset
 
-- Dataset link [link here to Google Drive](https://drive.google.com/drive/folders/1Y11KhmhUfg3q6JRAv4idBBt-OuFEvQBv?usp=sharing)
-- Link to WIDER Face dataset [here](http://shuoyang1213.me/WIDERFACE/)
+- Dataset link [link here to Google Drive](https://drive.google.com/drive/folders/1Y11KhmhUfg3q6JRAv4idBBt-OuFEvQBv?usp=sharing).
+- Link to WIDER Face dataset [here](http://shuoyang1213.me/WIDERFACE/).
 
 
 # Models
 
-The trained models are on Google Drive [link here for download if you wish to use the models](https://drive.google.com/drive/folders/1uvfchtz6BeO0tNeOHRmjQnztngTclMSs?usp=sharing)
+The trained models are on Google Drive [link here for download if you wish to use the models](https://drive.google.com/drive/folders/1uvfchtz6BeO0tNeOHRmjQnztngTclMSs?usp=sharing).
 
 ## List of Project Objectives
 
@@ -118,7 +118,7 @@ The trained models are on Google Drive [link here for download if you wish to us
 
 ## Hosting
 
-The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access the web app and available to download on windows and mobile. The API is hosted on a third party server which stores the latest version of the AI model which is a h5 file.
+The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access the web app and should be able to download on windows. The API is hosted on a third party server which stores the latest version of the AI model which is a h5 file.
 
 ## Tech Stack
 
@@ -126,7 +126,6 @@ The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access
 - FaceCCTV AI API:  Python, FastAPI
 - Web App: HTML, CSS, JavaScript, TailwindCSS
 - Desktop App: Electron, HTML, CSS, JavaScript, Tailwind CSS
-- Mobile App: React Native, JavaScript
 
 ## Screenshots
 
@@ -196,8 +195,6 @@ The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access
 
 | Resource            | URL                                                                                           |
 | ------------------- | --------------------------------------------------------------------------------------------- |
-| ESRGAN              | [Github](https://github.com/xinntao/ESRGAN)                                                   |
-| ESRGAN Neural Model | [Google Drive Link](https://drive.google.com/drive/folders/17VYV_SoZZesU6mbxz2dMAIccSSlqLecY) |
 | Glob2               | [Github](https://github.com/miracle2k/python-glob2/)                                          |
 | OpenCV              | [Website](https://opencv.org) / [Github](https://github.com/opencv/opencv)                    |
 | PyTorch             | [Website](https://pytorch.org)                                                                |
