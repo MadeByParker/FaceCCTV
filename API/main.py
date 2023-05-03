@@ -7,14 +7,14 @@ from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 import io
 from keras.models import load_model
 import uvicorn
-import autocolorize
+import deepai
+import requests
 
 app = FastAPI()
 
 model = load_model('./models/facecctv.h5', compile=False)
 # Load face detection model
-face_cascade = cv2.CascadeClassifier('./models/facecctv.xml')
-colouriser = autocolorize.load_default_classifier()
+face_model = cv2.CascadeClassifier('./models/facecctv.xml')
 
     
 @app.get("/")
@@ -39,7 +39,7 @@ async def DetectFacesAndImproveQualityImage(file: UploadFile = File(...)):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # Detect faces
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
+    faces = face_model.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
 
     # Draw bounding boxes on the image
     for (x, y, w, h) in faces:
@@ -47,8 +47,6 @@ async def DetectFacesAndImproveQualityImage(file: UploadFile = File(...)):
 
     # Apply a bilateral filter to reduce noise while preserving edges
     bilateral_img = cv2.bilateralFilter(img, 9, 75, 75)
-
-    rgb = autocolorize.colorize(bilateral_img, colouriser)
 
     # Convert the enhanced image back to bytes
     enhanced_img_bytes = cv2.imencode(".jpg", bilateral_img)[1].tobytes()
@@ -71,7 +69,7 @@ async def DetectFacesInImage(file: UploadFile = File(...)):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # Detect faces
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
+    faces = face_model.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5)
 
     # Draw bounding boxes on the image
     for (x, y, w, h) in faces:
@@ -87,6 +85,21 @@ async def DetectFacesInImage(file: UploadFile = File(...)):
 async def EnhanceImageQuality(file: UploadFile = File(...)):
 # Read the uploaded image file as a byte stream
     contents = await file.read()
+
+    '''# Convert the byte stream into a numpy array
+    nparr = np.frombuffer(contents, np.uint8)
+
+    r = requests.post(
+        "https://api.deepai.org/api/colorizer",
+        data={
+            'image': nparr,
+        },
+        headers={'api-key': 'ed913ed8-f985-4246-ac90-1ad55e5cf072'}
+    )
+    colorized_image_bytes = r.content
+
+    # Return the enhanced image as a StreamingResponse
+    return StreamingResponse(io.BytesIO(colorized_image_bytes), media_type="image/jpeg", headers={'Content-Disposition': 'attachment; filename=colorized.jpg'})'''
 
     # Convert the byte stream into a numpy array
     nparr = np.frombuffer(contents, np.uint8)
@@ -110,7 +123,6 @@ async def EnhanceImageQuality(file: UploadFile = File(...)):
     # Return the enhanced image as a StreamingResponse
     return StreamingResponse(io.BytesIO(enhanced_img_bytes), media_type="image/jpeg", headers={'Content-Disposition': 'attachment; filename=enhanced.jpg'})
 
-
 # Start the FastAPI app
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="127.0.0.1", port=8000)
