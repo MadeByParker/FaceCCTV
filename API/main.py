@@ -7,8 +7,8 @@ from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 import io
 from keras.models import load_model
 import uvicorn
-import deepai
-import requests
+#import deepai
+#import requests
 
 app = FastAPI()
 
