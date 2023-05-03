@@ -67,7 +67,7 @@
                 <div class="form-container">
                     <form id="my-form" action="https://18.169.165.72/task/face-detection" method="POST" enctype="multipart/form-data">
                         <label for="drag-drop">Upload your images for face detection and image enhancement.</label>
-                        <input type="file" name="file" id="drag-drop" multiple/>
+                        <input type="file" name="file" id="drag-drop" required/>
                         <div id="uploads"></div>
                         <div class="dropzone" id="dropzone">Drag and drop the images</div>
                         <button type="submit" class="card-button" onclick="previewImage()"><a>Submit</a></button>
@@ -80,9 +80,16 @@
         </div>
 
         <script>
+
             async function previewImage() {
                 const form = document.getElementById('my-form');
                 const formData = new FormData(form);
+                if (formData.get('file').size === 0) {
+                    return alert('Please select a file');
+                }
+                else {
+                    alert('File uploaded successfully');
+                }
                 const response = await fetch('https://18.169.165.72/task/face-detection', {
                     method: 'POST',
                     body: formData,
