@@ -171,7 +171,7 @@ nav{
     height: 5rem;
     width: 100vw;
     color: white;
-    background-color: #131418;
+    background-color: linear-gradient(90deg, var(--blue) 0%, var(--seablue) 100%);
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     position: fixed;
@@ -206,7 +206,7 @@ nav{
     transform: translateX(0px);
 }
 .nav-links li a:hover {
-    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.2);
     letter-spacing: 5px;
     transform: translateX(10px);
     transition: all 0.5s ease-in-out;
@@ -219,7 +219,6 @@ nav{
     display: block;
     height: 3px;
     width: 0%;
-    background-color: var(--iconblue);
     position: absolute;
     transition: all ease-in-out 250ms;
     margin: 0 0 0 10%;
@@ -233,7 +232,6 @@ nav{
     display: block;
     height: 3px;
     width: 0%;
-    background-color: var(--iconblue);
     position: absolute;
     transition: all ease-in-out 250ms;
     margin: 0 10% 0 0;
@@ -521,7 +519,7 @@ form {
     text-align: center;
     transition: all 0.5s ease-in-out;
     color: white;
-    font-size: 16px;
+    font-size: 1.2rem;
 }
 
 form:hover {
@@ -531,7 +529,6 @@ form:hover {
 }   
 
 label {
-    font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
@@ -544,7 +541,6 @@ input[type="file"] {
     text-align: center;
     height: 100px;
     line-height: 100px;
-    font-size: 1.2rem;
     transition: all 0.5s ease-in-out;
     padding: 20px;
     border-radius: 5px;

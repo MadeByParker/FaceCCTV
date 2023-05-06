@@ -28,8 +28,8 @@
       <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
       </head>
 
-      <body class="">
-        <nav class="bg-gradient-to-r from-blue-400 to-blue-800">
+      <body>
+        <nav>
             <div class="logo">
                 <img id="navbar-logo-img" src="../assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
                 <img id="navbar-brand-img" src="../assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
@@ -40,11 +40,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-links">
-                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md"  href="../">Home</a></li>
-                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../showcase">About</a></li>
-                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../face-detection">Face Detection</a></li>
-                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="/">Image Enhancement</a></li>
-                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../settings">Settings</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-gray-400 hover:rounded-md"  href="../">Home</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-gray-400 hover:rounded-md" href="../showcase">About</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-gray-400 hover:rounded-md" href="../face-detection">Face Detection</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-gray-400 hover:rounded-md" href="/">Image Enhancement</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-gray-400 hover:rounded-md" href="../settings">Settings</a></li>
             </ul>
         </nav>
         <div class="facecctv-page-container">
@@ -65,7 +65,7 @@
                     </div>
                 </div>        
                 <div class="form-container">
-                    <form id="my-form" action="https://18.169.165.72/task/image-enhancement" method="POST" enctype="multipart/form-data">
+                    <form id="my-form" action="http://18.169.165.72/task/image-enhancement" method="POST" enctype="multipart/form-data">
                         <label for="drag-drop">Upload your images for image enhancement.</label>
                         <input type="file" name="file" id="drag-drop" required/>
                         <div id="uploads"></div>
@@ -83,7 +83,7 @@
             async function previewImage() {
                 const form = document.getElementById('my-form');
                 const formData = new FormData(form);
-                const response = await fetch('https://18.169.165.72/task/image-enhancement', {
+                const response = await fetch('http://18.169.165.72/task/image-enhancement', {
                     method: 'POST',
                     body: formData,
                 });
