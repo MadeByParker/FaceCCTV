@@ -21,8 +21,17 @@ face_model = cv2.CascadeClassifier('./models/facecctv.xml')
 async def root():
     return {"message": "Hello and Welcome to the Face Detection API, this is the default route. Please use the /docs route to access the API documentation. Or go to Github Repository for more information. URL: https://github.com/Parker06/FaceCCTV"}
 
+@app.get("/status")
+async def status():
+    return {"status": "API is running"}
+
+
+# if they type /api after it will redirect to the html files in showcase folder.
 # first 'static' specify route path, second 'static' specify html files directory.
 app.mount('/api', StaticFiles(directory='showcase',html=True))
+
+
+
 
 # Define an API endpoint to handle image uploads
 @app.post("/task/full-image-examination")
@@ -94,7 +103,7 @@ async def EnhanceImageQuality(file: UploadFile = File(...)):
         data={
             'image': nparr,
         },
-        headers={'api-key': 'ed913ed8-f985-4246-ac90-1ad55e5cf072'}
+        headers={'api-key': ''}
     )
     colorized_image_bytes = r.content
 
