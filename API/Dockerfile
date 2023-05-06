@@ -4,15 +4,17 @@ FROM python:3.9-slim as py
 # Allow statements and log 
 FROM py as base
 ENV PYTHONUNBUFFERED 1
+
 # Copy local code to the container image.
 WORKDIR /app
-COPY . .
+COPY requirements.txt /app
+COPY . /app
 
-
+# Install production dependencies.
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-#
+# Run individual install commands
 RUN pip install fastapi --no-cache-dir
 RUN pip install uvicorn --no-cache-dir
 RUN pip install python-multipart --no-cache-dir
@@ -29,10 +31,8 @@ RUN pip install tqdm --no-cache-dir
 RUN apt-get update && apt-get install libgl1 -y
 RUN apt-get install ffmpeg libsm6 libxext6  -y
 
-EXPOSE 8080
-ENV PORT 8080
-ENV HOST 0.0.0.0
+EXPOSE 8000
  
 # Run
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "15400"]
 
