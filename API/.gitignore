@@ -4,6 +4,5 @@ Scripts
 .ebextensions
 pyvenv.cfg
 lib.zip
-.
-
+./models
 .space
