@@ -29,7 +29,7 @@
       </head>
 
       <body>
-        <nav class="bg-gradient-to-r from-blue-400 to-blue-800 relative">
+        <nav class="bg-gradient-to-r from-blue-400 to-blue-800">
             <div class="logo">
                 <img id="navbar-logo-img" src="../assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
                 <img id="navbar-brand-img" src="../assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
@@ -40,11 +40,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-links">
-                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md"  href="../">Home</a></li>
-                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../showcase">About</a></li>
-                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../face-detection">Face Detection</a></li>
-                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="/">Image Enhancement</a></li>
-                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../settings">Settings</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-gray-400 hover:rounded-md"  href="../">Home</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-gray-400 hover:rounded-md" href="../showcase">About</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-gray-400 hover:rounded-md" href="../face-detection">Face Detection</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-gray-400 hover:rounded-md" href="../image-enhancement">Image Enhancement</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-gray-400 hover:rounded-md" href="/">Settings</a></li>
             </ul>
         </nav>
         <section id="settings" class="bg-white dark:bg-gray-900 relative h-screen">
@@ -90,29 +90,27 @@
                   <div class="mb-6" data-key="text-size">
                     <label for="settings-text-color" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Text Size</label>
                     <select id="settings-text-color" name="countries" class="bg-gray-50 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                        <option value="xs"><span>16px</span></option>
-                        <option value="sm"><span>20px</span></option>
-                        <option value="base" selected><span>24px</span></option>
-                        <option value="lg"><span>28px</span></option>
-                        <option value="xl"><span>32px</span></option>
-                        <option value="2xl"><span>36px</span></option>
-                        <option value="3xl"><span>40px</span></option>
-                        <option value="4xl"><span>44px</span></option>
-                  </div>
-                  <!--<div>
-                        <button class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Save all</button>
-                  </div>-->
-                  </div>
-            </div>
-            </section>
+                                <option value="0.75"><span>12px</span></option>
+                                <option value="1"><span>16px</span></option>
+                                <option value="1.25" selected><span>20px</span></option>
+                                <option value="1.5"><span>24px</span></option>
+                                <option value="1.75"><span>28px</span></option>
+                                <option value="2"><span>32px</span></option>
+                                <option value="2.25"><span>36px</span></option>
+                                <option value="2.5"><span>40px</span></option>
+                          </div>
+                          <!--<div>
+                                <button class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Save all</button>
+                          </div>-->
+                          </div>
+                    </div>
+                </section>
+            
 
-        
-            
-            
             <!--JS Imports -->
             <script src="../assets/js/index.js"></script>
             <script src="../assets/js/elements.js"></script>
-            <script src="../assets/js/themes.js"></script>
+            <script src="../assets/js/settings.js"></script>
             <script src="../assets/js/platform.js"></script>
             <script src="../assets/js/slider.js"></script>
             <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
