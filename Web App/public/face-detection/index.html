@@ -65,11 +65,11 @@
                     </div>
                 </div>
                 <div class="form-container">
-                    <form id="my-form" action="http://18.169.165.72/task/face-detection" method="POST" enctype="multipart/form-data">
-                        <label for="drag-drop">Upload your images for face detection and image enhancement.</label>
+                    <form id="my-form" action="http://127.0.0.1:8000/task/face-detection" method="POST" enctype="multipart/form-data">
+                        <label for="drag-drop">Upload your images for face detection.</label>
                         <input type="file" name="file" id="drag-drop" required/>
                         <div id="uploads"></div>
-                        <div class="dropzone" id="dropzone">Drag and drop the images</div>
+                        <div class="dropzone" id="dropzone">Click here to upload</div>
                         <button type="submit" class="card-button" onclick="previewImage()"><a>Submit</a></button>
                     </form>
                 </div>
@@ -90,7 +90,7 @@
                 else {
                     alert('File uploaded successfully');
                 }
-                const response = await fetch('http://18.169.165.72/task/face-detection', {
+                const response = await fetch('http://127.0.0.1:8000/task/face-detection', {
                     method: 'POST',
                     body: formData,
                 });

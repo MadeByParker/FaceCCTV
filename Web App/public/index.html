@@ -28,7 +28,7 @@
       <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
       </head>
 
-      <http://1>
+      <body>
         <nav class="bg-gradient-to-r from-blue-400 to-blue-800">
             <div class="logo">
                 <img id="navbar-logo-img" src="./assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
@@ -65,11 +65,11 @@
                     </div>
                 </div>
                 <div class="form-container">
-                    <form id="my-form" action="http://18.169.165.72/task/full_image_examination" method="POST" enctype="multipart/form-data">
+                    <form id="my-form" action="http://127.0.0.1:8000/task/full-image-examination" method="POST" enctype="multipart/form-data">
                         <label for="drag-drop">Upload your images for face detection and image enhancement.</label>
                         <input type="file" name="file" id="drag-drop" required/>
                         <div id="uploads"></div>
-                        <div class="dropzone" id="dropzone">Drag and drop the images</div>
+                        <div class="dropzone" id="dropzone">Click here to upload</div>
                         <button type="submit" class="card-button" onclick="previewImage()"><a>Submit</a></button>
                     </form>
                 </div>
@@ -83,7 +83,7 @@
             async function previewImage() {
                 const form = document.getElementById('my-form');
                 const formData = new FormData(form);
-                const response = await fetch('http://18.169.165.72/task/full-image-examination', {
+                const response = await fetch('http://127.0.0.1:8000/task/full-image-examination', {
                     method: 'POST',
                     body: formData,
                 });
