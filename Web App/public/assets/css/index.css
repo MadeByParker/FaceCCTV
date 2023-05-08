@@ -27,7 +27,7 @@ html {
     --seablue: #277ebd;
     --darkblue: #111827;
     --gray: #374151;
-    --darkgary: #1f2937;
+    --darkgray: #1f2937;
     --lightgray: #9ca3af;
     --buttonblue: #1d4ed8;
     --iconblue: #93c5fd;
@@ -35,57 +35,7 @@ html {
     --linkblue: #3b82f6;
     --pink: #bb1960;
     --textColor: #d1d5db;
-    --text-xs: 16px;
-    --text-sm: 18px;
-    --text-base: 20px;
-    --text-lg: 24px;
-    --text-xl: 28px;
-    --text-2xl: 36px;
-    --text-3xl: 48px;
-    --text-4xl: 64px;
-    --text-5xl: 96px;
-    --text-6xl: 128px;
 }
-
-.text-xs {
-    font-size: var(--text-xs);
-  }
-  
-  .text-sm {
-    font-size: var(--text-sm);
-  }
-  
-  .text-base {
-    font-size: var(--text-base);
-  }
-  
-  .text-lg {
-    font-size: var(--text-lg);
-  }
-  
-  .text-xl {
-    font-size: var(--text-xl);
-  }
-  
-  .text-2xl {
-    font-size: var(--text-2xl);
-  }
-  
-  .text-3xl {
-    font-size: var(--text-3xl);
-  }
-  
-  .text-4xl {
-    font-size: var(--text-4xl);
-  }
-  
-  .text-5xl {
-    font-size: var(--text-5xl);
-  }
-  
-  .text-6xl {
-    font-size: var(--text-6xl);
-  }
 
 /*Standard Styling*/
 *,
@@ -106,6 +56,7 @@ body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    background-color: var(--darkgray);
 }
 
 /*Specific classes*/
@@ -126,6 +77,58 @@ body {
 .uppercase {
     text-transform: uppercase;
 }
+
+.invisible {
+    opacity: 0;
+}
+
+.black-and-white {
+    transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    background: var(--darkgray);
+}
+
+
+.blue-and-pink{
+    transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    background-color: linear-gradient(90deg, var(--blue) 0%, var(--pink) 100%);
+}
+
+.black {
+    background: var(--darkgray);
+}
+
+.white {
+    background: var(--white);
+}
+
+.dark-blue {
+    background: var(--darkblue);
+}
+
+.gray {
+    background: var(--gray);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-black {
+    color: var(--black);
+}
+
+.text-gray {
+    color: var(--gray);
+}
+
 
 
 
@@ -249,10 +252,12 @@ nav{
     display: none;
 }
 
+/* Containers */
 .facecctv-page-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: var(--darkgray);
 }
 
 .main-container {
@@ -270,6 +275,7 @@ nav{
     margin: 0 auto;
     flex-grow: 1;
 }
+
 
 .image-slider-container {
     position: relative;
@@ -297,11 +303,12 @@ nav{
 
 .cd-image-label {
     position: absolute;
-    font-weight: 700;
+    font-weight: 900;
+    font-size: 1rem;
     letter-spacing: 1px;
-    top: 0;
+    top: 6.5rem;
     right: 0;
-    color: #ffffff;
+    color: var(--darkblue);
     padding: 1em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -552,7 +559,7 @@ input[type="file"] {
 }
 
 #uploads {
-    font-size: 1.15em;
+    font-size: 1.2em;
     font-weight: bold;
     padding: 10px;
 }
@@ -585,7 +592,7 @@ input[type="file"] {
     background-color: var(--buttonblue);
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin: 0.5rem;
     transition: all 300ms ease;
@@ -595,7 +602,7 @@ input[type="file"] {
     background: linear-gradient(
         135deg,
         var(--buttonblue) 50%,
-        var(--iconblue) 50%
+        var(--black) 50%
     );
     color: (var(--white));
     background-position: 100%;
@@ -605,6 +612,7 @@ input[type="file"] {
     cursor: pointer;
 }
 
+/* responsive */
 @media only screen and (min-width: 768px) {
     .form-container {
       flex-direction: row;
@@ -677,7 +685,6 @@ input[type="file"] {
     }
     body {
         overflow-x: hidden;
-        background-color: #111827;
     }
     nav{
         position: fixed;
@@ -756,6 +763,8 @@ input[type="file"] {
     transform: rotate(45deg) translate(-5px,-6px);
 }
 
+/* miscelaneous */
+
 .mobile-bg {
     display: none;
     transition: all 0.3s ease;
@@ -784,3 +793,5 @@ input[type="file"] {
 section {
     padding-top: 100px;
 }
+
+ 
