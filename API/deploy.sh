@@ -23,10 +23,6 @@ pip install opencv-python --no-cache-dir
 pip install scikit-image --no-cache-dir
 pip install scikit-learn --no-cache-dir
 pip install matplotlib --no-cache-dir
-pip install pandas --no-cache-dir
-pip install numpy --no-cache-dir
-pip install tensorflow --no-cache-dir
-pip install tqdm --no-cache-dir
 apt-get update -y
 apt-get install libgl1 -y
 apt-get install ffmpeg libsm6 libxext6  -y
