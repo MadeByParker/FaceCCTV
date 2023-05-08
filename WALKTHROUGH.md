@@ -16,7 +16,7 @@ The AI Model is in the AI section of the repository under face_detection which i
 
 ### API 
 
-The API folder has the most up to date version of the h5 model file and hosted on a server. you can run it locally for experimental use.  First you need to download the `Web-App-and-API.zip` file from the latest release. Once downloaded, extract the content, and place the FaceCCTV folder wherever you want. Using a CLI such as Git Bash, Terminal or Powershell, cd into the FaceCCTV/API/ directory and run the `pip install -r requirements.txt` command to install the python modules that FaceCCTV's API uses. Once done, run the `uvicorn main:app --reload` command to start the server. The API will try to get the local IP of your device and output it, but if it fails to do so, you might have to find the IP address on your own in order to use FaceCCTV on other devices.
+The API folder has the most up to date version of the h5 model file and hosted on a server which thr website is connected to. However you can run it locally for experimental use or if the server is offline.  First you need to download the `Web-App-and-API.zip` file from the latest release. Once downloaded, extract the content, and place the FaceCCTV folder wherever you want. Using a CLI such as Git Bash, Terminal or Powershell, cd into the FaceCCTV/API/ directory and run the `pip install -r requirements.txt` command to install the python modules that FaceCCTV's API uses. Once done, run the `uvicorn main:app --reload` command to start the fastapi API local host server. The API will be hosted on http://127.0.0.1:8000 which you can modify in the HTML files.
 
 By default, port `8000` is used.
 
