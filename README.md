@@ -195,11 +195,12 @@ The project will be hosted at [facecctv.co.uk](https://facecctv.co.uk) to access
 
 ### AI Image Enhancement
 
-| Resource            | URL                                                                                           |
-| ------------------- | --------------------------------------------------------------------------------------------- |
-| Glob2               | [Github](https://github.com/miracle2k/python-glob2/)                                          |
-| OpenCV              | [Website](https://opencv.org) / [Github](https://github.com/opencv/opencv)                    |
-| PyTorch             | [Website](https://pytorch.org)                                                                |
+| Resource                | URL                                                                                           |
+| ----------------------- | --------------------------------------------------------------------------------------------- |
+| Glob2                   | [Github](https://github.com/miracle2k/python-glob2/)                                          |
+| OpenCV                  | [Website](https://opencv.org) / [Github](https://github.com/opencv/opencv)                    |
+| PyTorch                 | [Website](https://pytorch.org)                                                                |
+| Image Colourisation API | [GitHub](https://github.com/Neeleshrj/Image-Colorization-API)                                 |
 
 ### API
 
