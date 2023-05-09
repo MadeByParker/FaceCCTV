@@ -16,17 +16,17 @@ The AI Model is in the AI section of the repository under face_detection which i
 
 ### API 
 
-The API folder has the most up to date version of the h5 model file and hosted on a server which thr website is connected to. However you can run it locally for experimental use or if the server is offline.  First you need to download the `Web-App-and-API.zip` file from the latest release. Once downloaded, extract the content, and place the FaceCCTV folder wherever you want. Using a CLI such as Git Bash, Terminal or Powershell, cd into the FaceCCTV/API/ directory and run the `pip install -r requirements.txt` command to install the python modules that FaceCCTV's API uses. Once done, run the `uvicorn main:app --reload` command to start the fastapi API local host server. The API will be hosted on http://127.0.0.1:8000 which you can modify in the HTML files.
+The API folder has the most up to date version of the h5 model file and hosted on a server which thr website is connected to. However you can run it locally for experimental use or if the server is offline.  First you need to download the `API.zip` file from the latest releas [here](https://github.com/Parker06/FaceCCTV/releases/tag/V.1.0.0). Once downloaded, extract the content, and place the FaceCCTV folder wherever you want. Using a CLI such as Git Bash, Terminal or Powershell, cd into the FaceCCTV/API/ directory and run the `pip install -r requirements.txt` command to install the python modules that FaceCCTV's API uses. Once done, run the `uvicorn main:app --reload` command to start the fastapi API local host server. The API will be hosted on http://127.0.0.1:8000 which you can modify in the HTML files. You can type http://127.0.0.1:8000/docs
 
 By default, port `8000` is used.
 
 #### Web App local use
 
-After following the instructions above, you should be able to use the web app immediately by simply going to the IP address of the host device (or http://127.0.0.1:3000 / http://localhost:3000 if using the host device itself to access it).
+After following the instructions above, you should be able to use the web app immediately by simply going the web address and use the app. (or http://127.0.0.1:3000 / http://localhost:3000 if using the host device itself to access it).
 
 ### Desktop App
 
-Download the latest version of the desktop app for the platform of your choice from the Releases section, and install it. Once installed, open the app, and then the API should be connected automatically based on the third party server hosting the API.
+Download the latest version of the desktop app for the platform of your choice from the Releases section, and install it. Once installed, open the app, and then the API should be connected automatically based on the third party server hosting the API. [here](https://github.com/Parker06/FaceCCTV/releases/tag/V.1.0.0)
 
 ## Walkthrough on the use of the app
 
