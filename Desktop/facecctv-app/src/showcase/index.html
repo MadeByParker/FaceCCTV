@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" id="web">
+      <head>
+
+      <!-- Custom CSS Files-->
+      <link href="../assets/dist/tailwind.css" rel="stylesheet">
+      <link href="../assets/css/global.css" rel="stylesheet">
+      <link href="../assets/css/index.css" rel="stylesheet">
+
+      <script src="../assets/dist/jquery-3.6.2.min.js"></script>
+
+      <!-- Icons -->
+      <link class="favicon" rel="apple-touch-icon" sizes="180x180" href="../assets/logos/logo-with-bg.png">
+      <link class="favicon" rel="icon" type="image/png" sizes="32x32" href="../assets/logos/logo-with-bg.png">
+      <link class="favicon" rel="icon" type="image/png" sizes="16x16" href="../assets/logos/logo-with-bg.png">
+      <link class="favicon" rel="shortcut icon" href="../assets/logos/logo.ico">
+
+
+
+      <!-- Meta Tags -->
+      <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+      <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+      <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"/>
+      <meta class="browser-theme" name="theme-color" content="#000000">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+      <meta charset="UTF-8" />
+
+      <title>FaceCCTV Web | Face Detection and Enhancement Tool</title>
+      </head>
+
+      <body>
+        <nav class="bg-gradient-to-r from-blue-400 to-blue-800">
+            <div class="logo">
+                <img id="navbar-logo-img" src="../assets/logos/app-icon.png" alt="logo" style="height: 48px; width: 48px;">
+                <img id="navbar-brand-img" src="../assets/icons/text-logo.png" alt="logo" class="pl-2" style="height: 30px; width: 120px;">
+            </div>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../index.html">Home</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../showcase/index.html">About</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../face-detection/index.html">Face Detection</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../image-enhancement/index.html">Image Enhancement</a></li>
+                <li><a class="p-4 transition-all ease-in-out duration-200 hover:text-white hover:bg-slate-400 hover:rounded-md" href="../settings/index.html">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="facecctv-page-container">
+            <div class="main-container">   
+                <section class="bg-white dark:bg-gray-900">
+                    <div class="mx-auto grid max-w-screen-xl py-8 px-4 lg:grid-cols-12 lg:gap-8 lg:py-16 xl:gap-0">
+                      <div class="mr-auto py-10 place-self-center lg:col-span-7">
+                        <h1 class="mb-4 max-w-2xl text-[36px] font-extrabold leading-none dark:text-white md:text-5xl ">FaceCCTV</h1>
+                        <p class="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-base lg:mb-8 lg:text-lg">Face Detection and Image Enhancement Tool</p>
+                        <a href="#" class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg py-3 px-5 text-center text-base font-medium text-white focus:ring-4">
+                          Download for Desktop 
+                          <svg class="ml-2 -mr-1 h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </a>
+                        <!--<a href="#faq" class="inline-flex items-center justify-center rounded-lg border border-gray-300 py-3 px-5 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"> Download for Mobile </a>-->
+                      </div>
+                      <div class="hidden lg:col-span-5 lg:mt-0 lg:flex">
+                        <img src="../assets/logos/app-icon-large.png" alt="mockup" />
+                      </div>
+                    </div>
+                  </section>
+                  
+                  <section class="bg-white dark:bg-gray-900">
+                    <div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16">
+                      <h2 class="mb-8 text-center text-[36px] py-16 font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white lg:mb-16">Tech Stack</h2>
+                      <div class="grid grid-cols-2 gap-8 text-gray-500 dark:text-gray-400 sm:gap-12 md:grid-cols-3 lg:grid-cols-6">
+                        <a href="#" class="flex items-center justify-center">
+                          <svg class="hover:text-gray-900 dark:hover:text-white" viewBox="0 0 512 512" fill="currentColor" width="64" height="64" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M86.76,255a9.89,9.89,0,0,0,4.87-1.29,9.82,9.82,0,0,0,3.65-13.43c-16.46-28.56-17.81-52.12-7.45-70,14.26-24.57,53.61-33.65,105.27-24.29a9.86,9.86,0,0,0,11.45-7.9,9.84,9.84,0,0,0-7.93-11.44c-29.19-5.28-56-5.18-77.39.3-22.3,5.71-39,17.28-48.45,33.48-14,24.19-12.7,54.73,7.42,89.62A9.85,9.85,0,0,0,86.76,255Z"/><path d="M361.61,143.73c32.24.42,52.61,9.31,62.79,26.86,14.21,24.48,2.52,62.81-31.27,102.52a9.82,9.82,0,0,0,7.51,16.18,9.88,9.88,0,0,0,7.52-3.46c19.12-22.47,32.35-45.54,38.25-66.71,6.14-22,4.43-42.21-5-58.38-13.8-23.78-40.13-36.15-79.59-36.67h-.14a9.83,9.83,0,0,0-.12,19.66Z"/><path d="M326.47,414.89a9.88,9.88,0,0,0-13.5,3.35c-16.41,27.15-36.57,42.1-56.77,42.1-28.49,0-56-29.31-73.73-78.42A9.87,9.87,0,0,0,169.88,376a9.83,9.83,0,0,0-6,12.58c10,27.77,23.47,50.75,39,66.46,16.11,16.34,34.55,25,53.32,25,27.38,0,53.54-18.33,73.65-51.61a9.81,9.81,0,0,0-3.38-13.5Z"/><path d="M431.7,338.54a32.14,32.14,0,0,0-29.9,44.33C360,402.37,282,387.66,209.93,346.25c-32.91-18.9-62.16-41.86-84.6-66.39a9.9,9.9,0,0,0-13.91-.65,9.8,9.8,0,0,0-.65,13.9c23.79,26,54.68,50.28,89.33,70.18,40.28,23.13,82.27,38.63,121.43,44.81a225.54,225.54,0,0,0,35,2.91c23.12,0,43-4.3,58.51-12.79a32.2,32.2,0,1,0,16.7-59.68Zm0,44.66a12.6,12.6,0,0,1-7.82-2.72,10,10,0,0,0-2.2-2.21,12.61,12.61,0,1,1,10,4.93Z"/><path d="M82.09,338.59c.57-21.26,12.41-47,33.68-73.16,23.19-28.45,56.69-56,94.34-77.65,33.25-19.1,65.2-31.9,98.07-38.91a9.83,9.83,0,1,0-4.12-19.22c-34.85,7.43-68.78,21-103.79,41.09C116.09,219.09,59.9,289.88,62.46,343.9a32.32,32.32,0,1,0,19.63-5.31ZM80.3,383.2a12.5,12.5,0,1,1,12.59-12.5A12.56,12.56,0,0,1,80.3,383.2Z"/><path d="M256.2,96.32a32.23,32.23,0,0,0,26.53-13.81c17.89,11.69,34,35,45.81,66.12,13,34.39,19.84,75.38,19.84,118.54,0,37.18-5.19,72.35-15,103.6a9.72,9.72,0,0,0,.66,7.49,9.82,9.82,0,0,0,5.8,4.84,9.89,9.89,0,0,0,12.34-6.44c10.42-33.14,15.93-70.34,15.93-109.49,0-47.17-7.77-91.77-22.47-129-14.41-36.48-34.13-62.4-57.14-75.16A32.3,32.3,0,1,0,256.2,96.32Zm0-44.66a12.5,12.5,0,1,1-12.59,12.5A12.56,12.56,0,0,1,256.2,51.66Z"/><path d="M251,243.36h0a24.35,24.35,0,0,0,5.16,48.16,24.68,24.68,0,0,0,5.16-.55A24.36,24.36,0,1,0,251,243.36Z"/>
+                          </svg>
+                        </a>
+                        <a href="#" class="flex items-center justify-center">
+                          <svg class="hover:text-gray-900 dark:hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="64" height="64" viewBox="0 0 512 512"><title>ionicons-v5_logos</title><path d="M314,36.38c-18.59-3.06-45.8-4.47-64.27-4.38a311.09,311.09,0,0,0-51.66,4.38c-45.74,8-54.07,24.7-54.07,55.54V128H256v16H107.62C66.06,144,32.33,193.67,32,255.12c0,.29,0,.58,0,.88a162.91,162.91,0,0,0,3.13,32c9.29,46.28,38.23,80,72.49,80H128V314c0-31.3,20.84-59.95,55-66.1l9.87-1.23H314a56.05,56.05,0,0,0,15.06-2A52.48,52.48,0,0,0,368,193.68V91.92C368,63,343.32,41.19,314,36.38ZM194.93,105.5a20.37,20.37,0,1,1,20.3-20.3A20.29,20.29,0,0,1,194.93,105.5Z"/><path d="M475.28,217c-10.7-42.61-38.41-73-70.9-73H386.67v47.45c0,39.57-26,68.22-57.74,73.13a63.54,63.54,0,0,1-9.69.75H198.08a60,60,0,0,0-15.23,1.95C160.54,273.14,144,291.7,144,315.77V417.54c0,29,29.14,46,57.73,54.31,34.21,9.95,71.48,11.75,112.42,0,27.19-7.77,53.85-23.48,53.85-54.31V384H256V368H404.38c29.44,0,54.95-24.93,67.45-61.31A156.83,156.83,0,0,0,480,256,160.64,160.64,0,0,0,475.28,217ZM316.51,404a20.37,20.37,0,1,1-20.3,20.3A20.29,20.29,0,0,1,316.51,404Z"/></svg>
+                        </a>
+                        <a href="#" class="flex items-center justify-center">
+                          <svg class="hover:text-gray-900 dark:hover:text-white" role="img" viewBox="0 0 24 24" width="64" height="64" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><title>FastAPI</title><path d="M12 0C5.375 0 0 5.375 0 12c0 6.627 5.375 12 12 12 6.626 0 12-5.373 12-12 0-6.625-5.373-12-12-12zm-.624 21.62v-7.528H7.19L13.203 2.38v7.528h4.029L11.376 21.62z"/></svg>
+                        </a>
+                  
+                        <a href="#" class="flex items-center justify-center">
+                                <svg class="hover:text-gray-900 dark:hover:text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 256 300"><path d="M10.584 156.41v-32.753h7.136v35.256a21.302 21.302 0 0 1-4.686 15.976A18.213 18.213 0 0 1 .89 179.31l-.745-5.325a11.61 11.61 0 0 0 7.775-2.982c1.917-2.237 2.663-5.273 2.663-14.592Zm53.22-4.201c0 3.994 0 7.562.32 10.651h-6.338l-.426-6.337a14.752 14.752 0 0 1-12.941 7.242c-6.178 0-13.527-3.355-13.527-17.041v-22.74h7.136v21.302c0 7.402 2.29 12.355 8.734 12.355a9.958 9.958 0 0 0 10.065-10.065v-23.859h7.136v28.279l-.16.213Zm13.527-15.555c0-4.953 0-9-.32-12.675h6.39l.32 6.657a15.445 15.445 0 0 1 13.953-7.562c9.48 0 16.616 7.935 16.616 19.757c0 13.953-8.574 20.877-17.84 20.877a13.794 13.794 0 0 1-12.09-6.125v21.302h-7.03v-42.231Zm7.03 10.385c.019.966.126 1.928.319 2.875a10.97 10.97 0 0 0 10.651 8.255c7.509 0 11.93-6.124 11.93-15.018c0-7.775-4.155-14.432-11.664-14.432a12.249 12.249 0 0 0-11.237 11.663v6.657Zm42.644-23.095l8.574 22.953a132.673 132.673 0 0 1 2.503 7.935c.745-2.344 1.544-5.326 2.503-8.095l7.775-22.793h7.509l-10.651 27.692c-5.326 13.314-8.574 20.184-13.474 24.338a19.385 19.385 0 0 1-8.734 4.58l-1.757-5.965a18.906 18.906 0 0 0 6.23-3.461a21.302 21.302 0 0 0 6.019-7.882c.29-.53.488-1.107.585-1.704a6.125 6.125 0 0 0-.479-1.864l-14.485-35.84h7.775l.107.106Zm47.809-11.173v11.183h10.225v5.326h-10.225v20.983c0 4.793 1.384 7.562 5.325 7.562c1.4.023 2.796-.138 4.154-.48l.32 5.326a17.575 17.575 0 0 1-6.338.959a9.906 9.906 0 0 1-7.722-2.983a14.326 14.326 0 0 1-2.77-10.118v-21.302h-6.07V123.9h6.177v-9.48l6.924-1.65Zm23.37 31.877a12.516 12.516 0 0 0 13.474 13.473a25.988 25.988 0 0 0 10.651-2.024l1.225 5.326a31.953 31.953 0 0 1-13.048 2.396a18.106 18.106 0 0 1-19.278-19.598c0-11.716 6.976-20.982 18.373-20.982c12.781 0 15.977 11.183 15.977 18.32c.068 1.1.068 2.202 0 3.302h-27.533l.16-.213Zm20.877-5.326a10.064 10.064 0 0 0-9.906-11.503a11.77 11.77 0 0 0-10.917 11.503h20.823Zm17.324-3.269c0-4.58 0-8.52-.32-12.142h6.391v7.616h.32a11.77 11.77 0 0 1 10.651-8.521a7.775 7.775 0 0 1 2.024 0v6.657a10.645 10.645 0 0 0-2.45 0a9.958 9.958 0 0 0-9.533 9.053a19.772 19.772 0 0 0-.32 3.302v20.716h-7.029v-26.627l.266-.054Z"/><path d="M233.258 16.962a18.053 18.053 0 1 1-18.8-16.935a17.84 17.84 0 0 1 18.8 16.935Z"/><path d="M127.953 225.541c-47.93 0-90.055-17.201-111.836-42.604a119.239 119.239 0 0 0 223.672 0c-21.728 25.403-63.693 42.604-111.836 42.604Zm0-165.187c47.93 0 90.055 17.202 111.836 42.604a119.243 119.243 0 0 0-111.836-77.88a119.239 119.239 0 0 0-111.836 77.88c21.781-25.455 63.694-42.604 111.836-42.604Z"/><path d="M61.972 274.975a22.74 22.74 0 1 1-23.699-21.302a22.527 22.527 0 0 1 23.699 21.302Z"/><path d="M21.564 54.565a13.102 13.102 0 1 1 12.728-13.633a13.26 13.26 0 0 1-12.728 13.633Z"/></svg>
+                        </a>
+                        <a href="#" class="flex items-center justify-center">
+                                <svg class="hover:text-gray-900 dark:hover:text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24"><path fill="currentColor" d="M7.64 10.38c0 .25.02.45.07.62c.05.12.12.28.21.46c.04.04.05.1.05.15c0 .07-.04.13-.13.2l-.42.28c-.06.04-.12.06-.17.06c-.07 0-.13-.04-.2-.1c-.09-.1-.17-.2-.24-.31c-.06-.11-.13-.24-.2-.39c-.52.61-1.17.92-1.96.92c-.56 0-1-.16-1.33-.48c-.32-.32-.49-.75-.49-1.29c0-.55.2-1 .6-1.36c.41-.34.95-.52 1.63-.52c.23 0 .44.02.71.06c.23.03.5.08.76.14v-.48c0-.51-.1-.84-.31-1.07c-.22-.21-.57-.3-1.08-.3c-.24 0-.48.03-.72.08c-.25.06-.49.13-.72.23c-.11.04-.2.07-.23.08c-.05.02-.08.02-.11.02c-.09 0-.14-.06-.14-.2v-.33c0-.1.01-.18.05-.23c.03-.05.09-.09.18-.12c.24-.14.51-.24.84-.32a3.9 3.9 0 0 1 1.04-.13c.79 0 1.37.18 1.74.54c.37.36.55.91.55 1.64v2.15h.02m-2.7 1.02c.22 0 .44-.04.68-.12c.24-.08.45-.23.63-.43c.11-.13.19-.27.25-.43c0-.16.05-.35.05-.58v-.27c-.2-.07-.4-.07-.62-.12a6.89 6.89 0 0 0-.62-.04c-.45 0-.77.09-.99.27c-.22.18-.32.43-.32.76c0 .32.07.56.24.71c.16.17.39.25.7.25m5.34.71a.58.58 0 0 1-.28-.06c-.03-.05-.08-.14-.12-.26L8.32 6.65c-.04-.15-.06-.22-.06-.27c0-.11.05-.17.16-.17h.65c.13 0 .22.02.26.07c.06.04.1.13.14.26l1.11 4.4l1.04-4.4c.03-.13.07-.22.13-.26c.05-.04.14-.07.25-.07h.55c.12 0 .21.02.26.07c.05.04.1.13.13.26L14 11l1.14-4.46c.04-.13.09-.22.13-.26c.06-.04.14-.07.26-.07h.62c.11 0 .17.06.17.17c0 .03-.01.07-.02.12c0 0-.02.08-.04.15l-1.61 5.14c-.04.14-.08.21-.15.26c-.04.04-.13.07-.24.07h-.57c-.13 0-.19-.02-.27-.07a.45.45 0 0 1-.12-.26L12.27 7.5l-1.03 4.28c-.03.13-.07.22-.12.27a.49.49 0 0 1-.27.06h-.57m8.55.18c-.33 0-.7-.04-1.03-.12c-.33-.08-.59-.17-.76-.26a.496.496 0 0 1-.21-.19a.392.392 0 0 1-.04-.18v-.34c0-.14.05-.2.15-.2h.12c.04 0 .1.05.17.08c.22.1.47.18.73.23c.27.05.54.08.79.08c.42 0 .75-.07.97-.22c.23-.17.35-.36.35-.63c0-.19-.07-.34-.18-.47c-.12-.12-.35-.24-.67-.34l-.97-.3c-.48-.16-.84-.38-1.06-.68a1.58 1.58 0 0 1-.33-.97c0-.28.06-.52.18-.73c.12-.22.28-.4.46-.55c.22-.15.44-.26.71-.34c.26-.08.54-.12.84-.12c.14 0 .29.01.45.03c.14.02.28.05.42.07c.14.04.26.07.38.11c.12.04.2.08.28.12c.09.05.16.1.2.16c.04.06.06.13.06.22v.32c0 .14-.05.21-.15.21c-.05 0-.14-.03-.26-.08c-.37-.17-.8-.26-1.27-.26c-.38 0-.66.06-.89.19c-.2.12-.31.32-.31.59c0 .19.07.35.2.47c.13.13.38.25.73.37l.95.3c.48.14.82.36 1.03.64c.2.27.3.58.3.93c0 .28-.06.54-.17.77c-.12.22-.28.42-.5.58c-.19.17-.44.29-.72.38c-.28.09-.62.13-.95.13m1.25 3.24C17.89 17.14 14.71 18 12 18c-3.85 0-7.3-1.42-9.91-3.77c-.21-.19-.02-.44.23-.29c2.82 1.63 6.29 2.62 9.89 2.62c2.43 0 5.1-.5 7.55-1.56c.37-.15.68.26.32.53M21 14.5c-.29-.37-1.86-.18-2.57-.1c-.21.03-.24-.16-.05-.3c1.25-.87 3.31-.6 3.54-.33c.24.3-.06 2.36-1.23 3.34c-.19.15-.36.07-.28-.11c.27-.68.86-2.16.59-2.5Z"/></svg>
+                        </a>
+                        <a href="#" class="flex items-center justify-center">
+                          <svg class="hover:text-gray-900 dark:hover:text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="180" height="64" viewBox="0 0 512 64"><defs><linearGradient id="logosTailwindcss0" x1="-2.778%" x2="100%" y1="32%" y2="67.556%"><stop offset="0%" stop-color="#8a929e"/><stop offset="100%" stop-color="#8a929e"/></linearGradient></defs><path fill="url(#logosTailwindcss0)" d="M52.867 0c-14.098 0-22.91 7.049-26.434 21.147c5.287-7.05 11.455-9.693 18.504-7.93c4.021 1.005 6.896 3.923 10.078 7.153c5.183 5.26 11.182 11.35 24.285 11.35c14.098 0 22.909-7.049 26.433-21.147c-5.286 7.05-11.454 9.693-18.503 7.93c-4.022-1.005-6.896-3.923-10.078-7.153C71.968 6.09 65.97 0 52.867 0ZM26.433 31.72C12.336 31.72 3.524 38.769 0 52.867c5.287-7.05 11.454-9.693 18.503-7.93c4.022 1.005 6.897 3.923 10.078 7.152c5.184 5.262 11.183 11.35 24.286 11.35c14.097 0 22.908-7.048 26.433-21.146c-5.287 7.05-11.455 9.693-18.503 7.93c-4.022-1.005-6.897-3.923-10.079-7.153c-5.183-5.26-11.182-11.35-24.285-11.35Z"/><path d="M158.592 26.73h-9.226v17.858c0 4.762 3.125 4.688 9.226 4.39v7.217c-12.351 1.488-17.262-1.934-17.262-11.607V26.731h-6.845v-7.738h6.845V8.999l8.036-2.38v12.374h9.226v7.738Zm35.17-7.737h8.036v37.202h-8.036v-5.357c-2.827 3.944-7.217 6.325-13.02 6.325c-10.12 0-18.528-8.557-18.528-19.569c0-11.086 8.408-19.568 18.527-19.568c5.804 0 10.194 2.38 13.021 6.25v-5.283Zm-11.756 30.506c6.696 0 11.756-4.985 11.756-11.905c0-6.92-5.06-11.905-11.756-11.905c-6.696 0-11.756 4.985-11.756 11.905c0 6.92 5.06 11.905 11.756 11.905Zm33.185-36.087c-2.828 0-5.134-2.38-5.134-5.133a5.144 5.144 0 0 1 5.134-5.134a5.144 5.144 0 0 1 5.134 5.134c0 2.753-2.307 5.133-5.134 5.133Zm-4.018 42.783V18.993h8.035v37.202h-8.035Zm17.336 0V1.88h8.036v54.315h-8.036Zm60.194-37.202h8.482l-11.682 37.202h-7.887l-7.738-25.074l-7.812 25.074h-7.887l-11.682-37.202h8.482l7.218 25.67l7.812-25.67h7.664l7.738 25.67l7.292-25.67Zm18.452-5.58c-2.827 0-5.134-2.381-5.134-5.134a5.144 5.144 0 0 1 5.134-5.134a5.144 5.144 0 0 1 5.134 5.134c0 2.753-2.307 5.133-5.134 5.133Zm-4.018 42.782V18.993h8.036v37.202h-8.036Zm36.905-38.17c8.333 0 14.286 5.655 14.286 15.328v22.842h-8.036V34.171c0-5.654-3.274-8.63-8.333-8.63c-5.283 0-9.45 3.124-9.45 10.714v19.94h-8.036V18.993h8.036v4.762c2.456-3.87 6.473-5.73 11.533-5.73Zm52.381-13.913h8.036v52.083h-8.036v-5.357c-2.827 3.944-7.217 6.325-13.02 6.325c-10.12 0-18.528-8.557-18.528-19.569c0-11.086 8.408-19.568 18.527-19.568c5.804 0 10.194 2.38 13.021 6.25V4.112Zm-11.756 45.387c6.696 0 11.756-4.985 11.756-11.905c0-6.92-5.06-11.905-11.756-11.905c-6.696 0-11.756 4.985-11.756 11.905c0 6.92 5.06 11.905 11.756 11.905Zm46.726 7.664c-11.235 0-19.643-8.557-19.643-19.569c0-11.086 8.408-19.568 19.643-19.568c7.292 0 13.616 3.794 16.593 9.598l-6.92 4.018c-1.637-3.497-5.283-5.73-9.747-5.73c-6.548 0-11.533 4.986-11.533 11.682c0 6.696 4.985 11.682 11.533 11.682c4.464 0 8.11-2.307 9.896-5.73l6.92 3.944c-3.126 5.878-9.45 9.673-16.742 9.673Zm29.985-27.902c0 6.77 20.015 2.678 20.015 16.443c0 7.44-6.473 11.459-14.509 11.459c-7.44 0-12.797-3.349-15.178-8.706l6.92-4.018c1.19 3.349 4.166 5.357 8.258 5.357c3.572 0 6.325-1.19 6.325-4.166c0-6.622-20.015-2.902-20.015-16.22c0-6.995 6.027-11.384 13.616-11.384c6.101 0 11.16 2.827 13.765 7.738l-6.77 3.794c-1.34-2.901-3.944-4.24-6.995-4.24c-2.902 0-5.432 1.264-5.432 3.943Zm34.301 0c0 6.77 20.015 2.678 20.015 16.443c0 7.44-6.473 11.459-14.509 11.459c-7.44 0-12.798-3.349-15.179-8.706l6.92-4.018c1.19 3.349 4.167 5.357 8.259 5.357c3.571 0 6.324-1.19 6.324-4.166c0-6.622-20.014-2.902-20.014-16.22c0-6.995 6.026-11.384 13.616-11.384c6.1 0 11.16 2.827 13.765 7.738l-6.771 3.794c-1.34-2.901-3.944-4.24-6.994-4.24c-2.902 0-5.432 1.264-5.432 3.943Z"/></svg>
+                        </a>
+                      </div>
+                    </div>
+                  </section>
+                  
+                  <section class="bg-gray-50 dark:bg-gray-800">
+                    <div class="mx-auto max-w-screen-xl py-8 px-4 sm:py-16 lg:px-6">
+                      <div class="mb-8 max-w-screen-md lg:mb-16">
+                        <h2 class="mb-4 text-[36px] font-extrabold text-gray-900 dark:text-white">About FaceCCTV</h2>
+                        <p class="text-gray-500 dark:text-gray-400 sm:text-[24px]">FaceCCTV was developed for the sole purpose of helping individuals and organisations to identify suspects of crimes from CCTV footage.</p>
+                      </div>
+                      <div class="space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
+                        <div>
+                          <div class="bg-primary-100 dark:bg-primary-900 mb-4 flex h-10 w-10 items-center justify-center rounded-full lg:h-12 lg:w-12">
+                            <svg class="text-primary-600 dark:text-primary-300 h-5 w-5 lg:h-6 lg:w-6" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="m232.5 215.5l-40.7-40.7A94.9 94.9 0 0 0 212 116a96 96 0 1 0-96 96a94.9 94.9 0 0 0 58.8-20.2l40.7 40.7a12.1 12.1 0 0 0 17 0a12 12 0 0 0 0-17ZM44 116a72 72 0 1 1 72 72a72.1 72.1 0 0 1-72-72Z"/>
+                          </svg>
+                          </div>
+                          <h3 class="mb-2 text-xl font-bold dark:text-white">Face Detection</h3>
+                          <p class="text-gray-500 dark:text-gray-400">FaceCCTV uses Deep Learning to identify faces from a variety of different datasets which was trained on a Tensorflow VGG16 Convolutional Neural Network Model.</p>
+                        </div>
+                        <div>
+                          <div class="bg-primary-100 dark:bg-primary-900 mb-4 flex h-10 w-10 items-center justify-center rounded-full lg:h-12 lg:w-12">
+                            <svg class="text-primary-600 dark:text-primary-300 h-5 w-5 lg:h-6 lg:w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path></svg>
+                          </div>
+                          <h3 class="mb-2 text-xl font-bold dark:text-white">Safety</h3>
+                          <p class="text-gray-500 dark:text-gray-400">All images are not stored anywhere so no malicious behaviour can be used with the images. The images are also encrypted in transit so it is completely safe.</p>
+                        </div>
+                        <div>
+                          <div class="bg-primary-100 dark:bg-primary-900 mb-4 flex h-10 w-10 items-center justify-center rounded-full lg:h-12 lg:w-12">
+                            <svg class="text-primary-600 dark:text-primary-300 h-5 w-5 lg:h-6 lg:w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M5 21q-.825 0-1.413-.588T3 19V5q0-.825.588-1.413T5 3h14q.825 0 1.413.588T21 5v14q0 .825-.588 1.413T19 21H5Zm0-2h14V5H5v14Zm1-2h12l-3.75-5l-3 4L9 13l-3 4Zm-1 2V5v14Z"/>
+                            </svg>
+                          </div>
+                          <h3 class="mb-2 text-xl font-bold dark:text-white">Image Enhancement</h3>
+                          <p class="text-gray-500 dark:text-gray-400">The images and faces are enhanced using state-of-the-art technology, ESRGAN.</p>
+                        </div>
+                        <div>
+                          <div class="bg-primary-100 dark:bg-primary-900 mb-4 flex h-10 w-10 items-center justify-center rounded-full lg:h-12 lg:w-12">
+                            <svg class="text-primary-600 dark:text-primary-300 h-5 w-5 lg:h-6 lg:w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3z"/>
+                            </svg>
+                          </div>
+                          <h3 class="mb-2 text-xl font-bold dark:text-white">User Interface</h3>
+                          <p class="text-gray-500 dark:text-gray-400">Built with Tailwind CSS to provide a modern user interface and experience will keeping it simple.</p>
+                        </div>
+                        <div>
+                          <div class="bg-primary-100 dark:bg-primary-900 mb-4 flex h-10 w-10 items-center justify-center rounded-full lg:h-12 lg:w-12">
+                            <svg class="text-primary-600 dark:text-primary-300 h-5 w-5 lg:h-6 lg:w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M2 20v-3h2V6q0-.825.588-1.413T6 4h15v2H6v11h6v3H2Zm13 0q-.425 0-.713-.288T14 19V9q0-.425.288-.713T15 8h6q.425 0 .713.288T22 9v10q0 .425-.288.713T21 20h-6Zm1-3h4v-7h-4v7Z"/></svg>
+                          </div>
+                          <h3 class="mb-2 text-xl font-bold dark:text-white">Cross Platform Functionality</h3>
+                          <p class="text-gray-500 dark:text-gray-400">The web interface was designed to be used on multiple platforms.</p>
+                        </div>
+                        <div>
+                          <div class="bg-primary-100 dark:bg-primary-900 mb-4 flex h-10 w-10 items-center justify-center rounded-full lg:h-12 lg:w-12">
+                            <svg class="text-primary-600 dark:text-primary-300 h-5 w-5 lg:h-6 lg:w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
+                          </div>
+                          <h3 class="mb-2 text-xl font-bold dark:text-white">Customisable Settings</h3>
+                          <p class="text-gray-500 dark:text-gray-400">There are several different settings available to tailor the experience to the user's requirements.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+              
+                  
+                  <section class="bg-gray-50 dark:bg-gray-900">
+                    <div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16 lg:px-6">
+                      <div class="max-w-screen-lg text-gray-500 dark:text-gray-400 sm:text-[24px]">
+                        <h2 class="mb-4 text-[36px] font-bold text-gray-900 dark:text-white">Hoping to solve crimes <span class="font-extrabold">worldwide</span>.</h2>
+                        <p class="mb-4 font-light">After doing research on the crime rate percentage and seeing a 1% increase of crimes committed in 2021 from 2020 to approximately 79,000 in the last 12 months and only a 5% of those result in a charge.</p>
+                        <p class="mb-4 font-extrabold"> You wonder why? </p>
+                        <p class="mb-4 font-light">This is partly due to the poor quality of CCTV, which makes finding the right person more difficult. Adding to this, higher-resolution cameras are on the expensive side which most businesses can’t afford, due to high costs or budget restrictions, resulting in them purchasing lower-resolution CCTV cameras which could lead to poor image quality. If you ever tried to upscale an image, it will become very pixelated and may require photo editing skills to do it professionally, which potentially adds to the costs.</p>
+                        <p class="mb-4 font-extrabold">FaceCCTV is a step towards a better place.</p>
+                        <a href="#" class="text-primary-600 hover:text-primary-800 dark:text-primary-500 dark:hover:text-primary-700 inline-flex items-center font-medium">
+                          Learn more from my Github
+                          <svg class="ml-1 h-6 w-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                        </a>
+                      </div>
+                    </div>
+                  </section>
+                  
+              <section class="bg-white dark:bg-gray-900">
+                    <div class="mx-auto max-w-screen-xl py-8 px-4 sm:py-16 lg:px-6">
+                    <div class="mx-auto max-w-screen-sm text-center">
+                    <h2 class="mb-4 text-[36px] font-extrabold leading-tight text-gray-900 dark:text-white">Give it a go</h2>
+                    <!--<a href="#" class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 mr-2 mb-2 rounded-lg px-5 py-2.5 text-sm font-medium text-white focus:outline-none focus:ring-4">Download on Desktop</a>-->
+                    <a href="../" class="bg-indigo-700 mr-2 mb-2 rounded-lg px-5 py-2.5 text-sm font-medium text-white focus:outline-none focus:ring-4 hover:bg-gradient-to-r hover:from-indigo-600 hover:to-pink-700 ease-in-out duration-300">Try FaceCCTV out</a>
+                    </div>
+                    </div>
+              </section>              
+                
+            </div>
+        </div>
+
+            <!--JS Imports -->
+            <script src="../assets/js/index.js"></script>
+            <script src="../assets/js/elements.js"></script>
+            <script src="../assets/js/themes.js"></script>
+            <script src="../assets/js/platform.js"></script>
+            <script src="../assets/js/slider.js"></script>
+            <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+            <!-- Custom Libraries -->
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      </body>
+      
+</html>     
