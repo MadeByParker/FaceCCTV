@@ -26,7 +26,7 @@ After following the instructions above, you should be able to use the web app im
 
 ### Desktop App
 
-Download the latest version of the desktop app for the platform of your choice from the Releases section, and install it. Once installed, open the app, and then the API should be connected automatically based on the third party server hosting the API. [here](https://github.com/Parker06/FaceCCTV/releases/tag/V.1.0.0)
+Download the latest version of the desktop app from the Releases section  [here](https://github.com/Parker06/FaceCCTV/releases/tag/V.1.0.0), and install it. Once installed, open the app, and then the API should be connected automatically based on the third party server hosting the API.
 
 ## Walkthrough on the use of the app
 
