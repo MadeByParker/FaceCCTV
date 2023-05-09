@@ -1,6 +1,6 @@
 # FaceCCTV Desktop App
 
-This section hosts the development of the FaceCCTV Desktop App. Read the README in the main repository to learn more. The Desktop app can be downloaded at https://facecctv.co.uk/showcase
+This section hosts the development of the FaceCCTV Desktop App. Read the README in the main repository to learn more. The Desktop app can be downloaded at https://facecctv.co.uk/showcase or in the Releases Section.
 
 ### The App itself
 
