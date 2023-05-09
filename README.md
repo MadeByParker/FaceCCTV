@@ -17,7 +17,7 @@ This repository contains the source code and assets for my Final Year Project at
 
 ### Brief Demo
 
-A brief video has been recorded to show the application running - not done yet (coming soon).
+A brief video has been recorded to show the application running [here on Youtube](https://youtu.be/bSYXfr-A_B4).
 
 ### Setup Instructions
 
