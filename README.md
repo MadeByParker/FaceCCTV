@@ -13,6 +13,8 @@
 
 This repository contains the source code and assets for my Final Year Project at University.
 
+Results: 73/100
+
 #### **DISCLAIMER ALERT: This is a piece of software that was made for my final year university project so there might be unintentional bugs with the software or the AI itself so if you are going to use it in real life applications, please be aware that the AI may not perform well for your particular user case.**
 
 ### Brief Demo
